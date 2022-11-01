@@ -40,3 +40,11 @@
 #exampleModalLabel:hover{
   color: #8A0015 !important;
 }
+.form-control{
+  background-color: black !important;
+  border-color:  #212529 !important;
+  color: white !important;
+}
+.form-control:focus{
+  box-shadow: none !important;
+}
