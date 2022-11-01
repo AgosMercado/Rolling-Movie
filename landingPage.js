@@ -32,9 +32,9 @@ function register (e){
   let email = document.getElementById("register-email-value").value;
   let password = document.getElementById("register-password-value").value;
   let password2 = document.getElementById("register-password2-value").value;
-  let admin = false;
   let idNewUser = Math.random();
-  let newUser = new User(idNewUser, name, age, email, password, admin);
+  if(password==password2){
+  let newUser = new User(idNewUser, name, age, email, password, false);
   //ACTUALIZO EN LS
   //Traigo los admins de LS
   let adminsLS = JSON.parse(localStorage.getItem("admins"));
@@ -44,4 +44,12 @@ function register (e){
   localStorage.setItem("admins",JSON.stringify(adminsLS));
   //Redirijo al inicio:
   window.location.assign(window.location.origin + "/home.html")
+  }else{
+    let messageAlert = document.createElement("div");
+    // messageAlert.classList.add("alert-danger","alert");  //!  revisar el error de bopstrap***************************
+    // messageAlert.setAttribute("role","alert")
+    messageAlert.innerText="error";
+    let containerMessage = document.getElementById("container-message");
+    containerMessage.appendChild(messageAlert);
+  }
 }
