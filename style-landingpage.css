@@ -6,7 +6,7 @@
   background-color: #8A0015;
   color: white !important;
 }
-#button-search:focus{
+#button-search:focus,#style-button-register:focus{
   box-shadow: none;
 }
 .style-text-nav:hover{
@@ -20,12 +20,17 @@
   /* opacity: 0.75; */
 }
 .style-text-main{
-  width: 50vw;
+  text-align: center;
+  width: 70vw;
   height: 30vh;
   z-index: 1;
-  font-size: 2rem;
+  font-size: 50px;
   font-family: 'Bitter', serif;
   margin-top: 50px;
   color: white;
-  /* background-color: rgba(0, 0, 0, 0.849); */
+}
+#background-main{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.795);
 }
