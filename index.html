@@ -42,7 +42,7 @@
   </header>
   <main id="main-style">
     <div id="background-main" class="d-flex justify-content-center align-items-center">
-    <div class="style-text-main"><h2>Las mejores peliculas y series en un solo lugar</h2>
+    <div class="style-text-main"><h2><strong>Las mejores peliculas y series en un solo lugar</strong></h2>
     <button class="btn btn-outline-success" id="style-button-register" data-bs-toggle="modal" data-bs-target="#register-Modal">Registrarme</button>
     </div>
     <!-- ?INICIO MODAL -->
@@ -50,15 +50,36 @@
 <div class="modal fade" id="register-Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Registrate Aquí</h5>
+      <div class="modal-header register-modal-style">
+        <h5 class="modal-title text-light" id="exampleModalLabel">Registrate Acá</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        ...
+      <div class="modal-body register-modal-style" id="style-modal-register">
+        <form onsubmit="register(event)">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="register-name-value" placeholder="Juan Perez" required maxlength="50" minlength="10">
+            <label for="register-name-value">Nombre y Apellido</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="register-name-email" placeholder="name@example.com" required maxlength="20" minlength="8">
+            <label for="register-name-email">Email</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="number" class="form-control" id="register-name-age" placeholder="xx" required max="99" min="12">
+            <label for="register-name-age">Edad</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="register-name-password" placeholder="Password" required maxlength="16" minlength="8">
+            <label for="register-name-password">Contraseña</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="register-name-password2" placeholder="Password" required maxlength="16" minlength="8">
+            <label for="register-name-password2">Repetir Contraseña</label>
+          </div>
+        </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Registrarme</button>
+      <div class="modal-footer register-modal-style">
+        <button type="submit" class="btn btn-outline-success" id="buton-modal-register"data-bs-dismiss="modal">Registrarme</button>
       </div>
     </div>
   </div>

@@ -1,12 +1,12 @@
-#button-search,#style-button-register{
+#button-search,#style-button-register,#buton-modal-register{
   border: 1px solid #8A0015;
   color: #8A0015;
 }
-#button-search:hover,#style-button-register:hover{
+#button-search:hover,#style-button-register:hover,#buton-modal-register:hover{
   background-color: #8A0015;
   color: white !important;
 }
-#button-search:focus,#style-button-register:focus{
+#button-search:focus,#style-button-register:focus,#buton-modal-register:focus{
   box-shadow: none;
 }
 .style-text-nav:hover{
@@ -33,4 +33,10 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.795);
+}
+.register-modal-style{
+  background-color: black;
+}
+#exampleModalLabel:hover{
+  color: #8A0015 !important;
 }
