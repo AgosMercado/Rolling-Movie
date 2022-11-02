@@ -20,10 +20,14 @@ if(usersLS){
     new User(25, "Agostina Mercado", 29, "agosmercado@gmail.com", 123456789, "true"),
     new User(24, "Gisel Hemsy", 28, "ghemsy@gmail.com", 123456788, "true"),
     new User(23, "Gabriel Rodriguez", 27, "gabz89.gr@gmail.com", 123456787, "true"),
-    new User(22, "Gabriel Rodriguez", 26, "peralta.j.nicolas@gmail.com", 123456786, "true"),
+    new User(22, "Nicolas Peralta", 26, "peralta.j.nicolas@gmail.com", 123456786, "true"),
     new User(21, "David Fernandez", 25, "davidfmamani@gmail.com", 123456785, "true")
   ]
   localStorage.setItem("admins",JSON.stringify(admins));
+}
+
+function alertMessage(){
+  
 }
 function register (e){
   e.preventDefault();
@@ -46,10 +50,11 @@ function register (e){
   window.location.assign(window.location.origin + "/home.html")
   }else{
     let messageAlert = document.createElement("div");
-    // messageAlert.classList.add("alert-danger","alert");  //!  revisar el error de bopstrap***************************
-    // messageAlert.setAttribute("role","alert")
-    messageAlert.innerText="error";
+    messageAlert.classList.add("alert-danger","alert");  //!  revisar el error de bopstrap***************************
+    messageAlert.setAttribute("role","alert")
+    messageAlert.innerText="Credenciales erroneas";
     let containerMessage = document.getElementById("container-message");
     containerMessage.appendChild(messageAlert);
+    setTimeout(()=>{alertMessage.remove();},2000);
   }
 }
