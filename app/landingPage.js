@@ -47,7 +47,7 @@ function register (e){
   //Actualizo en LS:
   localStorage.setItem("admins",JSON.stringify(adminsLS));
   //Redirijo al inicio:
-  window.location.assign(window.location.origin + "/home.html")
+  window.location.assign(window.location.origin + "/pages/home.html")
   }else{
     let messageAlert = document.createElement("div");
     messageAlert.classList.add("alert-danger","alert");  //!  revisar el error de bopstrap***************************
