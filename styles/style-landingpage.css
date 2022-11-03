@@ -17,7 +17,9 @@
   width: 100vw;
   height: 100vh;
   background-size: cover;
+  background-position: center;
   /* opacity: 0.75; */
+  background-repeat: no-repeat;
 }
 .style-text-main{
   text-align: center;
@@ -47,4 +49,14 @@
 }
 .form-control:focus{
   box-shadow: none !important;
+}
+#container-alertMessage{
+  width: 70%;
+}
+@media screen and (max-width: 768px){
+  #main-style{
+    margin-top: 50px;
+    background-image:url(https://i.pinimg.com/474x/26/0a/6c/260a6c7b3c104bb026096fea0c2c8e57.jpg);
+    background-size: cover;
+}
 }

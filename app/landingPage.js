@@ -26,8 +26,15 @@ if(usersLS){
   localStorage.setItem("admins",JSON.stringify(admins));
 }
 
-function alertMessage(){
-  
+
+function alertMessage (message, containerMessage){
+    let alertMessage = document.createElement("div");
+    alertMessage.classList.add("alert","alert-secondary","my-1");
+    alertMessage.setAttribute("role","alert"); //USO SET ATRIBUTE CUANDO QUIERO AGREGAR UN ATRIBUTO QUE NO APARECE EN LA LISTA
+    alertMessage.innerText =message;
+    let containerParent = document.getElementById(containerMessage);
+    containerParent.appendChild(alertMessage);
+    setTimeout(()=>{alertMessage.remove();},2000); // PASADOS 2 SEGUNDOS SE BORRE EL ELEMENTO QUE ACABO DE CREAR SINO ES SPAM
 }
 function register (e){
   e.preventDefault();
@@ -49,12 +56,6 @@ function register (e){
   //Redirijo al inicio:
   window.location.assign(window.location.origin + "/pages/home.html")
   }else{
-    let messageAlert = document.createElement("div");
-    messageAlert.classList.add("alert-danger","alert");  //!  revisar el error de bopstrap***************************
-    messageAlert.setAttribute("role","alert")
-    messageAlert.innerText="Credenciales erroneas";
-    let containerMessage = document.getElementById("container-message");
-    containerMessage.appendChild(messageAlert);
-    setTimeout(()=>{alertMessage.remove();},2000);
+    alertMessage ("LAS CONTRASEÑAS NO COINCIDEN", "container-alertMessage");
   }
 }
