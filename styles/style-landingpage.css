@@ -1,8 +1,8 @@
-#button-search,#style-button-register,#buton-modal-register{
+#button-search,#style-button-register,#buton-modal-register,#button-init{
   border: 1px solid #8A0015;
   color: #8A0015;
 }
-#button-search:hover,#style-button-register:hover,#buton-modal-register:hover{
+#button-search:hover,#style-button-register:hover,#buton-modal-register:hover,#button-init{
   background-color: #8A0015;
   color: white !important;
 }
