@@ -39,8 +39,8 @@
   </header>
   <main id="main-style">
     <div id="background-main" class="d-flex justify-content-center align-items-center">
-    <div class="style-text-main"><h2><strong>Las mejores peliculas y series en un solo lugar</strong></h2>
-    <button class="btn btn-outline-success" id="style-button-register" data-bs-toggle="modal" data-bs-target="#register-Modal" id="buton-modal-register"data-bs-dismiss="modal">Registrarme</button>
+    <div class="style-text-main"><h1><strong>Las mejores películas y series en un solo lugar</strong></h1><h4>Disfruta donde quieras. Cancela cuando quieras</h4>
+    <button class="btn btn-outline-success" id="style-button-register-main" data-bs-toggle="modal" data-bs-target="#register-Modal"  data-bs-dismiss="modal">Registrarme</button>
     </div>
     <!-- ?INICIO MODAL -->
     <!-- Modal -->
@@ -49,28 +49,28 @@
     <div class="modal-content">
       <div class="modal-header register-modal-style">
         <h5 class="modal-title text-light" id="exampleModalLabel">Registrate Acá</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body register-modal-style" id="style-modal-register">
         <form onsubmit="register(event)">
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="register-name-value" placeholder="Juan Perez" required maxlength="50" minlength="10">
+          <div class="form-floating mb-3" id="testttt">
+            <input type="text" class="form-control" id="register-name-value" placeholder="Juan Perez" required minlength="" maxlength="30">
             <label for="register-name-value">Nombre y Apellido</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="register-email-value" placeholder="name@example.com" required maxlength="20" minlength="8">
+            <input type="email" class="form-control" id="register-email-value" placeholder="name@example.com" required minlength="6" maxlength="30" >
             <label for="register-name-email">Email</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="number" class="form-control" id="register-age-value" placeholder="xx" required max="99" min="12">
+            <input type="number" class="form-control" id="register-age-value" placeholder="xx" required  min="16" max="99">
             <label for="register-name-age">Edad</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="register-password-value" placeholder="Password" required maxlength="16" minlength="8">
+            <input type="password" class="form-control" id="register-password-value" placeholder="Password" required minlength="8" maxlength="16" >
             <label for="register-name-password">Contraseña</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="register-password2-value" placeholder="Password" required maxlength="16" minlength="8">
+            <input type="password" class="form-control" id="register-password2-value" placeholder="Password" required minlength="8" maxlength="16" >
             <label for="register-name-password2">Repetir Contraseña</label>
           </div>
           <div class="form-floating mb-3" id="container-message">
