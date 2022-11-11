@@ -45,7 +45,8 @@ peliculas.forEach(pelicula=>{
     containerPelicula.appendChild(peliculaFila);
 })
 
-const agregarPelicula= () =>{
+const agregarPelicula= (e) =>{
+  e.preventDefault();
   
 }
 
