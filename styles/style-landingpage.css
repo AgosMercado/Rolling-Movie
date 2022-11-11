@@ -1,20 +1,20 @@
-#button-search,#style-button-register,#buton-modal-register{
+#button-search,#style-button-register,#buton-modal-register,#button-init{
   border: 1px solid #8A0015;
   color: #8A0015;
 }
-#button-search:hover,#style-button-register:hover,#buton-modal-register:hover{
-  background-color: #8A0015;
+#button-search:hover,#style-button-register:hover,#buton-modal-register:hover,#button-init{
+  background-color: #8A0015 !important;
   color: white !important;
 }
-#button-search:focus,#style-button-register:focus,#buton-modal-register:focus{
-  box-shadow: none;
+#button-search:focus,#style-button-register:focus,#buton-modal-register:focus,.btn-close:focus{
+  box-shadow: none !important;
 }
 .style-text-nav:hover{
   color: #8A0015 !important;
 }
 #main-style{
   background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mejores-peliculas-terror-1666357610.jpg);
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-size: cover;
   background-position: center;
@@ -32,7 +32,7 @@
   color: white;
 }
 #background-main{
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.795);
 }
@@ -53,10 +53,20 @@
 #container-alertMessage{
   width: 70%;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 576px){
   #main-style{
+    width: 100%;
+    height: 100vh;
     margin-top: 50px;
     background-image:url(https://i.pinimg.com/474x/26/0a/6c/260a6c7b3c104bb026096fea0c2c8e57.jpg);
     background-size: cover;
+    background-position: center;
 }
+}
+.style-message{
+  color:#8A0015;
+  font-size: .9rem;
+}
+#style-nav{
+  background-color: black;
 }

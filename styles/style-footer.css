@@ -1,0 +1,70 @@
+/* Background colors */
+.bg-compass-primary{
+    background-color:black;
+}
+
+.bg-compass-persianRed{
+    background-color:#8A0015;
+}
+
+
+.container-copyright{
+    color: white;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+
+/* Text colors */
+.incons-networks{
+    color:white;
+    font-family: 'Bitter', serif;
+}
+
+
+
+/* Imagen del footer */
+.img-footer{
+    width: 60%;
+}
+
+
+/*Quitar color y subrayado a etiquetas a*/
+#footer-page a:link,#footer-page a:visited,#footer-page a:active {
+    color:white;
+    text-decoration:none;
+}
+
+#footer-page a:hover{
+    color:#8A0015;
+}
+
+
+/* Animacion link de redes */
+.animation-redes:hover{
+    transform:scale(1.2);
+    transition-duration: 250ms;
+    color: #8A0015;
+}
+
+
+
+@media (max-width:767px) {
+    .img-footer{
+        width: 50%;
+    }
+}
+
+@media (min-width:992px) {
+    .img-footer{
+        height: 70%;
+    }
+    .text-compass-smaller{
+        font-size:1em!important;
+    }
+}
+#footer-page{
+    height: 35vh;
+    width: 100%;
+    box-sizing: border-box;
+}

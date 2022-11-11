@@ -1,0 +1,5 @@
+.carousel-pag-principal{
+ height: 100vh !important;
+ object-fit: cover;
+ object-position: center;
+}
