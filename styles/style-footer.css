@@ -1,6 +1,6 @@
 /* Background colors */
 .bg-compass-primary{
-    background-color:#212529;
+    background-color:black;
 }
 
 .bg-compass-persianRed{
@@ -62,4 +62,9 @@
     .text-compass-smaller{
         font-size:1em!important;
     }
+}
+#footer-page{
+    height: 35vh;
+    width: 100%;
+    box-sizing: border-box;
 }
