@@ -1,18 +1,9 @@
 .carousel-pag-principal{
- height: 100vh !important;
+
  object-fit: cover;
  object-position: center;
 }
 
 main{
     background-color: black;
-}
-
-nav{
-    background-color: black !important;
-}
-
-#button-dropdwn:hover{
-background-color: #8A0015 !important;
-  color: white !important;
 }
