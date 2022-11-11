@@ -1,3 +1,11 @@
+// //! PROTECCION DE RUTAS VA EN JS DE PAGINA PRINCIPAL NO EN LANDING PAGE ??
+// //TRIAGO EL USUARIO REGISTRADO/LOGUEADO DE LS
+// let userRegisteredLS = localStorage.getItem("userRegistered");
+// //SI EL USUARIO REGISTRADO O LOGUEADO NO EXISTE ENTONCES REDIRIJO AL LANDING PAGE, NO PUEDE ACCEDER A PAG PRINCIPAL
+// if (!userRegisteredLS){
+//   window.location.assign(window.location.origin + "/pages/index.html");
+// }
+
 class User{
   constructor(id, name, age, email, password, admin){
     this.id = id,
@@ -21,7 +29,8 @@ if(usersLS){
     new User(24, "Gisel Hemsy", 28, "ghemsy@gmail.com", 123456788, "true"),
     new User(23, "Gabriel Rodriguez", 27, "gabz89.gr@gmail.com", 123456787, "true"),
     new User(22, "Nicolas Peralta", 26, "peralta.j.nicolas@gmail.com", 123456786, "true"),
-    new User(21, "David Fernandez", 25, "davidfmamani@gmail.com", 123456785, "true")
+    new User(21, "David Fernandez", 25, "davidfmamani@gmail.com", 123456785, "true"),
+    new User(20, "Facundo Fierro", 24, "fachu2501@gmail.com", 1234567894, "true")
   ]
   localStorage.setItem("admins",JSON.stringify(admins));
 }
@@ -63,7 +72,7 @@ function register (e){
   //Actualizo en LS:
   localStorage.setItem("admins",JSON.stringify(adminsLS));
   //Redirijo al inicio:
-  window.location.assign(window.location.origin + "/pages/home.html")
+  window.location.assign(window.location.origin + "/pages/pagprincipal.html")
     }else alertMessage (" El email ingresado ya ha sido registrado","container-alertMessage");
   }else{
     errorsValues.map(error=>{
