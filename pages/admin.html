@@ -4,25 +4,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles/style-admin.css">
+  <link rel="stylesheet" href="/styles/style-landingpage.css">
+  <link rel="stylesheet" href="/styles/style-footer.css">
+  <title>Página de Administración</title>
 </head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bitter&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles/style-landingpage.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<<<<<<< HEAD
-<link rel="icon" href="/assets/pngwing.com (2).png"
-=======
-<link rel="stylesheet" href="/styles/style-footer.css">
->>>>>>> 7bc9434812b5ec4d5c6ced823121661d5503fc77
 <body>
   <header>
     <!-- ?INICIO NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top my-auto" id="style-nav">
       <div class="container-fluid">
-        <a class="navbar-brand style-text-nav" href="#">Rolling Movies
-          <img src="/assets/pngwing.com (2).png" id=imagelogo alt="logo" class="main-image" width="35" height="35"> </a>
+        <a class="navbar-brand style-text-nav" href="#">Rolling Movies</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,54 +38,74 @@
     </nav>
     <!-- ?FIN NAVBAR -->
   </header>
-  <main id="main-style">
-    <div id="background-main" class="d-flex justify-content-center align-items-center">
-    <div class="style-text-main"><h1><strong>Las mejores películas y series en un solo lugar</strong></h1><h4>Disfruta donde quieras. Cancela cuando quieras</h4>
-    <button class="btn btn-outline-success" id="style-button-register" data-bs-toggle="modal" data-bs-target="#register-Modal"  data-bs-dismiss="modal">Registrarme</button>
-    </div>
-    <!-- ?INICIO MODAL REGISTRO-->
-    <!-- Modal -->
-<div class="modal fade" id="register-Modal" tabindex="-1" aria-labelledby="modalRegister" aria-hidden="true">
+  <main class="mt-5 pt-4 container">
+    <h1 class="text-center">Tabla de Administración</h1> 
+    <button class="style-button-add btn btn-outline-success ms-auto d-block" data-bs-toggle="modal" data-bs-target="#add-movie-modal">AGREGAR <i class="fa-solid fa-plus"></i></button>
+    <div class="d-flex justify-content-center">
+      
+    <table class="table table-bordered style-table mt-3" id="tableABM">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Imagen</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Publicado</th>
+        <th scope="col">Destacado</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr>
+        <th scope="row">3</th>
+        <td>Lazzzzthe Bird</td>
+        <td>xccxcxtwitter</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td><i class="fa-solid fa-trash mx-3"></i><i class="fa-solid fa-pen"></i></td>
+      </tr> -->
+    </tbody>
+  </table>
+</div>
+<!-- ?INICIO MODAL AGREGAR PELICULA -->
+<div class="modal" tabindex="-1" id="add-movie-modal" tabindex="-1" aria-labelledby="modalAdd" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header register-modal-style">
-        <h5 class="modal-title text-light" id="exampleModalLabel">Registrate Acá</h5>
+        <h5 class="modal-title text-light">Agregar Película</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body register-modal-style" id="style-modal-register">
-        <form onsubmit="register(event)">
-          <div class="form-floating mb-3" id="testttt">
-            <input type="text" class="form-control" id="register-name-value" placeholder="Juan Perez" required minlength="" maxlength="30">
-            <label for="register-name-value">Nombre y Apellido</label>
+      <div class="modal-body register-modal-style">
+        <form onsubmit="agregarPelicula()">
+          <div class="form-floating mb-3" id="">
+            <input type="text" class="form-control" id="modal-add-name" placeholder="El horfanato" required minlength="8" maxlength="15">
+            <label for="modal-add-name">Nombre de la Película</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="register-email-value" placeholder="name@example.com" required minlength="6" maxlength="30" >
-            <label for="register-name-email">Email</label>
+            <input type="text" class="form-control" id="modal-add-description" placeholder="Lorem.." required minlength="10" maxlength="500" >
+            <label for="modal-add-description">Descripción</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="number" class="form-control" id="register-age-value" placeholder="xx" required  min="16" max="99">
-            <label for="register-name-age">Edad</label>
+            <input type="url" class="form-control" id="modal-add-image" placeholder="xx" required>
+            <label for="modal-add-image">Imágen</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="register-password-value" placeholder="Password" required minlength="8" maxlength="16" >
-            <label for="register-name-password">Contraseña</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="register-password2-value" placeholder="Password" required minlength="8" maxlength="16" >
-            <label for="register-name-password2">Repetir Contraseña</label>
+            <input type="text" class="form-control" id="modal-add-category" placeholder="xx" required minlength="2" maxlength="16" >
+            <label for="modal-add-category">Categoría</label>
           </div>
           <div class="form-floating mb-3" id="container-message">
-            <button type="submit" class="btn btn-outline-success" id="buton-modal-register">Registrarme</button>
+            <button type="submit" class="btn btn-outline-success" id="buton-modal-register">Enviar datos</button>
           </div>  
           <div id="container-alertMessage"></div>
         </form>
       </div>
-    
     </div>
   </div>
 </div>
-<!-- ?FIN MODAL REGISTRO -->
-</div>
+<!-- ?FIN MODAL AGREGAR PELICULA-->
   </main>
   <!-- ?INICIO FOOTER -->
   <footer id="footer-page" class="container-fluid bg-compass-primary">
@@ -130,8 +143,8 @@
     </div>
   </footer>
   <!-- ?FIN FOOTER -->
-  <script src="/app/landingPage.js"></script>
   <script src="https://kit.fontawesome.com/73835d0d8e.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="/app/admin.js"></script>
 </body>
 </html>
