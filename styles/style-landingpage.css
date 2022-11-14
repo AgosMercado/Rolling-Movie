@@ -2,7 +2,7 @@
   border: 1px solid #8A0015;
   color: #8A0015;
 }
-#button-search:hover,#style-button-register:hover,#buton-modal-register:hover,#button-init{
+#button-search:hover,#style-button-register:hover,#buton-modal-register:hover,#button-init,#button-dropdwn,.button-carousel{
   background-color: #8A0015 !important;
   color: white !important;
 }
