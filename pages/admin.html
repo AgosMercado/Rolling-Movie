@@ -81,7 +81,7 @@
       <div class="modal-body register-modal-style">
         <form onsubmit="agregarPelicula(e)">
           <div class="form-floating mb-3" id="">
-            <input type="text" class="form-control" id="newMovie-name" placeholder="El horfanato" required minlength="8" maxlength="15">
+            <input type="text" class="form-control" id="newMovie-name" placeholder="xxxxxx" required minlength="8" maxlength="15">
             <label for="newMovie-name">Nombre de la Película</label>
           </div>
           <div class="form-floating mb-3">
@@ -95,6 +95,18 @@
           <div class="form-floating mb-3">
             <input type="text" class="form-control" id="newMovie-category" placeholder="xx" required minlength="2" maxlength="16" >
             <label for="newMovie-category">Categoría</label>
+          </div>
+          <div class="form-floating mb-3 ms-1">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="switch-publicado" required>
+              <label class="form-check-label" for="switch-publicado">Publicado</label>
+            </div>
+          </div>
+          <div class="form-floating mb-3 ms-1">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="switch-destacado" required>
+              <label class="form-check-label" for="switch-destacado">Destacado</label>
+            </div>
           </div>
           <div class="form-floating mb-3" id="container-message">
             <button type="submit" class="btn btn-outline-success" id="buton-modal-register">Enviar datos</button>

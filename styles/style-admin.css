@@ -6,14 +6,14 @@ main{
   text-align: center;
 }
 .style-table-category{
-  max-width: 250px;
+  max-width: 200px;
   overflow-x: scroll;
   white-space:nowrap;
   text-overflow: clip;
 } 
 .style-table-img{
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   margin-left: 15px;
   margin-right: 15px;
 }
@@ -34,4 +34,21 @@ main{
   .style-table{
     width: 70vw;
 }
+}
+.style-cell{
+  max-height: 200px;
+}
+.form-check-input{
+  background-color:#8A0015;
+  color: black !important;
+}
+.form-check-input:focus{
+  background-color: #8A0015 !important;
+  border-color: crimson !important;
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(64, 64, 71, 0.253)
+}
+.form-check-input:checked{
+  background-color: #8A0015;
+  border-color: black;
 }
