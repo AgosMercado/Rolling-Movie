@@ -1,10 +1,10 @@
-class user{
-    constructor(id, name, age, email, password){
-        this.id = id 
-        this.name = name
-        this.age = age
-        this.email = email
-        this.password = password
+class User{
+    constructor(id, name, age, email, password, admin){
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.email = email;
+        this.password = password;
         this.admin = admin
     }
 }
@@ -13,11 +13,11 @@ if(localStorage.getItem('users')){
     users= JSON.parse(localStorage.getItem('users'))
 }else{
     users= [
-    new User(25, "Agostina Mercado", 29, "agosmercado@gmail.com", 123456789,true),
-    new User(24, "Gisel Hemsy", 28, "ghemsy@gmail.com", 123456788,true),
-    new User(23, "Gabriel Rodriguez", 27, "gabz89.gr@gmail.com", 123456787,true),
-    new User(22, "Nicolas Peralta", 26, "peralta.j.nicolas@gmail.com", 123456786,true),
-    new User(21, "David Fernandez", 25, "davidfmamani@gmail.com", 123456785,true)
+    new User(25, "Agostina Mercado", 29, "agosmercado@gmail.com", 123456789,"true"),
+    new User(24, "Gisel Hemsy", 28, "ghemsy@gmail.com", 123456788,"true"),
+    new User(23, "Gabriel Rodriguez", 27, "gabz89.gr@gmail.com", 123456787,"true"),
+    new User(22, "Nicolas Peralta", 26, "peralta.j.nicolas@gmail.com", 123456786,"true"),
+    new User(21, "David Fernandez", 25, "davidfmamani@gmail.com", 123456785,"true")
 ]
 localStorage.setItem('users',JSON.stringify(users))
 }
@@ -25,12 +25,12 @@ const login = (e)=>{
     e.preventDefault(); 
     const email = document.getElementById ('values-Email1').value;
     const password = document.getElementById ('values-Password1').value;
-    const userfound= user.find(user=>user.email===email);
+    const userfound= users.find(user=>user.email===email);
     if(userfound && userfound.password===password){
         window.location.assign(window.location.origin + '/home.html');
         
     }else{
-        alertMessage('datos invalidos','form');
+        alertMessage('datos invalidos','#container-message');
     }
 }
 
@@ -38,7 +38,7 @@ function alertMessage (message,querycontainer){
     let alertMessage = document.createElement('div');
     alertMessage.classList.add('alert','alert-danger','mt-4');
     alertMessage.setAttribute('role','alert');
-    alertMessage.innerText = message;
+    alertMessage.innerHTML = `${message}`;
     let container= document.querySelector(querycontainer);
     container.appendchild(alertMessage);
     setTimeout(()=>{
