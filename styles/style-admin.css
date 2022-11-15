@@ -66,3 +66,6 @@ main{
   transition-duration: 250ms;
   color: #8A0015;
 }
+.btn-secondary{
+  border: none !important;
+}

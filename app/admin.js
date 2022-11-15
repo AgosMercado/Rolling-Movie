@@ -75,7 +75,7 @@ peliculas.forEach(pelicula=>{
   peliculasLS.push(nuevaPelicula);
   //GUARDO EL ARRAY ACTUALIZADO
   localStorage.setItem("peliculas",JSON.stringify(peliculasLS));
-  window.location.reload() 
+  window.location.reload(); 
   //!  la pag principal no actualiza solo cuando agrego una pelicula
 }
 
