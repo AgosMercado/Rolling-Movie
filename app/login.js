@@ -1,5 +1,5 @@
 class user{
-    constructor(id, name, age, email, password){
+    constructor(id, name, age, email, password,admin){
         this.id = id 
         this.name = name
         this.age = age
@@ -23,8 +23,8 @@ localStorage.setItem('users',JSON.stringify(users))
 }
 const login = (e)=>{
     e.preventDefault(); 
-    const email = document.getElementById ('values-Email1').value;
-    const password = document.getElementById ('values-Password1').value;
+    const email = document.getElementById ('values-Email').value;
+    const password = document.getElementById ('values-Password').value;
     const userfound= user.find(user=>user.email===email);
     if(userfound && userfound.password===password){
         window.location.assign(window.location.origin + '/home.html');
