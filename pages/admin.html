@@ -41,8 +41,7 @@
   <main class="mt-5 pt-4 container">
     <h1 class="text-center">Administración de Películas</h1> 
     <button class="style-button-add btn btn-outline-success ms-auto d-block" data-bs-toggle="modal" data-bs-target="#add-movie-modal">AGREGAR <i class="fa-solid fa-plus"></i></button>
-    <div class="d-flex justify-content-center">
-      
+    <div class="d-flex justify-content-center container">
     <table class="table table-bordered style-table mt-3" id="tableABM">
     <thead>
       <tr>
@@ -79,9 +78,9 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body register-modal-style">
-        <form onsubmit="agregarPelicula(e)">
+        <form onsubmit="agregarPelicula(event)">
           <div class="form-floating mb-3" id="">
-            <input type="text" class="form-control" id="newMovie-name" placeholder="xxxxxx" required minlength="8" maxlength="15">
+            <input type="text" class="form-control" id="newMovie-name" placeholder="xxxxxx" required minlength="6" maxlength="15">
             <label for="newMovie-name">Nombre de la Película</label>
           </div>
           <div class="form-floating mb-3">
@@ -89,11 +88,11 @@
             <label for="newMovie-description">Descripción</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="url" class="form-control" id="newMovie-image" placeholder="xx" required>
+            <input type="text" class="form-control" id="newMovie-image" placeholder="xx" required>
             <label for="newMovie-image">Imágen</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="newMovie-category" placeholder="xx" required minlength="2" maxlength="16" >
+            <input type="text" class="form-control" id="newMovie-category" placeholder="xx" required minlength="4" maxlength="16" >
             <label for="newMovie-category">Categoría</label>
           </div>
           <div class="form-floating mb-3 ms-1">

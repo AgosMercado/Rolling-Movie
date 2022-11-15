@@ -17,6 +17,11 @@ main{
   margin-left: 15px;
   margin-right: 15px;
 }
+.style-table-img:hover{
+  transform:scale(2.5);
+  transition-duration: 200ms;
+  color: #8A0015;
+}
 .style-button-add{
   border: 1px solid #8A0015 !important;
   color: #8A0015;
@@ -51,4 +56,13 @@ main{
 .form-check-input:checked{
   background-color: #8A0015;
   border-color: black;
+}
+.style-button-table:focus, .btn:focus{
+  outline: none !important;
+  box-shadow: none !important;
+}
+.style-button-table:hover{
+  transform:scale(1.2);
+  transition-duration: 250ms;
+  color: #8A0015;
 }
