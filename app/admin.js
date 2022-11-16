@@ -59,7 +59,8 @@ peliculas.forEach(pelicula=>{
 })
 
 //! FUNCION PARA AGREGAR PELICULAS
-  const agregarPelicula= () =>{ //! ¿HAY QUE VALIDAR CON JS ESTE FORMULARIO?
+  const agregarPelicula= (e) =>{ 
+    e.preventDefault();
   let nombrePelic = document.getElementById("newMovie-name").value;
   let descripcionPelic = document.getElementById("newMovie-description").value;
   let imagenPelic = document.getElementById("newMovie-image").value;
@@ -79,14 +80,21 @@ peliculas.forEach(pelicula=>{
   console.log(idPelicula);
   //CREO LA NUEVA PELICULA
   let nuevaPelicula = new Peliculas(nombrePelic, idPelicula, descripcionPelic, publicado, destacado, imagenPelic, categoriaPelic);
+  let errorsObject = validationRegister(nombrePelic, descripcionPelic); //traigo el "objeto Errores" de la funcion
+  let errorsKeys = Object.keys(errorsObject);  //Traigo el array de propiedades del objeto Errores
+  let errorsValues = Object.values(errorsObject); //Traigo el array de valores del objeto errores
+  if (errorsKeys.length==0){
   //GUARDO EN LS y actualizo el array de peliculas
   let peliculasLS = JSON.parse(localStorage.getItem("peliculas"));
   peliculasLS.push(nuevaPelicula);
   //GUARDO EL ARRAY ACTUALIZADO
   localStorage.setItem("peliculas",JSON.stringify(peliculasLS));
-  window.location.reload(); 
-  //!  la pag principal no actualiza solo cuando agrego una pelicula
-}
+  window.location.reload();
+  }else{
+    errorsValues.map(error=>{
+      alertMessage (error,"container-alertMessage");
+    })
+}}
 
 // //! FUNCION PARA ELIMINAR PELICULAS 
 const eliminarPelicula = (idPeli)=>{
@@ -96,4 +104,24 @@ const eliminarPelicula = (idPeli)=>{
 // 
 }
 
+//! FUNCION QUE VALIDA A TRAVES DE REGEX LOS CAMPOS QUE PASO POR PARAMETRO (CAMPOS DEL MODAL AGREGAR PELICULA)
+const validationRegister = (nombrePelic, descripcionPelic)=>{  
+  let errors = {};
+  let nombrePelicOk = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$/.test(nombrePelic);
+  if(!nombrePelicOk) errors.descripcionPelic = " Verifica el nombre ingresado";
+  let descripcionPelicOk = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$/.test(descripcionPelic);
+  if(!descripcionPelicOk) errors.descripcionPelic = " Verifica la descripcion ingresado";
+  return errors;
+}
 
+//!FUNCION PARA CREAR UN ALERT EN UN CONTENEDOR Y LUEGO DE DOS SEGUNDOS SE BORRE
+function alertMessage (message, containerMessage){    
+  let alertMessage = document.createElement("div");
+  alertMessage.classList.add("style-message","my-1");
+  // alertMessage.classList.add("alert","alert-secondary","my-1");
+  // alertMessage.setAttribute("role","alert"); //USO SET ATRIBUTE CUANDO QUIERO AGREGAR UN ATRIBUTO QUE NO APARECE EN LA LISTA
+  alertMessage.innerHTML =`<i class="fa-solid fa-circle-exclamation"></i>${message}`;
+  let containerParent = document.getElementById(containerMessage);
+  containerParent.appendChild(alertMessage);
+  setTimeout(()=>{alertMessage.remove();},5000); // PASADOS 2 SEGUNDOS SE BORRE EL ELEMENTO QUE ACABO DE CREAR SINO ES SPAM
+}
