@@ -1,39 +1,164 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Page</title>
-    <link rel="stylesheet" href="/styles/styyle-contact-page.css">
-</head>
-    
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="/styles/style-contact-page.css" />
+    <link rel="stylesheet" href="/styles/style-footer.css">
+    <script src="https://kit.fontawesome.com/64d58efce2.js"crossorigin="anonymous"></script>
+  </head>
 
-<div class="contact-container">
-  <div class="left-col">
-  </div>
-  <div class="right-col">
-    <div class="theme-switch-wrapper">
-    <!-- <label class="theme-switch" for="checkbox"> -->
-        <!-- <input type="checkbox" id="checkbox" /> -->
-        <!-- <div class="slider round"></div> -->
-  <!-- </label> -->
-  <!-- <div class="description">Dark Mode</div> -->
-</div>
-    
-    <h1>Contactanos</h1>
-    <form id="contact-form" method="post">
-      <label for="name">Nombre</label>
-  <input type="text" id="name" name="name" placeholder="Ej. Jose Luis Perez" required>
-      <label for="email">E-mail</label>
-  <input type="email" id="email" name="email" placeholder="Ej. Joseluisperez@gmail.com" required>
-      <label for="message">Mensaje</label>
-  <textarea rows="6" placeholder="Escribe aquí tu consulta" id="message" name="message" required></textarea>
-      <button type="submit" id="submit" name="submit">Enviar</button>
+<header>
+      <!-- ?INICIO NAVBAR -->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top my-auto" id="style-nav">
+        <div class="container-fluid">
+          <a class="navbar-brand style-text-nav" href="#">Rolling Movies
+            <img src="/assets/pngwing.com (2).png" id=imagelogo alt="logo" class="main-image" width="35" height="35"> </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active style-text-nav" href="#" data-bs-toggle="modal" data-bs-target="#register-Modal">Registrarme</a>
+              </li>
+            </ul>
+            <div class="nav-item">
+              <a button class="btn btn-outline-success" href="/pages/login.html" id="button-search" type="submit">INGRESAR</a>
+            </div>
+            <!-- <ul>
+              <li class="nav-item">
+                <a button class="btn btn-outline-success" href="/pages/login.html" id="button-search" type="submit">INGRESAR</a>
+              </li>
+            </ul> -->
+          </div>
+        </div>
+      </nav>
+      <!-- ?FIN NAVBAR -->
+</header>
 
-</div>
+  <body>
 
-    <script  src=""></script>
-</body>
+    <!-- AQUI COMIENZA DIV DE DETALLES DE CONTACTO -->
+    <div class="container">
+      <div class="form">
+        <div class="contact-info">
+          <h3 class="title">Rolling Movies</h3>
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+            dolorum adipisci recusandae praesentium dicta!
+          </p>
+
+          <div class="info">
+            <div class="information">
+              <img src="/assets/ICONOS/location.png" class="icon" alt="" />
+              <p>Gral. Paz 576, T4000 San Miguel de Tucumán, Tucumán</p>
+            </div>
+            <div class="information">
+              <img src="/assets/ICONOS/email.png" class="icon" alt="" />
+              <p>Rollingmovies@gmail.com</p>
+            </div>
+            <div class="information">
+              <img src="/assets/ICONOS/phone.png" class="icon" alt="" />
+              <p>0381 578-3030</p>
+            </div>
+          </div>
+
+          <div class="social-media">
+            <p>Nuestras Redes :</p>
+            <div class="social-icons">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-google-plus"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- FIN DIV DE DETALLES DE CONTACTO -->
+
+
+        <!-- COMIENZA EL FORMULARIO DE CONTACTO -->
+
+        <div class="contact-form">
+          <form action="index.html" autocomplete="off">
+            <h3 class="title">Contactanos</h3>
+            <div class="input-container">
+              <input type="text" name="name" class="input" />
+              <label for="">Usuario</label>
+              <span>Username</span>
+            </div>
+            <div class="input-container">
+              <input type="email" name="email" class="input" />
+              <label for="">E-mail</label>
+              <span>Email</span>
+            </div>
+            <div class="input-container">
+              <input type="tel" name="phone" class="input" />
+              <label for="">Teléfono</label>
+              <span>Phone</span>
+            </div>
+            <div class="input-container textarea">
+              <textarea name="message" class="input"></textarea>
+              <label for="">Mensaje</label>
+              <span>Message</span>
+            </div>
+            <input type="submit" value="Enviar" class="btn" />
+          </form>
+        </div>
+
+        <!-- FIN FORMULARIO DE CONTACTO -->
+
+      </div>
+    </div>
+
+    <script src="/app/contac-page.js"></script>
+  </body>
+
+  <!-- ?INICIO FOOTER -->
+  <footer id="footer-page" class="container-fluid bg-compass-primary">
+    <div class="row d-lg-flex justify-content-around align-items-center bg-compass-primary py-4">
+        <!-- Logo Rolling Movie-->
+        <div class="col-md-5 col-lg-3 order-0 d-flex justify-content-center"><img src=""
+            class="img-footer" alt="Logo Rolling Movie">
+        </div>
+        <div class="w-100 order-1 bg-compass-persianRed my-4 d-md-none" style="height: 2px;"></div>
+        <div class="w-100 order-3 bg-compass-persianRed my-4 d-lg-none" style="height: 2px;"></div>
+
+        <!-- Redes Sociales-->
+        <div class="d-flex order-4 order-lg-2 justify-content-around align-items-center col-lg-3">
+            <a href=""><i
+              class="fa-brands fa-instagram fa-2xl incons-networks animation-redes"></i></a>
+            <a href=""><i
+              class="fa-brands fa-facebook fa-2xl incons-networks animation-redes"></i></a>
+            <a href=""><i
+              class="fa-brands fa-twitter fa-2xl incons-networks animation-redes"></i></a>
+            <a href=""><i
+              class="fa-brands fa-google-plus-g fa-2xl incons-networks animation-redes"></i></a>
+        </div>
+        <div class="w-100 order-5 bg-compass-persianRed mt-4 mb-2 d-lg-none" style="height: 2px;"></div>
+
+        <!-- Links -->
+        <div class="col-md-5 col-lg-3 order-2 order-lg-3 flex-column">
+            <p class="text-general-page fs-5 text-center text-lg-end"><a href=""></a></p>
+            <p class="text-general-page fs-5 text-center text-lg-end"><a href=""></a></p>
+            <p class="text-general-page fs-5 text-center text-lg-end"><a href="">Contáctanos</a></p>
+            <p class="text-general-page fs-5 text-center text-lg-end"><a href="">Acerca de nosotros</a></p>
+        </div>
+    </div>
+    <div class="container-copyright">
+        <p>&copy; Copyright 2022 - Todos los derechos reservados Rolling Movie.</p>
+    </div>
+  </footer>
+  <!-- ?FIN FOOTER -->
+  
 </html>
