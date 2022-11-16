@@ -51,7 +51,7 @@ peliculas.forEach(pelicula=>{
     <td class="style-cell">${pelicula.destacado}</td>
     <td class="style-cell">
       <button class="btn style-button-table"><i class="fa-solid fa-trash" onclick="eliminarPelicula(${pelicula.id})"></i></button>
-      <button class="btn style-button-table"><i onclick="editarPelicula(event)"class="fa-solid fa-pen"></i></button>
+      <button class="btn style-button-table"><i class="fa-solid fa-pen"></i></button>
     </td>
     `
     let containerPelicula = document.getElementById("tableABM");
@@ -63,13 +63,22 @@ peliculas.forEach(pelicula=>{
   let nombrePelic = document.getElementById("newMovie-name").value;
   let descripcionPelic = document.getElementById("newMovie-description").value;
   let imagenPelic = document.getElementById("newMovie-image").value;
-  let categoriaPelic = document.getElementById("newMovie-category").value;
-  let publicado;
-  let destacado;
-  let idPelicula = Math.random()*10;
+  let categoriaTerror = document.getElementById("categoria-terror-radio");
+  let categoriaInfantil = document.getElementById("categoria-infantil-radio");
+  let categoriaAccion = document.getElementById("categoria-accion-radio");
+    if(categoriaTerror.checked){
+      categoriaPelic = categoriaTerror.value;
+    } else if (categoriaInfantil.checked){
+      categoriaPelic = categoriaInfantil.value;
+    }else{
+      categoriaPelic = categoriaAccion.value;
+    }
+  let publicado = document.getElementById("switch-publicado").checked;
+  let destacado = document.getElementById("switch-destacado").checked;
+  let idPelicula = Math.round(Math.random()*150);
+  console.log(idPelicula);
   //CREO LA NUEVA PELICULA
   let nuevaPelicula = new Peliculas(nombrePelic, idPelicula, descripcionPelic, publicado, destacado, imagenPelic, categoriaPelic);
-  nuevaPelicula.id = nuevaPelicula.id;
   //GUARDO EN LS y actualizo el array de peliculas
   let peliculasLS = JSON.parse(localStorage.getItem("peliculas"));
   peliculasLS.push(nuevaPelicula);

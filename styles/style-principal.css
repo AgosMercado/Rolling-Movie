@@ -1,8 +1,8 @@
 .carousel-pag-principal{
- object-fit: cover;
- object-position: center;
- height: 100vh;
- width: 100vw;
+    object-fit: cover;
+    object-position:center;
+    height: 100vh;
+    width: 100vw;
 }
 
 main{
@@ -10,10 +10,10 @@ main{
 }
 
 .img-card{
- height: 250px;
- width: 300px;
- object-fit: contain;
- object-position: center;
+    height: 250px;
+    width: 300px;
+    object-fit: contain;
+    object-position: center;
 
 }
 
@@ -24,4 +24,9 @@ main{
 
 .button-carousel{
     border: none;
+}
+.style-text-carousel{
+    background-color: rgba(0, 0, 0, 0.459);
+    padding: 10px;
+    border-radius: 15px;
 }
