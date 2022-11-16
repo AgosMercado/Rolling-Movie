@@ -1,10 +1,10 @@
-class user{
-    constructor(id, name, age, email, password,admin){
-        this.id = id 
-        this.name = name
-        this.age = age
-        this.email = email
-        this.password = password
+class User{
+    constructor(id, name, age, email, password, admin){
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.email = email;
+        this.password = password;
         this.admin = admin
     }
 }
@@ -13,34 +13,35 @@ if(localStorage.getItem('users')){
     users= JSON.parse(localStorage.getItem('users'))
 }else{
     users= [
-    new User(25, "Agostina Mercado", 29, "agosmercado@gmail.com", 123456789,true),
-    new User(24, "Gisel Hemsy", 28, "ghemsy@gmail.com", 123456788,true),
-    new User(23, "Gabriel Rodriguez", 27, "gabz89.gr@gmail.com", 123456787,true),
-    new User(22, "Nicolas Peralta", 26, "peralta.j.nicolas@gmail.com", 123456786,true),
-    new User(21, "David Fernandez", 25, "davidfmamani@gmail.com", 123456785,true)
+    new User(25, "Agostina Mercado", 29, "agosmercado@gmail.com", 123456789,"true"),
+    new User(24, "Gisel Hemsy", 28, "ghemsy@gmail.com", 123456788,"true"),
+    new User(23, "Gabriel Rodriguez", 27, "gabz89.gr@gmail.com", 123456787,"true"),
+    new User(22, "Nicolas Peralta", 26, "peralta.j.nicolas@gmail.com", 123456786,"true"),
+    new User(21, "David Fernandez", 25, "davidfmamani@gmail.com", 123456785,"true")
 ]
 localStorage.setItem('users',JSON.stringify(users))
 }
 const login = (e)=>{
-    e.preventDefault(); 
-    const email = document.getElementById ('values-Email').value;
-    const password = document.getElementById ('values-Password').value;
-    const userfound= user.find(user=>user.email===email);
-    if(userfound && userfound.password===password){
-        window.location.assign(window.location.origin + '/home.html');
-        
+    e.preventDefault();
+    const email = document.getElementById('values-email-login').value;
+    const password = document.getElementById('values-password-login').value;
+    const userFound = users.find(user=>user.email===email);
+    if(userFound && userFound.password===password){
+        localStorage.setItem('users',JSON.stringify(userFound));
+        console.log(userFound);
+        window.location.assign(window.location.origin + '/index.html');
     }else{
-        alertMessage('datos invalidos','form');
+    alertMessage('contraeña invalida')
     }
 }
 
-function alertMessage (message,querycontainer){
-    let alertMessage = document.createElement('div');
-    alertMessage.classList.add('alert','alert-danger','mt-4');
+function alertMessage (message,queryContainer){
+    let alertMessage = document.createElement('div'); 
+    alertMessage.classList.add('alert','alert-danger','mt-3');
     alertMessage.setAttribute('role','alert');
     alertMessage.innerText = message;
-    let container= document.querySelector(querycontainer);
-    container.appendchild(alertMessage);
+    let container= document.querySelector(queryContainer);
+    container.appendChild(alertMessage);
     setTimeout(()=>{
         alertMessage.remove()
     },3000)
