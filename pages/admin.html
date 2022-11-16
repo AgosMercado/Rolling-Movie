@@ -103,19 +103,40 @@
             <input type="text" class="form-control" id="newMovie-image" placeholder="xx" required>
             <label for="newMovie-image">Imágen</label>
           </div>
-          <div class="form-floating mb-3">
+          <p class="text-light">Categoria</p>
+          <div class="d-flex justify-content-start pb-2 mb-1">
+          <div class="form-check me-2">
+            <input class="form-check-input" type="radio" name="radios-categoria" id="categoria-terror-radio" value="terror" required>
+            <label class="form-check-label" for="categoria-terror-radio">
+              Terror
+            </label>
+          </div>
+          <div class="form-check me-2">
+            <input class="form-check-input" type="radio" name="radios-categoria" id="categoria-infantil-radio" value="infantil" checked required>
+            <label class="form-check-label" for="categoria-infantil-radio">
+              Infantil
+            </label>
+          </div>
+          <div class="form-check me-2"">
+            <input class="form-check-input" type="radio" name="radios-categoria" id="categoria-accion-radio" value="accion" required>
+            <label class="form-check-label" for="categoria-accion-radio">
+              Accion
+            </label>
+          </div>
+        </div>
+          <!-- <div class="form-floating mb-3">
             <input type="text" class="form-control" id="newMovie-category" placeholder="xx" required minlength="4" maxlength="16" >
             <label for="newMovie-category">Categoría</label>
-          </div>
+          </div> -->
           <div class="form-floating mb-3 ms-1">
             <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="switch-publicado" required>
+              <input class="form-check-input" type="checkbox" role="switch" id="switch-publicado">
               <label class="form-check-label" for="switch-publicado">Publicado</label>
             </div>
           </div>
           <div class="form-floating mb-3 ms-1">
             <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="switch-destacado" required>
+              <input class="form-check-input" type="checkbox" role="switch" id="switch-destacado">
               <label class="form-check-label" for="switch-destacado">Destacado</label>
             </div>
           </div>
@@ -167,7 +188,6 @@
     </div>
   </footer>
   <!-- ?FIN FOOTER -->
-  <script src="https://kit.fontawesome.com/73835d0d8e.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="/app/admin.js"></script>
   <script src="https://kit.fontawesome.com/73835d0d8e.js" crossorigin="anonymous"></script>
