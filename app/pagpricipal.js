@@ -44,9 +44,10 @@ peliculas = [
             newCard.classList.add ("card");
             newCard.style.width= '18rem';
             newCard.innerHTML = `
-            <img src= ${pelicula.imagen} class="card-img-top img-card img-fluid" alt= ${pelicula.nombre}>
-            <div class="card-body d-flex justify-content-center">
-                <a href="#" class="btn btn-primary btn-sm button-carousel" ${pelicula.id}>Ver</a>
+            <img src= ${pelicula.imagen} class="card-img-top" alt= ${pelicula.nombre}>
+            <div class="card-body">
+                <a href='http://127.0.0.1:5500/pages/detail.html#${pelicula.id}' class="btn btn-primary btn-sm button-carousel" ${pelicula.id}>Ver</a>
+
                     `
                 document.querySelector(queryContainer).appendChild(newCard);
                 });
