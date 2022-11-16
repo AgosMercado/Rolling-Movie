@@ -39,6 +39,7 @@ peliculas = [
         let peliculaCategoria = peliculas.filter(pelicula => pelicula.categoria == categoria);
         peliculaCategoria.forEach(pelicula => {
             const newCard=document.createElement ("div");
+            newCard.classList.add ("card-style");
             newCard.id = pelicula.id
             newCard.classList.add ("card");
             newCard.style.width= '18rem';
@@ -46,6 +47,7 @@ peliculas = [
             <img src= ${pelicula.imagen} class="card-img-top" alt= ${pelicula.nombre}>
             <div class="card-body">
                 <a href='http://127.0.0.1:5500/pages/detail.html#${pelicula.id}' class="btn btn-primary btn-sm button-carousel" ${pelicula.id}>Ver</a>
+
                     `
                 document.querySelector(queryContainer).appendChild(newCard);
                 });
