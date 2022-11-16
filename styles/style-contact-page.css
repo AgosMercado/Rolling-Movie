@@ -39,36 +39,6 @@ textarea {
   position: relative;
 }
 
-.circle {
-  border-radius: 50%;
-  background: linear-gradient(135deg, transparent 20%, #149279);
-  position: absolute;
-}
-
-.circle.one {
-  width: 130px;
-  height: 130px;
-  top: 130px;
-  right: -40px;
-}
-
-.circle.two {
-  width: 80px;
-  height: 80px;
-  top: 10px;
-  right: 30px;
-}
-
-.contact-form:before {
-  content: "";
-  position: absolute;
-  width: 26px;
-  height: 26px;
-  background-color: #8A0015;
-  transform: rotate(45deg);
-  top: 50px;
-  left: -13px;
-}
 
 form {
   padding: 2.3rem 2.2rem;
@@ -253,15 +223,6 @@ textarea.input {
 }
 
 
-.square {
-  position: absolute;
-  height: 400px;
-  top: 50%;
-  left: 50%;
-  transform: translate(181%, 11%);
-  opacity: 0.2;
-}
-
 @media (max-width: 850px) {
   .form {
     grid-template-columns: 1fr;
@@ -274,16 +235,6 @@ textarea.input {
     right: 70px;
   }
 
-  .square {
-    transform: translate(140%, 43%);
-    height: 350px;
-  }
-
-  .big-circle {
-    bottom: 75%;
-    transform: scale(0.9) translate(-40%, 30%);
-    right: 50%;
-  }
 
   .text {
     margin: 1rem 0 1.5rem 0;
