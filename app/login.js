@@ -22,25 +22,26 @@ if(localStorage.getItem('users')){
 localStorage.setItem('users',JSON.stringify(users))
 }
 const login = (e)=>{
-    e.preventDefault(); 
-    const email = document.getElementById ('values-Email1').value;
-    const password = document.getElementById ('values-Password1').value;
-    const userfound= users.find(user=>user.email===email);
-    if(userfound && userfound.password===password){
-        window.location.assign(window.location.origin + '/home.html');
-        
+    e.preventDefault();
+    const email = document.getElementById('values-email-login').value;
+    const password = document.getElementById('values-password-login').value;
+    const userFound = users.find(user=>user.email===email);
+    if(userFound && userFound.password===password){
+        localStorage.setItem('users',JSON.stringify(userFound));
+        console.log(userFound);
+        window.location.assign(window.location.origin + '/index.html');
     }else{
-        alertMessage('datos invalidos','#container-message');
+    alertMessage('contraeña invalida')
     }
 }
 
-function alertMessage (message,querycontainer){
-    let alertMessage = document.createElement('div');
-    alertMessage.classList.add('alert','alert-danger','mt-4');
+function alertMessage (message,queryContainer){
+    let alertMessage = document.createElement('div'); 
+    alertMessage.classList.add('alert','alert-danger','mt-3');
     alertMessage.setAttribute('role','alert');
-    alertMessage.innerHTML = `${message}`;
-    let container= document.querySelector(querycontainer);
-    container.appendchild(alertMessage);
+    alertMessage.innerText = message;
+    let container= document.querySelector(queryContainer);
+    container.appendChild(alertMessage);
     setTimeout(()=>{
         alertMessage.remove()
     },3000)
