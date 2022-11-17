@@ -51,6 +51,7 @@
 </nav>
   </header>
   <!-- ?FIN NAVBAR -->
+  <!-- ?INICIO TABLA ADMINISTRACION -->
   <main class="mt-5 pt-4 container">
     <h1 class="text-center">Administración de Películas</h1> 
     <button class="style-button-add btn btn-outline-success ms-auto d-block" data-bs-toggle="modal" data-bs-target="#add-movie-modal">AGREGAR <i class="fa-solid fa-plus"></i></button>
@@ -72,6 +73,7 @@
     </tbody>
   </table>
 </div>
+<!-- ?FIN TABLA ADMINISTRACION -->
 <!-- ?INICIO MODAL AGREGAR PELICULA -->
 <div class="modal" tabindex="-1" id="add-movie-modal" tabindex="-1" aria-labelledby="modalAdd" aria-hidden="true">
   <div class="modal-dialog">
@@ -137,6 +139,71 @@
   </div>
 </div>
 <!-- ?FIN MODAL AGREGAR PELICULA-->
+<!-- ?INICIO MODAL EDITAR PELICULA -->
+<div class="modal" tabindex="-1" id="edit-movie-modal" tabindex="-1" aria-labelledby="modalEdit" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header register-modal-style">
+        <h5 class="modal-title text-light">Editar Película</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body register-modal-style">
+        <form onsubmit="editarPelicula(event)">
+          <div class="form-floating mb-3" id="">
+            <input type="text" class="form-control" id="editMovie-name" placeholder="xxxxxx" required minlength="6" maxlength="15">
+            <label for="editMovie-name">Nombre de la Película</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="editMovie-description" placeholder="Lorem.." required minlength="10" maxlength="500" >
+            <label for="editMovie-description">Descripción</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="editMovie-image" placeholder="xx" required>
+            <label for="editMovie-image">Imágen</label>
+          </div>
+          <p class="text-light">Categoria</p>
+          <div class="d-flex justify-content-start pb-2 mb-1">
+          <div class="form-check me-2">
+            <input class="form-check-input" type="radio" name="radios-categoria" id="categ-terror-radio-edit" value="terror" required>
+            <label class="form-check-label" for="categ-terror-radio-edit">
+              Terror
+            </label>
+          </div>
+          <div class="form-check me-2">
+            <input class="form-check-input" type="radio" name="radios-categoria" id="categ-infantil-radio-edit" value="infantil" required>
+            <label class="form-check-label" for="categ-infantil-radio-edit">
+              Infantil
+            </label>
+          </div>
+          <div class="form-check me-2"">
+            <input class="form-check-input" type="radio" name="radios-categoria" id="categ-accion-radio-edit" value="accion" required>
+            <label class="form-check-label" for="categ-accion-radio-edit">
+              Accion
+            </label>
+          </div>
+        </div>
+          <div class="form-floating mb-3 ms-1">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="switch-publicado">
+              <label class="form-check-label" for="switch-publicado">Publicado</label>
+            </div>
+          </div>
+          <div class="form-floating mb-3 ms-1">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="switch-destacado">
+              <label class="form-check-label" for="switch-destacado">Destacado</label>
+            </div>
+          </div>
+          <div class="form-floating mb-3" id="container-message">
+            <button type="submit" class="btn btn-outline-success" id="buton-modal-register">Enviar datos</button>
+          </div>  
+          <div id="container-alertMessage"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ?FIN MODAL EDITAR -->
   </main>
   <!-- ?INICIO FOOTER -->
   <footer id="footer-page" class="container-fluid bg-compass-primary">

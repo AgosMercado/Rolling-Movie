@@ -51,7 +51,7 @@ peliculas.forEach(pelicula=>{
     <td class="style-cell">${pelicula.destacado}</td>
     <td class="style-cell">
       <button class="btn style-button-table"><i class="fa-solid fa-trash" onclick="eliminarPelicula(${pelicula.id})"></i></button>
-      <button class="btn style-button-table"><i class="fa-solid fa-pen"></i></button>
+      <button class="btn style-button-table" data-bs-toggle="modal" data-bs-target="#edit-movie-modal"><i onclick="traerDatos(${pelicula.id})" class="fa-solid fa-pen"></i></button>
     </td>
     `
     let containerPelicula = document.getElementById("tableABM");
@@ -125,3 +125,30 @@ function alertMessage (message, containerMessage){
   containerParent.appendChild(alertMessage);
   setTimeout(()=>{alertMessage.remove();},5000); // PASADOS 2 SEGUNDOS SE BORRE EL ELEMENTO QUE ACABO DE CREAR SINO ES SPAM
 }
+
+//! FUNCION PARA EDITAR PELICULAS
+const editarPelicula =()=>{
+
+}
+
+// //! FUNCION PARA CARGAR LOS DATOS A EDITAR
+// const traerDatos = (idSeleccionado) =>{
+//   let peliculaEncontrada = peliculas.find(pelicula=>pelicula.id==idSeleccionado);
+//   document.getElementById("editMovie-name").value = peliculaEncontrada.nombre;
+//   document.getElementById("editMovie-description").value = peliculaEncontrada.descripcion;
+//   document.getElementById("editMovie-image").value = peliculaEncontrada.imagen;
+//   let categoriaTerror = document.getElementById("categoria-terror-radio");
+//   let categoriaTerrorEdit = document.getElementById("categ-terror-radio-edit");
+//   let categoriaInfantil = document.getElementById("categoria-infantil-radio");
+//   let categoriaInfantilEdit = document.getElementById("categ-infantil-radio-edit");
+//   let categoriaAccion = document.getElementById("categoria-accion-radio");
+//   let categoriaAccionEdit = document.getElementById("categ-accion-radio-edit");
+//     if(categoriaTerror.checked){
+//       categoriaTerrorEdit.checked =true;
+//     } else if (categoriaInfantil.checked){
+//       categoriaInfantilEdit.checked=true;
+//     }else{
+//       categoriaInfantilEdit.checked=true;
+//     }
+
+// }

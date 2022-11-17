@@ -1,26 +1,22 @@
-const id= windows.location.hash.slice(1);
+const id= window.location.hash.slice(1);  ///40
+console.log(id);   ///ok
 
-const pelicula = JSON.parse(localStorage.getItem('peliculas'));
+const peliculasLS = JSON.parse(localStorage.getItem('peliculas')); //Peliculas LS
+console.log(peliculasLS);   ///ok
 
-const peliculas = pelicula.find(pelicula=> pelicula.id===id);
-const peliculasDetail= document.createElement ('div');
-peliculasDetail.id = product.id
-
+const peliculaEncontrada = peliculasLS.find(pelicula=> pelicula.id==id);
+console.log(peliculaEncontrada);  ///ok
+const peliculasDetail= document.createElement('div');
 peliculasDetail.classList.add('row');
-
-peliculasDetail.innerHTML= `
-<div class="container-fluid" id="container-detail">
-			<div class="p-3 row d-flex justify-content-lg-start my-5 m-0">
-        <div class="container img-fluid">
-        <img src="${Peliculas.imagen}" alt="${Peliculas.nombre}">
-        </div>
-            <h3 class="text text-center"> ${Peliculas.descripcion}</h3>
-				<p class="description">
-				</p>
-			</div>
-
+peliculasDetail.innerHTML =
 `
-let peliculaContainer=document.querySelector('#pelicula-container');
+    <div class="col-md-5 col-11 mt-4"><img class="image-style-detail mt-5" src="${peliculaEncontrada.imagen}" alt="${peliculaEncontrada.nombre}"></div>
+    <div class="col-md-5 col-11 mt-5"><h2>${peliculaEncontrada.nombre}</h2>
+    <div class="mt-5"><p>${peliculaEncontrada.descripcion}</p>
+    <div><h2> hola</h2></div>
+    </div>
+`
+let containerDetail = document.getElementById("pelicula-container");
+containerDetail.appendChild(peliculasDetail);
 
-peliculaContainer.appendchild(peliculasDetail); 
 
