@@ -66,19 +66,19 @@ peliculas = [
 
 
 
-function buscador (pelicula){
+// function buscador (pelicula){
     
-}
+// }
 
 
-    document.addEventListener("keyup",e=> {
-    if(e.target.matches("#buscador")){
-    document.querySelectorAll(".pelicula").forEach(elemento =>{
-    if ( elemento.${pelicula.nombre}.toLowerCase().includes(e.target.value.toLowerCase())){
-    elemento.classList.remove("filtro")
-    }else{
-    elemento.classList.add("filtro")
-    }
- })
-}
-})
+//     document.addEventListener("keyup",e=> {
+//     if(e.target.matches("#buscador")){
+//     document.querySelectorAll(".pelicula").forEach(elemento =>{
+//     if ( elemento.${pelicula.nombre}.toLowerCase().includes(e.target.value.toLowerCase())){
+//     elemento.classList.remove("filtro")
+//     }else{
+//     elemento.classList.add("filtro")
+//     }
+//  })
+// }
+// })

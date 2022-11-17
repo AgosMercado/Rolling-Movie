@@ -16,16 +16,24 @@ const login = (e)=>{
     const email = document.getElementById('values-email-login').value;
     const password = document.getElementById('values-password-login').value;
     const userFound = users.find(user=>user.email==email);
+    let errorsObject = validationRegister(email, password); //traigo el "objeto Errores" de la funcion
+    let errorsKeys = Object.keys(errorsObject);  //Traigo el array de propiedades del objeto Errores
+    let errorsValues = Object.values(errorsObject); //Traigo el array de valores del objeto errores
+    if (errorsKeys.length==0){
     if(userFound && userFound.password==password){
-        // localStorage.setItem('users',JSON.stringify(userFound));
-        // console.log(userFound);
+        //GUARDO EL USUARIO EN LS
+        localStorage.setItem("userLogged",JSON.stringify(userFound));
+
+        console.log(userFound);
         window.location.assign(window.location.origin + "/pages/pagprincipal.html");
         console.log("entro");
-    }else{
-    alertMessage('contraeña invalida',"#div-form")
-    console.log("no entro");
-    }
+    }}else{
+        errorsValues.map(error=>{
+        alertMessage (error,"#div-form");
+    })}
 }
+
+
 
 function alertMessage (message,queryContainer){
     let alertMessage = document.createElement('div'); 
@@ -39,15 +47,11 @@ function alertMessage (message,queryContainer){
     },3000)
 }
 
-const validationRegister = (name, age, email, password, password2)=>{  
+const validationRegister = (email, password)=>{  
     let errors = {};
-    let nameOk = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$/.test(name);
-    if(!nameOk) errors.name = " Verifica el nombre ingresado";
-    let ageOk = /^([0-9]{2})$/.test(age);
-    if (!ageOk) errors.age = " Verifica la edad ingresada";
     let emailOk = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
     if(!emailOk) errors.email = " Verifica el email ingresado";
-    let passwordOk = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password) && password==password2;
+    let passwordOk = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password);
     if(!passwordOk) errors.password = " Verifica la contraseña ingresada";
     return errors;
 }
