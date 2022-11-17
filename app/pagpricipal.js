@@ -47,6 +47,7 @@ peliculas = [
             newCard.classList.add ("card-style");
             newCard.id = pelicula.id
             newCard.classList.add ("card");
+            newCard.classList.add ("pelicula");
             newCard.style.width= '18rem';
             newCard.innerHTML = `
             <img src= ${pelicula.imagen} class="card-img-top img-card img-fluid" alt= ${pelicula.nombre}>
@@ -62,3 +63,21 @@ peliculas = [
             createCard("accion","#categoria-accion");
             createCard("comedia","#categoria-comedia");
 
+
+
+function buscador (pelicula){
+    
+}
+
+
+    document.addEventListener("keyup",e=> {
+    if(e.target.matches("#buscador")){
+    document.querySelectorAll(".pelicula").forEach(elemento =>{
+    if ( elemento.${pelicula.nombre}.toLowerCase().includes(e.target.value.toLowerCase())){
+    elemento.classList.remove("filtro")
+    }else{
+    elemento.classList.add("filtro")
+    }
+ })
+}
+})
