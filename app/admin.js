@@ -1,10 +1,10 @@
 //! CRUD 
-// PROTECCION DE RUTAS
-// let userLoggedLS = JSON.parse(localStorage.getItem("userLogged"));
-// if(!userLoggedLS){ //SI NO EXISTE USUARIO LOGUEADO REDIRIJO AL LOGIN
-//   window.location.asign(window.location.origin) + "/login.html";
+//! PROTECCION DE RUTAS
+let userLoggedLS = JSON.parse(localStorage.getItem("userLogged"));
+if(!userLoggedLS){ //SI NO EXISTE USUARIO LOGUEADO REDIRIJO AL LOGIN
+window.location.assign(window.location.origin) + "/pages/login.html";}
 // }else if (!userLoggedLS.admin){ //SI EXISTE USUARIO LOGUEADO Y NO ES ADMIN REDIRIJO A PAGIN PRINCIPAL
-//   window.location.asign(window.location.origin) + "/pagprincipal.html";
+// window.location.assign(window.location.origin) + "/pages/pagprincipal.html";
 // }
 
 class Peliculas{
