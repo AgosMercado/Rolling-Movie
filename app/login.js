@@ -1,37 +1,29 @@
 class User{
     constructor(id, name, age, email, password, admin){
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.email = email;
-        this.password = password;
+        this.id = id,
+        this.name = name,
+        this.age = age,
+        this.email = email,
+        this.password = password,
         this.admin = admin
     }
 }
-let users;
-if(localStorage.getItem('users')){
-    users= JSON.parse(localStorage.getItem('users'))
-}else{
-    users= [
-    new User(25, "Agostina Mercado", 29, "agosmercado@gmail.com", 123456789,"true"),
-    new User(24, "Gisel Hemsy", 28, "ghemsy@gmail.com", 123456788,"true"),
-    new User(23, "Gabriel Rodriguez", 27, "gabz89.gr@gmail.com", 123456787,"true"),
-    new User(22, "Nicolas Peralta", 26, "peralta.j.nicolas@gmail.com", 123456786,"true"),
-    new User(21, "David Fernandez", 25, "davidfmamani@gmail.com", 123456785,"true")
-]
-localStorage.setItem('users',JSON.stringify(users))
-}
+
+//* traigo admins de LS
+let users = JSON.parse(localStorage.getItem("admins"));
 const login = (e)=>{
     e.preventDefault();
     const email = document.getElementById('values-email-login').value;
     const password = document.getElementById('values-password-login').value;
-    const userFound = users.find(user=>user.email===email);
-    if(userFound && userFound.password===password){
-        localStorage.setItem('users',JSON.stringify(userFound));
-        console.log(userFound);
-        window.location.assign(window.location.origin + '/index.html');
+    const userFound = users.find(user=>user.email==email);
+    if(userFound && userFound.password==password){
+        // localStorage.setItem('users',JSON.stringify(userFound));
+        // console.log(userFound);
+        window.location.assign(window.location.origin + "/pages/pagprincipal.html");
+        console.log("entro");
     }else{
-    alertMessage('contraeña invalida')
+    alertMessage('contraeña invalida',"#div-form")
+    console.log("no entro");
     }
 }
 

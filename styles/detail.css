@@ -4,3 +4,9 @@ main{
     justify-content: center;
     height: 90vh;
 }
+.image-style{
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    } 
