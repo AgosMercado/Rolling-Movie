@@ -82,3 +82,11 @@ peliculas = [
 //  })
 // }
 // })
+
+//! FUNCION PARA DESLOGUEARSE
+const logOut =()=>{
+    //BORRO DE LS EN USUARIO LOGUEADO
+    localStorage.removeItem("userLogged");
+    //REDIRIJO A LOGIN
+    window.location.assign(window.location.origin + "/pages/login.html");
+    }

@@ -35,17 +35,21 @@ const login = (e)=>{
 
 
 
+// //!FUNCION PARA CREAR UN ALERT EN UN CONTENEDOR Y LUEGO DE DOS SEGUNDOS SE BORRE
 function alertMessage (message,queryContainer){
     let alertMessage = document.createElement('div'); 
-    alertMessage.classList.add('alert','alert-danger','mt-3');
-    alertMessage.setAttribute('role','alert');
-    alertMessage.innerText = message;
-    let container= document.querySelector(queryContainer);
-    container.appendChild(alertMessage);
+    alertMessage.classList.add("style-message2","my-1");
+    // alertMessage.setAttribute('role','alert');
+    alertMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i>${message}`;
+    let containerMessage= document.querySelector(queryContainer);
+    containerMessage.appendChild(alertMessage);
     setTimeout(()=>{
         alertMessage.remove()
     },3000)
 }
+
+
+
 
 const validationRegister = (email, password)=>{  
     let errors = {};
