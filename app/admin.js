@@ -2,10 +2,10 @@
 //! PROTECCION DE RUTAS
 let userLoggedLS = JSON.parse(localStorage.getItem("userLogged"));
 if(!userLoggedLS){ //SI NO EXISTE USUARIO LOGUEADO REDIRIJO AL LOGIN
-window.location.assign(window.location.origin) + "/pages/login.html";}
-// }else if (!userLoggedLS.admin){ //SI EXISTE USUARIO LOGUEADO Y NO ES ADMIN REDIRIJO A PAGIN PRINCIPAL
-// window.location.assign(window.location.origin) + "/pages/pagprincipal.html";
-// }
+window.location.assign(window.location.origin + "/pages/login.html");
+}else if (!userLoggedLS.admin){ //SI EXISTE USUARIO LOGUEADO Y NO ES ADMIN REDIRIJO A PAGIN PRINCIPAL
+window.location.assign(window.location.origin + "/pages/pagprincipal.html");
+}
 
 class Peliculas{
   constructor(nombre, id, descripcion, publicado, destacado, imagen, categoria){
@@ -110,7 +110,7 @@ const validationRegister = (nombrePelic, descripcionPelic)=>{
   let nombrePelicOk = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$/.test(nombrePelic);
   if(!nombrePelicOk) errors.descripcionPelic = " Verifica el nombre ingresado";
   let descripcionPelicOk = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$/.test(descripcionPelic);
-  if(!descripcionPelicOk) errors.descripcionPelic = " Verifica la descripcion ingresado";
+  if(!descripcionPelicOk) errors.descripcionPelic = " Verifica la descripcion ingresada";
   return errors;
 }
 
@@ -171,3 +171,11 @@ const traerDatos = (idSeleccionado) =>{
     //   publicadoEdit.setAttribute("checked", "false")
     // }
 }
+
+//! FUNCION PARA DESLOGUEARSE
+const logOut =()=>{
+  //BORRO DE LS EN USUARIO LOGUEADO
+  localStorage.removeItem("userLogged");
+  //REDIRIJO A LOGIN
+  window.location.assign(window.location.origin + "/pages/login.html");
+  }
