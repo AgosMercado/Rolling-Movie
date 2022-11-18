@@ -7,7 +7,11 @@
 body,
 input,
 textarea {
-  font-family: 'Bitter', serif;
+  font-family: 'Bitter', serif !important;
+}
+
+body{
+  background-color: rgb(19, 17, 17) !important;
 }
 
 .container {
@@ -47,12 +51,12 @@ form {
 }
 
 .title {
-  color: #fff;
+  color: #fafafa;
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 1;
   margin-bottom: 0.7rem;
-}
+} 
 
 .input-container {
   position: relative;
@@ -209,7 +213,7 @@ textarea.input {
   width: 35px;
   height: 35px;
   border-radius: 5px;
-  background: linear-gradient(45deg, #8A0015, #8A0015) ;
+  background: linear-gradient(45deg, #8A0015, #000000) ;
   color: #fff;
   text-align: center;
   line-height: 35px;
