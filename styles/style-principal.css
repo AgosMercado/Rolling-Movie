@@ -31,6 +31,12 @@ main{
     border-radius: 15px;
 }
 
+.scrollmenu{
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100vw;
+}
+
 #line{
   background-color: #8A0015;
   width: 100%;
@@ -48,4 +54,8 @@ main{
 
 .filtro{
     display: none;
+}
+#categoria-terror{
+   
+    overflow-x: scroll;
 }

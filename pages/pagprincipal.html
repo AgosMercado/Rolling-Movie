@@ -29,12 +29,13 @@
         <li class="nav-item">
           <a class="nav-link active style-text-nav" href="#" data-bs-toggle="modal" data-bs-target="#register-Modal">Mi lista</a>
         </li>
+        <div class="d-flex align-items-center ms-2">
+          <form id="form-buscador" class="" action="">
+            <input type="text" name="buscador" id="buscador" placeholder="Buscar una peli">
+          </form>
+        </div>
       </ul>
-      <div>
-        <form id="form-buscador" class="me-4" action="">
-          <input type="text" name="buscador" id="buscador" placeholder="Buscar...">
-        </form>
-      </div>
+      
       <!-- Default dropstart button -->
       <div class="btn-group dropstart">
         <button type="button" class="btn btn-secondary dropdown-toggle" id="button-user" data-bs-toggle="dropdown" aria-expanded="false">
@@ -119,20 +120,23 @@
 
 <!-- ?INICIO CATEGORIAS  -->
 <main>
-  <h3 class="py-3 px-2 text-light">Terror</h3>
-  <div id="categoria-terror" class="d-flex justify-content-around">
-  </div>
+  <div class="scrollmenu">
+    <h3 class="py-3 px-2 text-light">Terror</h3>
+    <div id="categoria-terror" class="d-flex justify-content-around">
+    </div>
+  </div>  
 
-  <h3 class="py-3 px-2 text-light">Infantil</h3>
-  <div id="categoria-infantil" class="d-flex justify-content-around">
-  </div>
+    <h3 class="py-3 px-2 text-light">Infantil</h3>
+    <div id="categoria-infantil" class="d-flex justify-content-around">
+    </div>
 
-  <h3 class="py-3 px-2 text-light" >Acción</h3>
-  <div id="categoria-accion" class="d-flex justify-content-around">
-  </div>
+    <h3 class="py-3 px-2 text-light" >Acción</h3>
+    <div id="categoria-accion" class="d-flex justify-content-around">
+    </div>
 
-  <h3 class="py-3 px-2 text-light" >Comedia</h3>
-  <div id="categoria-comedia" class="d-flex justify-content-around">
+    <h3 class="py-3 px-2 text-light" >Comedia</h3>
+    <div id="categoria-comedia" class="d-flex justify-content-around">
+    </div>
   </div>
 
   <div id="line"></div>
