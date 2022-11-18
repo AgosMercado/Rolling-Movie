@@ -1,12 +1,12 @@
-#button-search,#style-button-register,#buton-modal-register,#button-init,#BO,#button-user{
-  border: 1px solid #8A0015;
-  color: #8A0015;
+#button-search,#style-button-register,#buton-modal-register,#button-init,#BO,#button-user,.button-login{
+  border: 1px solid #8A0015 !important;
+  color: #8A0015 !important;
 }
-#button-search:hover,#style-button-register:hover,#buton-modal-register:hover,#button-init,#button-user,.button-carousel{
+#button-search:hover,#style-button-register:hover,#buton-modal-register:hover,#button-init,#button-user,.button-carousel,.button-login{
   background-color: #8A0015 !important;
   color: white !important;
 }
-#button-search:focus,#style-button-register:focus,#buton-modal-register:focus,.btn-close:focus,#button-user:focus{
+#button-search:focus,#style-button-register:focus,#buton-modal-register:focus,.btn-close:focus,#button-user:focus,.button-login:focus{
   box-shadow: none !important;
 }
 .style-text-nav:hover{
@@ -77,4 +77,8 @@
 }
 #style-nav{
   background-color: black;
+}
+.style-message2{
+  color:white;
+  font-size: .9rem;
 }

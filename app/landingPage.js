@@ -25,7 +25,7 @@ if(usersLS){
   admins = JSON.parse(localStorage.getItem("admins"));
 }else{
   admins= [
-    new User(25, "Agostina Mercado", 29, "agosmercado@gmail.com", 123456789, "true"),
+    new User(25, "Agostina Mercado", 29, "agosmercado@gmail.com", "123456789aA", "true"),
     new User(24, "Gisel Hemsy", 28, "ghemsy@gmail.com", 123456788, "true"),
     new User(23, "Gabriel Rodriguez", 27, "gabz89.gr@gmail.com", 123456787, "true"),
     new User(22, "Nicolas Peralta", 26, "peralta.j.nicolas@gmail.com", 123456786, "true"),
@@ -71,6 +71,8 @@ function register (e){
   adminsLS.push(newUser);
   //Actualizo en LS:
   localStorage.setItem("admins",JSON.stringify(adminsLS));
+  //GUARDO EL USUARIO LOGUEADO
+  localStorage.setItem("userLogged",JSON.stringify(newUser));
   //Redirijo al inicio:
   window.location.assign(window.location.origin + "/pages/pagprincipal.html")
     }else alertMessage (" El email ingresado ya ha sido registrado","container-alertMessage");

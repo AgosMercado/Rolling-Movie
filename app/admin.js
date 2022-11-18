@@ -1,11 +1,11 @@
 //! CRUD 
-// PROTECCION DE RUTAS
-// let userLoggedLS = JSON.parse(localStorage.getItem("userLogged"));
-// if(!userLoggedLS){ //SI NO EXISTE USUARIO LOGUEADO REDIRIJO AL LOGIN
-//   window.location.asign(window.location.origin) + "/login.html";
-// }else if (!userLoggedLS.admin){ //SI EXISTE USUARIO LOGUEADO Y NO ES ADMIN REDIRIJO A PAGIN PRINCIPAL
-//   window.location.asign(window.location.origin) + "/pagprincipal.html";
-// }
+//! PROTECCION DE RUTAS
+let userLoggedLS = JSON.parse(localStorage.getItem("userLogged"));
+if(!userLoggedLS){ //SI NO EXISTE USUARIO LOGUEADO REDIRIJO AL LOGIN
+window.location.assign(window.location.origin + "/pages/login.html");
+}else if (!userLoggedLS.admin){ //SI EXISTE USUARIO LOGUEADO Y NO ES ADMIN REDIRIJO A PAGIN PRINCIPAL
+window.location.assign(window.location.origin + "/pages/pagprincipal.html");
+}
 
 class Peliculas{
   constructor(nombre, id, descripcion, publicado, destacado, imagen, categoria){
@@ -38,7 +38,7 @@ class Peliculas{
 let peliculas = JSON.parse(localStorage.getItem("peliculas"));
 console.log(peliculas);
 
-//CREACION DINAMICA DE TABLA ABM
+//!CREACION DINAMICA DE TABLA ABM
 peliculas.forEach(pelicula=>{
   let peliculaFila = document.createElement("tr");
   peliculaFila.innerHTML=`
@@ -51,7 +51,7 @@ peliculas.forEach(pelicula=>{
     <td class="style-cell">${pelicula.destacado}</td>
     <td class="style-cell">
       <button class="btn style-button-table"><i class="fa-solid fa-trash" onclick="eliminarPelicula(${pelicula.id})"></i></button>
-      <button class="btn style-button-table"><i class="fa-solid fa-pen"></i></button>
+      <button class="btn style-button-table" data-bs-toggle="modal" data-bs-target="#edit-movie-modal"><i onclick="traerDatos(${pelicula.id})" class="fa-solid fa-pen"></i></button>
     </td>
     `
     let containerPelicula = document.getElementById("tableABM");
@@ -110,7 +110,7 @@ const validationRegister = (nombrePelic, descripcionPelic)=>{
   let nombrePelicOk = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$/.test(nombrePelic);
   if(!nombrePelicOk) errors.descripcionPelic = " Verifica el nombre ingresado";
   let descripcionPelicOk = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$/.test(descripcionPelic);
-  if(!descripcionPelicOk) errors.descripcionPelic = " Verifica la descripcion ingresado";
+  if(!descripcionPelicOk) errors.descripcionPelic = " Verifica la descripcion ingresada";
   return errors;
 }
 
@@ -125,3 +125,57 @@ function alertMessage (message, containerMessage){
   containerParent.appendChild(alertMessage);
   setTimeout(()=>{alertMessage.remove();},5000); // PASADOS 2 SEGUNDOS SE BORRE EL ELEMENTO QUE ACABO DE CREAR SINO ES SPAM
 }
+
+//! FUNCION PARA EDITAR PELICULAS
+const editarPelicula =()=>{
+
+}
+
+// //! FUNCION PARA CARGAR LOS DATOS A EDITAR
+const traerDatos = (idSeleccionado) =>{
+  let peliculaEncontrada = peliculas.find(pelicula=>pelicula.id==idSeleccionado);
+  document.getElementById("editMovie-name").value = peliculaEncontrada.nombre;
+  document.getElementById("editMovie-description").value = peliculaEncontrada.descripcion;
+  document.getElementById("editMovie-image").value = peliculaEncontrada.imagen;
+  let categoriaTerror = document.getElementById("categoria-terror-radio");
+  let categoriaTerrorEdit = document.getElementById("categ-terror-radio-edit");
+  let categoriaInfantil = document.getElementById("categoria-infantil-radio");
+  let categoriaInfantilEdit = document.getElementById("categ-infantil-radio-edit");
+  let categoriaAccion = document.getElementById("categoria-accion-radio");
+  let categoriaAccionEdit = document.getElementById("categ-accion-radio-edit");
+  let switchDestacado = peliculaEncontrada.destacado;
+  let switchPublicado = document.getElementById("switch-publicado");
+  let destacadoEdit = document.getElementById("switch-destacado-edit");
+  let publicadoEdit = document.getElementById("switch-publicado-edit");
+    if(categoriaTerror.checked){  //! NO FUNCIONA
+      categoriaTerrorEdit.checked="true";
+      console.log("terror");
+    } else if (categoriaInfantil.checked){
+      categoriaInfantilEdit.checked="true";
+      console.log("infantil");
+    }else if (categoriaAccion.checked){
+      categoriaAccionEdit.checked="true";
+      console.log("accion");
+    // BOTONES SWITCH MODAL EDITAR NO FUNCIONA
+    }
+    if(switchDestacado){
+      destacadoEdit.checked="true"
+    }
+    else{
+        destacadoEdit.checked="false"
+        }
+    //TRAER LOS VALORES Y SELECCIONAR LA OPCION CORRESPONDIENTE
+    // if(switchPublicado.checked){
+    //   publicadoEdit.setAttribute("checked", "true")
+    // } else{
+    //   publicadoEdit.setAttribute("checked", "false")
+    // }
+}
+
+//! FUNCION PARA DESLOGUEARSE
+const logOut =()=>{
+  //BORRO DE LS EN USUARIO LOGUEADO
+  localStorage.removeItem("userLogged");
+  //REDIRIJO A LOGIN
+  window.location.assign(window.location.origin + "/pages/login.html");
+  }
