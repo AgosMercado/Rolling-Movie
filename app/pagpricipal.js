@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 
 //! proteccion creando boton admin
->>>>>>> 58f20d65adfb1e8b5e8561399d626658a9b846ea
 // let userLoggedLS = JSON.parse(localStorage.getItem("userLogged"));
 // if(!userLoggedLS){ 
 // window.location.assign(window.location.origin + "/pages/login.html");
