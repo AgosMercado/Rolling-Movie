@@ -94,26 +94,26 @@
           <form id="form" action="" autocomplete="off">
             <h3 class="title">TU OPINIÓN NOS INTERESA</h3>
             <div class="input-container">
-              <input type="text" name="name" class="input" /> <!-- required  minlength="3" maxlength="35" autofocus -->
+              <input type="text" name="name" class="input" id="input-nombre"/> <!-- required  minlength="3" maxlength="35" autofocus -->
               <label for="">Nombre</label>
               <span>Username</span>
             </div>
             <div class="input-container">
-              <input type="email" name="email" class="input"/> <!--required minlength="10"maxlength="50"  -->
+              <input type="email" name="email" class="input" id="input-email"/> <!--required minlength="10"maxlength="50"  -->
               <label for="">E-mail</label>
               <span>Email</span>
             </div>
             <div class="input-container">
-              <input type="tel" name="phone" class="input"/> <!--required pattern="[0-9]+"  -->
+              <input type="tel" name="phone" class="input" id="input-telefono"/> <!--required pattern="[0-9]+"  -->
               <label for="">Teléfono</label>
               <span>Phone</span>
             </div>
-            <div class="input-container textarea">
-              <textarea name="message" class="input" ></textarea> <!-- maxlength="200" -->
+            <div class="input-container textarea" >
+              <textarea name="message" class="input" id="input-mensaje" ></textarea > <!-- maxlength="200" -->
               <label for="">Mensaje</label>
               <span>Message</span>
             </div>
-            <input type="submit" value="Enviar" class="boton" />
+            <button type="submit" value="Enviar" class="boton" onclick="validar(event)"></button>
           </form>
         </div>
 

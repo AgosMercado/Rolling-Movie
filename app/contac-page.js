@@ -19,7 +19,7 @@ inputs.forEach((input) => {
 
 
 
-//  PARA QUE SE ABRA EL MAIL CON LOS DATOS YA CARGADOS Y SOLO TENGA QUE PONER ENVIAR
+ //PARA QUE SE ABRA EL MAIL CON LOS DATOS YA CARGADOS Y SOLO TENGA QUE PONER ENVIAR
 // const $form = document.querySelector('#form');
 // const $buttonMailTo = document.querySelector('#businessMail');
 
@@ -31,3 +31,47 @@ inputs.forEach((input) => {
 //   $buttonMailTo.setAttribute('href', `mailto:peralta.j.nicolas@gmail.com?subject=${form.get('name')}${form.get('email')}&body=${form.get('message')}`)
 //   $buttonMailTo.click()
 // }
+
+//!VALIDACIONES
+function validar(e){
+  e.preventDefault();
+  let name = document.getElementById("input-nombre").value;
+  let phone = document.getElementById("input-telefono").value;
+  let email = document.getElementById("input-email").value;
+  let errorsObject = validationRegister(name, email, phone); //traigo el "objeto Errores" de la funcion
+  let errorsKeys = Object.keys(errorsObject);  //Traigo el array de propiedades del objeto Errores
+  let errorsValues = Object.values(errorsObject); //Traigo el array de valores del objeto errores
+  if (errorsKeys.length==0){
+    console.log("ok");
+
+
+  }else{
+    errorsValues.map(error=>{
+      alertMessage (error,"form");
+    }) 
+}}
+//! FUNCION QUE VALIDA A TRAVES DE REGEX LOS CAMPOS QUE PASO POR PARAMETRO (CAMPOS DEL REGISTRO)
+const validationRegister = (name, email, phone)=>{  
+  let errors = {};
+  let nameOk = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$/.test(name);
+  if(!nameOk) errors.name = " Verifica el nombre ingresado";
+  let emailOk = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+  if(!emailOk) errors.email = " Verifica el email ingresado";
+  let phoneOk = /^[0-9]+$/.test(phone);
+  if(!phoneOk) errors.phone = " Verifica el telefono ingresado";
+
+  return errors;
+}
+
+
+//FUNCION PARA CREAR UN ALERT EN UN CONTENEDOR Y LUEGO DE DOS SEGUNDOS SE BORRE
+function alertMessage (message, containerMessage){    
+    let alertMessage = document.createElement("div");
+    alertMessage.classList.add("style-message2","my-1");
+    // alertMessage.classList.add("alert","alert-secondary","my-1");
+    // alertMessage.setAttribute("role","alert"); //USO SET ATRIBUTE CUANDO QUIERO AGREGAR UN ATRIBUTO QUE NO APARECE EN LA LISTA
+    alertMessage.innerHTML =`<i class="fa-solid fa-circle-exclamation"></i>${message}`;
+    let containerParent = document.getElementById(containerMessage);
+    containerParent.appendChild(alertMessage);
+    setTimeout(()=>{alertMessage.remove();},3000); // PASADOS 2 SEGUNDOS SE BORRE EL ELEMENTO QUE ACABO DE CREAR SINO ES SPAM
+}
