@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+
+//! proteccion creando boton admin
+>>>>>>> 58f20d65adfb1e8b5e8561399d626658a9b846ea
 // let userLoggedLS = JSON.parse(localStorage.getItem("userLogged"));
 // if(!userLoggedLS){ 
 // window.location.assign(window.location.origin + "/pages/login.html");
@@ -5,10 +10,17 @@
 //     const adminMenu=document.createElement("li");
 //     adminMenu.classList.add("nav-item");
 //     adminMenu.innerHTML= `
-//     <a class="nav-link active style-text-nav" href="#" data-bs-toggle="modal" data-bs-target="#register-Modal">Administrador</a>
+//     <a class="nav-link active style-text-nav" href="#" >Administrador</a>
 //     `
-//     document.querySelector(".navbar").appendChild(adminMenu);
+//     document.querySelector(".navbar-nav").appendChild(adminMenu);
 // }
+
+//! proteccion sin crear boton admin
+// let userLogged = JSON.parse(localStorage.getItem("userLogged"));
+// if(!userLogged){
+// window.location.assign(window.location.origin + "/pages/login.html");}
+
+
 
 class Peliculas{
     constructor(nombre,id,descripcion,publicado,destacado,imagen,categoria){
