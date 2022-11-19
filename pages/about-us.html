@@ -14,35 +14,45 @@
 
 <body>
 
-    <header>
-      <!-- ?INICIO NAVBAR -->
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-top my-auto" id="style-nav">
-        <div class="container-fluid">
-          <a class="navbar-brand style-text-nav" href="#">Rolling Movies
-            <img src="/assets/pngwing.com (2).png" id=imagelogo alt="logo" class="main-image" width="35" height="35"> </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active style-text-nav" href="#" data-bs-toggle="modal" data-bs-target="#register-Modal">Registrarme</a>
-              </li>
+    <!-- ?INICIO NAVBAR -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top my-auto" id="style-nav">
+      <div class="container-fluid">
+        <a class="navbar-brand style-text-nav" href="#">Rolling Movies
+          <img src="/assets/pngwing.com (2).png" id=imagelogo alt="logo" class="main-image" width="35" height="35"> </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active style-text-nav" href="/pages/pagprincipal.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active style-text-nav" href="/pages/error404.html">Mi lista</a>
+            </li>
+          </ul>
+          <!-- Default dropstart button -->
+          <div class="btn-group dropstart">
+            <button type="button" class="btn btn-secondary dropdown-toggle" id="button-user" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-user"></i>
+            </button> 
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="error404.html">Cuenta</a></li>
+                <li><a class="dropdown-item" href="error404.html">Configuraciones</a></li>
+                <li><a class="dropdown-item" href="error404.html">Centro de ayuda</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#" onclick="logOut()">Cerrar sesion</a></li>
+              <!-- Dropdown menu links -->
             </ul>
-            <div class="nav-item">
-              <a button class="btn btn-outline-success" href="/pages/login.html" id="button-search" type="submit">INGRESAR</a>
-            </div>
-            <!-- <ul>
-              <li class="nav-item">
-                <a button class="btn btn-outline-success" href="/pages/login.html" id="button-search" type="submit">INGRESAR</a>
-              </li>
-            </ul> -->
+          </div>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
+      </header>
       <!-- ?FIN NAVBAR -->
-</header>
-
+<main>
    <!-- AQUI COMIENZA SOBRE NOSOTROS -->
    <div class="title">
      <h1>Our Team</h1>
@@ -183,8 +193,8 @@
               </div>
             </div>
     </div>
-     <!-- AQUI TERMINA SOBRE NOSOTROS -->
-
+      <!-- AQUI TERMINA SOBRE NOSOTROS -->
+</main>
 <!-- ?INICIO FOOTER -->
 <footer id="footer-page" class="container-fluid bg-compass-primary">
   <div class="row d-lg-flex justify-content-around align-items-center bg-compass-primary py-4">

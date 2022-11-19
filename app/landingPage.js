@@ -105,3 +105,6 @@ const validationRegister = (name, age, email, password, password2)=>{
 
   //EXPRESION REGULAR PARA TEXTO
   // ^[a-zA-Z]*$
+
+  //exp reg numeros
+   // /^[0-9]+$/
