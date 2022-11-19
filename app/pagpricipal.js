@@ -1,6 +1,10 @@
 
 //! proteccion creando boton admin
 // let userLoggedLS = JSON.parse(localStorage.getItem("userLogged"));
+// if(!userLoggedLS){ //SI NO EXISTE USUARIO LOGUEADO REDIRIJO AL LOGIN
+// window.location.assign(window.location.origin + "/pages/login.html");
+// }
+// let userLoggedLS = JSON.parse(localStorage.getItem("userLogged"));
 // if(!userLoggedLS){ 
 // window.location.assign(window.location.origin + "/pages/login.html");
 // }else if(userLoggedLS.admin){
@@ -91,14 +95,14 @@ peliculas = [
 
 
 
-document.getElementById("buscador").addEventListener("keyup",(event)=>{
-    let infoInput= document.getElementById("buscador").value.toLowerCase();
-    console.log("texto",infoInput);
-    console.log("hola",peliculas.filter(pelicula => pelicula.nombre.includes("mal de ojo")));
-    let peliculaEncontrada= peliculas.filter(pelicula => pelicula.nombre.includes(infoInput));
-    console.log(peliculaEncontrada);
-}
-)
+// document.getElementById("buscador").addEventListener("keyup",(event)=>{
+//     let infoInput= document.getElementById("buscador").value.toLowerCase();
+//     console.log("texto",infoInput);
+//     console.log("hola",peliculas.filter(pelicula => pelicula.nombre.includes("mal de ojo")));
+//     let peliculaEncontrada= peliculas.filter(pelicula => pelicula.nombre.includes(infoInput));
+//     console.log(peliculaEncontrada);
+// }
+// )
 
 //     document.addEventListener("keyup",e=> {
 //     if(e.target.matches("#buscador")){
