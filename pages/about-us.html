@@ -14,35 +14,45 @@
 
 <body>
 
-    <header>
-      <!-- ?INICIO NAVBAR -->
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-top my-auto" id="style-nav">
-        <div class="container-fluid">
-          <a class="navbar-brand style-text-nav" href="#">Rolling Movies
-            <img src="/assets/pngwing.com (2).png" id=imagelogo alt="logo" class="main-image" width="35" height="35"> </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active style-text-nav" href="#" data-bs-toggle="modal" data-bs-target="#register-Modal">Registrarme</a>
-              </li>
+    <!-- ?INICIO NAVBAR -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top my-auto" id="style-nav">
+      <div class="container-fluid">
+        <a class="navbar-brand style-text-nav" href="#">Rolling Movies
+          <img src="/assets/pngwing.com (2).png" id=imagelogo alt="logo" class="main-image" width="35" height="35"> </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active style-text-nav" href="/pages/pagprincipal.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active style-text-nav" href="/pages/error404.html">Mi lista</a>
+            </li>
+          </ul>
+          <!-- Default dropstart button -->
+          <div class="btn-group dropstart">
+            <button type="button" class="btn btn-secondary dropdown-toggle" id="button-user" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-user"></i>
+            </button> 
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="error404.html">Cuenta</a></li>
+                <li><a class="dropdown-item" href="error404.html">Configuraciones</a></li>
+                <li><a class="dropdown-item" href="error404.html">Centro de ayuda</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#" onclick="logOut()">Cerrar sesion</a></li>
+              <!-- Dropdown menu links -->
             </ul>
-            <div class="nav-item">
-              <a button class="btn btn-outline-success" href="/pages/login.html" id="button-search" type="submit">INGRESAR</a>
-            </div>
-            <!-- <ul>
-              <li class="nav-item">
-                <a button class="btn btn-outline-success" href="/pages/login.html" id="button-search" type="submit">INGRESAR</a>
-              </li>
-            </ul> -->
+          </div>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
+      </header>
       <!-- ?FIN NAVBAR -->
-</header>
-
+<main>
    <!-- AQUI COMIENZA SOBRE NOSOTROS -->
    <div class="title">
      <h1>Our Team</h1>
@@ -183,28 +193,29 @@
               </div>
             </div>
     </div>
-     <!-- AQUI TERMINA SOBRE NOSOTROS -->
-
+      <!-- AQUI TERMINA SOBRE NOSOTROS -->
+</main>
 <!-- ?INICIO FOOTER -->
 <footer id="footer-page" class="container-fluid bg-compass-primary">
   <div class="row d-lg-flex justify-content-around align-items-center bg-compass-primary py-4">
       <!-- Logo Rolling Movie-->
-      <div class="col-md-5 col-lg-3 order-0 d-flex justify-content-center"><img src=""
-          class="img-footer" alt="Logo Rolling Movie">
+      <div class="col-md-5 col-lg-3 order-0 d-flex justify-content-center">
+        <img src="/assets/pngwing.com (2).png" id=imagelogo alt="Logo Rolling Movie" class="main-image" width="65" height="65">
+
       </div>
       <div class="w-100 order-1 bg-compass-persianRed my-4 d-md-none" style="height: 2px;"></div>
       <div class="w-100 order-3 bg-compass-persianRed my-4 d-lg-none" style="height: 2px;"></div>
 
       <!-- Redes Sociales-->
       <div class="d-flex order-4 order-lg-2 justify-content-around align-items-center col-lg-3">
-          <a href=""><i
+          <a href="error404.html"><i
             class="fa-brands fa-instagram fa-2xl incons-networks animation-redes"></i></a>
-          <a href=""><i
+          <a href="error404.html"><i
             class="fa-brands fa-facebook fa-2xl incons-networks animation-redes"></i></a>
-          <a href=""><i
+          <a href="error404.html"><i
             class="fa-brands fa-twitter fa-2xl incons-networks animation-redes"></i></a>
-          <a href=""><i
-            class="fa-brands fab fa-github fa-2xl incons-networks animation-redes"></i></a>
+          <a href="error404.html"><i
+            class="fa-brands fa-google-plus-g fa-2xl incons-networks animation-redes"></i></a>
       </div>
       <div class="w-100 order-5 bg-compass-persianRed mt-4 mb-2 d-lg-none" style="height: 2px;"></div>
 
