@@ -59,7 +59,7 @@
         <div class="form-floating">
           <input type="password" class="form-control" id="values-password-login" placeholder="Password" maxlength="16" minlength="6" required>
           <label for="floatingPassword">Contraseña</label>
-          <a href="" class="text-light" data-bs-toggle="modal" data-bs-target="#password">Te Olvidaste la Contraseña?</a>
+          <a href="" class="text-light" data-bs-toggle="modal" data-bs-target="#passworr-modal">Te Olvidaste la Contraseña?</a>
         </div>
         <button type="submit" class="btn btn-outline-success mt-4 button-login">Ingresar</button>
       </form>
@@ -67,6 +67,36 @@
   </div>
   <!-- fin de login -->
   <div id="div-form" class="d-flex align-items-center flex-column justify-content-center"> </div>
+</div>
+<!-- ?inicio MODAL olvide contraseño -->
+<!-- Modal -->
+<div class="modal fade" id="passworr-modal" tabindex="-1" aria-labelledby="passworr-modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header register-modal-style">
+        <h5 class="modal-title text-light" id="exampleModalLabel">¿No recuerdas tu contraseña?</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body register-modal-style" id="style-modal-register">
+        <div>
+          <p class="text-light">¡No te preocupes! Nos sucede a todos. Ingresa tu email y te enviaremos los pasos a seguir para recuperarla</p>
+        </div>
+        <form onsubmit="validationForgetPassword(event)">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="password-email-value" placeholder="name@example.com" required minlength="6" maxlength="30" >
+            <label for="register-name-email">Email</label>
+          </div>
+          <div class="form-floating mb-3" id="container-message">
+            <button type="submit" class="btn btn-outline-success" id="buton-modal-register">Solicitar</button>
+          </div>  
+          <div id="container-alertMessage2"></div>
+        </form>
+      </div>
+    
+    </div>
+  </div>
+</div>
+<!-- ?FIN MODAL olvide contraseña -->
 </main>
   <!-- ?INICIO FOOTER -->
   <footer id="footer-page" class="container-fluid bg-compass-primary">
@@ -96,8 +126,8 @@
         <div class="col-md-5 col-lg-3 order-2 order-lg-3 flex-column">
             <p class="text-general-page fs-5 text-center text-lg-end"><a href=""></a></p>
             <p class="text-general-page fs-5 text-center text-lg-end"><a href=""></a></p>
-            <p class="text-general-page fs-5 text-center text-lg-end"><a href="">Contáctanos</a></p>
-            <p class="text-general-page fs-5 text-center text-lg-end"><a href="">Acerca de nosotros</a></p>
+            <p class="text-general-page fs-5 text-center text-lg-end"><a href="/pages/contact-page.html">Contáctanos</a></p>
+            <p class="text-general-page fs-5 text-center text-lg-end"><a href="/pages/about-us.html">Acerca de nosotros</a></p>
         </div>
     </div>
     <div class="container-copyright">
