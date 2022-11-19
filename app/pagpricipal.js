@@ -13,6 +13,7 @@
 // }
 
 //! proteccion sin crear boton admin
+// let admins = JSON.parse(localStorage.getItem("admins"));
 // let userLogged = JSON.parse(localStorage.getItem("userLogged"));
 // if(!userLogged){
 // window.location.assign(window.location.origin + "/pages/login.html");}
