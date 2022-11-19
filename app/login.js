@@ -23,7 +23,6 @@ const login = (e)=>{
     if(userFound && userFound.password==password){
         //GUARDO EL USUARIO EN LS
         localStorage.setItem("userLogged",JSON.stringify(userFound));
-
         console.log(userFound);
         window.location.assign(window.location.origin + "/pages/pagprincipal.html");
         console.log("entro");

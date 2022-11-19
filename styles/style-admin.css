@@ -1,15 +1,21 @@
+body{
+  background-color: black;
+}
 main{
   padding-bottom: 300px;
+  background-color: black;
 }
 .style-table{
   width: 90vw !important;
   text-align: center;
+  background-color: black;
 }
 .style-table-category{
   max-width: 200px;
   overflow-x: scroll;
   white-space:nowrap;
   text-overflow: clip;
+  scrollbar-base-color: black;
 } 
 .style-table-img{
   width: 40px;
@@ -68,4 +74,10 @@ main{
 }
 .btn-secondary{
   border: none !important;
+}
+footer{
+  border-top: 1px  #8A0015 solid;
+}
+nav{
+  border-bottom: 1px  #8A0015 solid;
 }
