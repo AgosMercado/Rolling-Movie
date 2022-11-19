@@ -1,14 +1,23 @@
-let userLoggedLS = JSON.parse(localStorage.getItem("userLogged"));
-if(!userLoggedLS){ 
-window.location.assign(window.location.origin + "/pages/login.html";
-}else if(userLoggedLS.admin){
-    const adminMenu=document.createElement("li");
-    adminMenu.classList.add("nav-item");
-    adminMenu.innerHTML= `
-    <a class="nav-link active style-text-nav" href="#" data-bs-toggle="modal" data-bs-target="#register-Modal">Administrador</a>
-    `
-    document.querySelector(".navbar").appendChild(adminMenu);
-}
+
+//! proteccion creando boton admin
+// let userLoggedLS = JSON.parse(localStorage.getItem("userLogged"));
+// if(!userLoggedLS){ 
+// window.location.assign(window.location.origin + "/pages/login.html");
+// }else if(userLoggedLS.admin){
+//     const adminMenu=document.createElement("li");
+//     adminMenu.classList.add("nav-item");
+//     adminMenu.innerHTML= `
+//     <a class="nav-link active style-text-nav" href="#" >Administrador</a>
+//     `
+//     document.querySelector(".navbar-nav").appendChild(adminMenu);
+// }
+
+//! proteccion sin crear boton admin
+// let userLogged = JSON.parse(localStorage.getItem("userLogged"));
+// if(!userLogged){
+// window.location.assign(window.location.origin + "/pages/login.html");}
+
+
 
 class Peliculas{
     constructor(nombre,id,descripcion,publicado,destacado,imagen,categoria){
