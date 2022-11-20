@@ -221,10 +221,10 @@ textarea.input {
   transition: 0.3s;
 }
 
-.social-icons a:hover {
-  transform: scale(1.05);
+/* .social-icons a:hover {
+  transform: scale(1.15);
   background-color: white;
-}
+} */
 
 a{
   color: white !important;
