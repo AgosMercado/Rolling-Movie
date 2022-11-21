@@ -35,12 +35,18 @@ inputs.forEach((input) => {
 //!VALIDACIONES
 function validar(e){
   e.preventDefault();
-  let name = document.getElementById("input-nombre").value;
-  let phone = document.getElementById("input-telefono").value;
+
+
+  let name = document.getElementById("input-name").value;
+  let phone = document.getElementById("input-phone").value;
   let email = document.getElementById("input-email").value;
-  let errorsObject = validationRegister(name, email, phone); //traigo el "objeto Errores" de la funcion
-  let errorsKeys = Object.keys(errorsObject);  //Traigo el array de propiedades del objeto Errores
+  let textArea = document.getElementById("input-message").value;
+
+
+  let errorsObject = validationRegister(name, email, phone, textArea,); //traigo el "objeto Errores" de la funcion
   let errorsValues = Object.values(errorsObject); //Traigo el array de valores del objeto errores
+  let errorsKeys = Object.keys(errorsObject);  //Traigo el array de propiedades del objeto Errores
+  
   if (errorsKeys.length==0){
     console.log("ok");
 
@@ -50,15 +56,18 @@ function validar(e){
       alertMessage (error,"form");
     }) 
 }}
+
 //! FUNCION QUE VALIDA A TRAVES DE REGEX LOS CAMPOS QUE PASO POR PARAMETRO (CAMPOS DEL REGISTRO)
-const validationRegister = (name, email, phone)=>{  
+const validationRegister = (name, email, phone, textArea)=>{  
   let errors = {};
   let nameOk = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$/.test(name);
-  if(!nameOk) errors.name = " Verifica el nombre ingresado";
+  if(!nameOk) errors.name = " Verifica el nombre ingresado.";
   let emailOk = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-  if(!emailOk) errors.email = " Verifica el email ingresado";
+  if(!emailOk) errors.email = " Verifica el email ingresado.";
   let phoneOk = /^[0-9]+$/.test(phone);
-  if(!phoneOk) errors.phone = " Verifica el telefono ingresado";
+  if(!phoneOk) errors.phone = " Verifica el telefono ingresado.";
+  let textAreaOk = /[A-Za-zÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ][0-9]*$/.test(textArea);
+  if(!textAreaOk) errors.textArea = " Verifica el texto ingresado.";
 
   return errors;
 }
@@ -67,11 +76,11 @@ const validationRegister = (name, email, phone)=>{
 //FUNCION PARA CREAR UN ALERT EN UN CONTENEDOR Y LUEGO DE DOS SEGUNDOS SE BORRE
 function alertMessage (message, containerMessage){    
     let alertMessage = document.createElement("div");
-    alertMessage.classList.add("style-message2","my-1");
+    alertMessage.classList.add("style-message2","my-2");
     // alertMessage.classList.add("alert","alert-secondary","my-1");
     // alertMessage.setAttribute("role","alert"); //USO SET ATRIBUTE CUANDO QUIERO AGREGAR UN ATRIBUTO QUE NO APARECE EN LA LISTA
     alertMessage.innerHTML =`<i class="fa-solid fa-circle-exclamation"></i>${message}`;
     let containerParent = document.getElementById(containerMessage);
     containerParent.appendChild(alertMessage);
-    setTimeout(()=>{alertMessage.remove();},3000); // PASADOS 2 SEGUNDOS SE BORRE EL ELEMENTO QUE ACABO DE CREAR SINO ES SPAM
+    setTimeout(()=>{alertMessage.remove();},1500); // PASADOS 2 SEGUNDOS SE BORRE EL ELEMENTO QUE ACABO DE CREAR SINO ES SPAM
 }
