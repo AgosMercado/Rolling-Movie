@@ -5,6 +5,13 @@ if(!userLoggedLS){ //SI NO EXISTE USUARIO LOGUEADO REDIRIJO AL LOGIN
 window.location.assign(window.location.origin + "/pages/login.html");
 }else if (!userLoggedLS.admin){ //SI EXISTE USUARIO LOGUEADO Y NO ES ADMIN REDIRIJO A PAGIN PRINCIPAL
 window.location.assign(window.location.origin + "/pages/pagprincipal.html");
+}else{
+  let adminMenu=document.createElement("li");
+    adminMenu.classList.add("nav-item");
+    adminMenu.innerHTML= `
+      <a class="nav-link active style-text-nav" href="/pages/admin.html" >ADMIN</a>
+    `
+    document.querySelector(".navbar-nav").appendChild(adminMenu);
 }
 
 class Peliculas{
@@ -51,12 +58,15 @@ peliculas.forEach(pelicula=>{
   let categoriaTerror = document.getElementById("categoria-terror-radio");
   let categoriaInfantil = document.getElementById("categoria-infantil-radio");
   let categoriaAccion = document.getElementById("categoria-accion-radio");
+  let categoriaComedia = document.getElementById("categoria-comedia-radio");
     if(categoriaTerror.checked){
       categoriaPelic = categoriaTerror.value;
     } else if (categoriaInfantil.checked){
       categoriaPelic = categoriaInfantil.value;
-    }else{
-      categoriaPelic = categoriaAccion.value;
+    }else if (categoriaAccion.checked){
+        categoriaPelic = categoriaAccion.value;
+    }else if (categoriaComedia.checked){
+      categoriaPelic = categoriaComedia.value;
     }
   let publicado = document.getElementById("switch-publicado").checked;
   let destacado = document.getElementById("switch-destacado").checked;
@@ -91,9 +101,9 @@ const eliminarPelicula = (idPeli)=>{
 //! FUNCION QUE VALIDA A TRAVES DE REGEX LOS CAMPOS QUE PASO POR PARAMETRO (CAMPOS DEL MODAL AGREGAR PELICULA)
 const validationRegister = (nombrePelic, descripcionPelic)=>{  
   let errors = {};
-  let nombrePelicOk = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$/.test(nombrePelic);
+  let nombrePelicOk = /^[A-Za-z0-9\s]+$/g.test(nombrePelic);
   if(!nombrePelicOk) errors.descripcionPelic = " Verifica el nombre ingresado";
-  let descripcionPelicOk = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$/.test(descripcionPelic);
+  let descripcionPelicOk = /^[A-Za-z0-9\s]+$/g.test(descripcionPelic);
   if(!descripcionPelicOk) errors.descripcionPelic = " Verifica la descripcion ingresada";
   return errors;
 }
@@ -121,33 +131,23 @@ const traerDatos = (idSeleccionado) =>{
   document.getElementById("editMovie-name").value = peliculaEncontrada.nombre;
   document.getElementById("editMovie-description").value = peliculaEncontrada.descripcion;
   document.getElementById("editMovie-image").value = peliculaEncontrada.imagen;
-  let categoriaTerror = document.getElementById("categoria-terror-radio");
-  let categoriaTerrorEdit = document.getElementById("categ-terror-radio-edit");
-  let categoriaInfantil = document.getElementById("categoria-infantil-radio");
-  let categoriaInfantilEdit = document.getElementById("categ-infantil-radio-edit");
-  let categoriaAccion = document.getElementById("categoria-accion-radio");
-  let categoriaAccionEdit = document.getElementById("categ-accion-radio-edit");
-  let switchDestacado = peliculaEncontrada.destacado;
-  let switchPublicado = document.getElementById("switch-publicado");
-  let destacadoEdit = document.getElementById("switch-destacado-edit");
-  let publicadoEdit = document.getElementById("switch-publicado-edit");
-    if(categoriaTerror.checked){  //! NO FUNCIONA
-      categoriaTerrorEdit.checked="true";
-      console.log("terror");
-    } else if (categoriaInfantil.checked){
-      categoriaInfantilEdit.checked="true";
-      console.log("infantil");
-    }else if (categoriaAccion.checked){
-      categoriaAccionEdit.checked="true";
-      console.log("accion");
-    // BOTONES SWITCH MODAL EDITAR NO FUNCIONA
-    }
-    if(switchDestacado){
-      destacadoEdit.checked="true"
-    }
-    else{
-        destacadoEdit.checked="false"
-        }
+  console.log(document.querySelector(`input[value="${peliculaEncontrada.categoria}"]`));
+  //   if(categoriaTerror.checked){  //! NO FUNCIONA
+  //     categoriaTerrorEdit.checked="true";
+  //     console.log("terror");
+  //   } else if (categoriaInfantil.checked){
+  //     categoriaInfantilEdit.checked="true";
+  //     console.log("infantil");
+  //   }else if (categoriaAccion.checked){
+  //     categoriaAccionEdit.checked="true";
+  //     console.log("accion");
+  //   }
+  //   if(switchDestacado){
+  //     destacadoEdit.checked="true"
+  //   }
+  //   else{
+  //       destacadoEdit.checked="false"
+  //       }
     //TRAER LOS VALORES Y SELECCIONAR LA OPCION CORRESPONDIENTE
     // if(switchPublicado.checked){
     //   publicadoEdit.setAttribute("checked", "true")

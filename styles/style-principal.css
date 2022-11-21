@@ -50,6 +50,8 @@ main{
 #buscador{
     background-color: white;
     border-radius:8px;
+    border: none;
+    caret-color: #8A0015;
 }
 
 .filtro{
@@ -59,3 +61,56 @@ main{
    
     overflow-x: scroll;
 }
+
+@media screen and (max-width: 991px){
+    .dropdown-menu{
+        right: 0% !important;
+        left: 100% !important;
+        top: 0%;
+    }
+    .containerInput{
+      margin-bottom: 10px;
+    }
+    }
+    .search-input{
+        outline: none;
+        border: none;
+        background: black ;
+        width: 0;
+        padding: 0;
+        color: black;
+        float: left;
+        font-size: 16px;
+        transition: .3s;
+        line-height: 40px;
+        }
+        .search-input::placeholder{
+        color: #dbc5b0;
+        }
+      .search-btn{
+        color: #fff;
+        float: right;
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        background-color: #8A0015;
+        display: flex;
+        justify-content: center !important;
+        align-items: center;
+        text-decoration: none;
+        transition: .3s;
+      }
+      .search-input:focus,.search-input:not(:placeholder-shown){
+        width: 240px;
+        padding: 0 6px;
+      }
+      .search-box:hover > .search-input{
+        width: 240px;
+        padding: 0 6px;
+      }
+      .search-box:hover > .search-btn,
+      .search-input:focus + .search-btn,
+      .search-input:not(:placeholder-shown) + .search-btn{
+        color: #FFF;
+        background-color: #8A0015;
+      }

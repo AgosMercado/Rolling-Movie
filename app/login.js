@@ -16,7 +16,7 @@ const login = (e)=>{
     const email = document.getElementById('values-email-login').value;
     const password = document.getElementById('values-password-login').value;
     const userFound = users.find(user=>user.email==email);
-    let errorsObject = validationRegister(email, password); //traigo el "objeto Errores" de la funcion
+    let errorsObject = validationLogin(email, password); //traigo el "objeto Errores" de la funcion
     let errorsKeys = Object.keys(errorsObject);  //Traigo el array de propiedades del objeto Errores
     let errorsValues = Object.values(errorsObject); //Traigo el array de valores del objeto errores
     if (errorsKeys.length==0){
@@ -29,6 +29,7 @@ const login = (e)=>{
     }}else{
         errorsValues.map(error=>{
         alertMessage (error,"#div-form");
+        // document.getElementById("formLogin").reset();
     })}
 }
 
@@ -50,7 +51,7 @@ function alertMessage (message,queryContainer){
 
 
 
-const validationRegister = (email, password)=>{  
+const validationLogin = (email, password)=>{  
     let errors = {};
     let emailOk = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
     if(!emailOk) errors.email = " Verifica el email ingresado";
