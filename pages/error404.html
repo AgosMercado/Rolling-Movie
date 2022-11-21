@@ -1,59 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/style-principal.css">
+    <link rel="stylesheet" href="../styles/style-landingpage.css">
+    <link rel="stylesheet" href="/styles/style-footer.css">
+    <link rel="stylesheet" href="/styles/Styles-Buscador.css">
+    <link rel="stylesheet" href="../styles/404.style.css">
+    <title>Document</title>
 </head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bitter&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles/style-landingpage.css"> 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="icon" href="/assets/pngwing.com (2).png"
 <body>
-  <header>
-    <!-- ?INICIO NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top my-auto">
-      <div class="container-fluid">
-        <a class="navbar-brand style-text-nav" href="#">Rolling Movies
-          <img src="/assets/pngwing.com (2).png" id=imagelogo alt="logo" class="main-image" width="35" height="35"> </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active style-text-nav" aria-current="page" href="home.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active style-text-nav" href="#" data-bs-toggle="modal" data-bs-target="#register-Modal">Registrarme</a>
-            </li>
-          </ul>
-            <li class="nav-item" >
-            <a button class="btn btn-outline-success" href="/pages/login.html" id="button-search" type="submit">INGRESAR</a>
-          </li>
-        </div>
+    <header>
+<!-- ?INICIO NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top my-auto" id="style-nav">
+  <div class="container-fluid">
+    <a class="navbar-brand style-text-nav" href="#">Rolling Movies
+      <img src="/assets/pngwing.com (2).png" id=imagelogo alt="logo" class="main-image" width="35" height="35"> </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+          <!-- Dropdown menu links -->
+        </ul>
       </div>
-    </nav>
-    <!-- ?FIN NAVBAR -->
-  </header>
-  <main id="main-style">
-    <!-- incio error 404 -->
-    <div id="background-main" class="d-flex justify-content-center align-items-center"> 
-    <div class="style-text-main"><h1<strong>ERROR 404</strong></h1>
-    <div class="tenor-gif-embed"data-postid="15677648" data-share-method="host" data-aspect-ratio="1.61616" data-width="50%"><a href="https://tenor.com/view/it2-pennywise-clown-gif-15677648">It2 Pennywise GIF</a>from <a href="https://tenor.com/search/it2-gifs">It2 GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-      <br>
-      <h4>MIEDO?, VUELVE AQUI</h4>
-      <button class="btn btn-outline-success" id="style-button-register" data-bs-toggle="modal" data-bs-target="#register-Modal"  data-bs-dismiss="modal">INICIO</button> 
-    <!-- fin error -->
+        <!-- <div class="dropdown">
+          <a id="button-dropdwn" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cuenta 
+          </a>
+        
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Cuenta</a></li>
+            <li><a class="dropdown-item" href="#">Configuraciones</a></li>
+            <li><a class="dropdown-item" href="#">Centro de ayuda</a></li>
+            <li><hr class="dropdown-divider"></li>
+<li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+          </ul>
+        </div> -->
+      </div>
     </div>
+  </div>
+</nav>
+<!-- ?FIN NAVBAR -->
+            
+
+
+
+
+<!-- ?INICIO CATEGORIAS  -->
+<main>
+  <section>
+  <!--incio error 404  -->
+  <div id="background-main" class="d-flex justify-content-center"> 
     
+  <div class="style-text-main"><h1<strong>ERROR 404</strong></h1>
+    <br><br>
+    <div class="container-fluid d-flex justify-content-center" id="gifpenny">
+      <div class="d-flex justify-content-center"><video src="../assets/LA RISA DE IT.mp4"  type=video/mp4 controls autoplay></video>
+      </div>
     </div>
-    </main>
-    <script src="/app/landingPage.js"></script>
-    <script src="https://kit.fontawesome.com/73835d0d8e.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  </body>
+    <br><br>
+    <h4>MIEDO?, VUELVE AQUI</h4>
+    <button class="btn btn-outline-success" id="style-button-register" data-bs-toggle="modal" data-bs-target="#register-Modal"  data-bs-dismiss="modal">INICIO </button>
+  </div>
+  <!-- fin error
+  </div> -->
+</section>
+  
+
+  </main>
+
+<!-- ?INICIO FOOTER -->
+<footer id="footer-page" class="container-fluid bg-compass-primary">
+  <div class="row d-lg-flex justify-content-around align-items-center bg-compass-primary py-4">
+      <!-- Logo Rolling Movie-->
+      <div class="col-md-5 col-lg-3 order-0 d-flex justify-content-center">
+        <img src="/assets/pngwing.com (2).png" id=imagelogo alt="Logo Rolling Movie" class="main-image" width="65" height="65">
+
+      </div>
+      <div class="w-100 order-1 bg-compass-persianRed my-4 d-md-none" style="height: 2px;"></div>
+      <div class="w-100 order-3 bg-compass-persianRed my-4 d-lg-none" style="height: 2px;"></div>
+
+      <!-- Redes Sociales-->
+      <div class="d-flex order-4 order-lg-2 justify-content-around align-items-center col-lg-3">
+          <a href="error404.html"><i
+            class="fa-brands fa-instagram fa-2xl incons-networks animation-redes"></i></a>
+          <a href="error404.html"><i
+            class="fa-brands fa-facebook fa-2xl incons-networks animation-redes"></i></a>
+          <a href="error404.html"><i
+            class="fa-brands fa-twitter fa-2xl incons-networks animation-redes"></i></a>
+          <a href="error404.html"><i
+            class="fa-brands fa-google-plus-g fa-2xl incons-networks animation-redes"></i></a>
+      </div>
+      <div class="w-100 order-5 bg-compass-persianRed mt-4 mb-2 d-lg-none" style="height: 2px;"></div>
+
+      <!-- Links -->
+      <div class="col-md-5 col-lg-3 order-2 order-lg-3 flex-column">
+          <p class="text-general-page fs-5 text-center text-lg-end"><a href=""></a></p>
+          <p class="text-general-page fs-5 text-center text-lg-end"><a href=""></a></p>
+          <p class="text-general-page fs-5 text-center text-lg-end"><a href="">Contáctanos</a></p>
+          <p class="text-general-page fs-5 text-center text-lg-end"><a href="">Acerca de nosotros</a></p>
+      </div>
+  </div>
+  <div class="container-copyright">
+      <p>&copy; Copyright 2022 - Todos los derechos reservados Rolling Movie.</p>
+  </div>
+</footer>
+<!-- ?FIN FOOTER -->
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/73835d0d8e.js" crossorigin="anonymous"></script>
+<script src="../app/pagpricipal.js"></script>
+<scrip src="../app/Buscador.js"></scrip>
+</body>
 </html>
