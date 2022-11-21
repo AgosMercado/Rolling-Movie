@@ -55,7 +55,7 @@ function register (e){
   let email = document.getElementById("register-email-value").value;
   let password = document.getElementById("register-password-value").value;
   let password2 = document.getElementById("register-password2-value").value;
-  let idNewUser = Math.random();
+  let idNewUser = Math.round(Math.random()*150);
   let newUser = new User(idNewUser, name, age, email, password, false);
   
   let userFounded = admins.find(user=>user.email==email); //Busco en la lista de admins si encuentro alguno que tenga el email que se esta ingresando

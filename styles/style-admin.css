@@ -1,14 +1,14 @@
 body{
-  background-color: black;
+background-image: url(/assets/PORTADAS/portada.jpg);
+background-position: center;
+background-size: cover;
 }
-main{
-  padding-bottom: 300px;
-  background-color: black;
+.style-table-bg,th{
+  background-color: rgba(0, 0, 0, 0.938) !important;
 }
 .style-table{
   width: 90vw !important;
   text-align: center;
-  background-color: black;
 }
 .style-table-category{
   max-width: 200px;
@@ -30,8 +30,8 @@ main{
 }
 .style-button-add{
   border: 1px solid #8A0015 !important;
-  color: #8A0015;
-  border: 1px solid #8A0015;
+  color: #8A0015 !important;
+  border: 1px solid #8A0015 !important;
   margin-right: 20px;
 }
 .style-button-add:hover{
@@ -67,7 +67,7 @@ main{
   outline: none !important;
   box-shadow: none !important;
 }
-.style-button-table:hover{
+hover{
   transform:scale(1.2);
   transition-duration: 250ms;
   color: #8A0015;
@@ -80,4 +80,42 @@ footer{
 }
 nav{
   border-bottom: 1px  #8A0015 solid;
+}
+.style-button-table{
+  background-color: rgba(0, 0, 0, 0.158) !important;
+  color: #8A0015;
+}
+.style-button-table:hover{
+  color:white;
+}
+.style-table-category::-webkit-scrollbar:horizontal {
+  width:10px;
+}
+.style-table-category::-webkit-scrollbar {
+  appearance: none;
+}
+
+.style-table-category::-webkit-scrollbar:vertical {
+  width:10px;
+}
+
+.style-table-category::-webkit-scrollbar-button:increment,.style-table-category::-webkit-scrollbar-button {
+  display: none;
+} 
+
+.style-table-category::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+.style-table-category::-webkit-scrollbar-thumb {
+  background-color: #8A0015;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+
+.style-table-category::-webkit-scrollbar-track {
+  border-radius: 10px;  
+}
+#radios-button{
+  padding-left: 0px !important;
 }

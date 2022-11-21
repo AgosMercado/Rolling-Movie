@@ -52,10 +52,9 @@
   <!-- ?FIN NAVBAR -->
   <!-- ?INICIO TABLA ADMINISTRACION -->
   <main class="mt-5 pt-4 container" id="main-style2">
-    <div id="background-main2">
-    <h1 class="text-center">Administración de Películas</h1> 
+    <h1 class="text-center text-light">Administración de Películas</h1> 
     <button class="style-button-add btn btn-outline-success ms-auto d-block" data-bs-toggle="modal" data-bs-target="#add-movie-modal">AGREGAR <i class="fa-solid fa-plus"></i></button>
-    <div class="d-flex justify-content-center container">
+    <div class="d-flex justify-content-center container style-table-bg">
     <table class="table table-dark table-hover style-table mt-3" id="tableABM">
     <thead>
       <tr>
@@ -116,6 +115,12 @@
               Accion
             </label>
           </div>
+          <div class="form-check me-2"">
+            <input class="form-check-input" type="radio" name="radios-categoria" id="categoria-comedia-radio" value="comedia" required>
+            <label class="form-check-label" for="categoria-comedia-radio">
+              Comedia
+            </label>
+          </div>
         </div>
           <div class="form-floating mb-3 ms-1">
             <div class="form-check form-switch">
@@ -149,7 +154,7 @@
       </div>
       <div class="modal-body register-modal-style">
         <form onsubmit="editarPelicula(event)">
-          <div class="form-floating mb-3" id="">
+          <div class="form-floating mb-3">
             <input type="text" class="form-control" id="editMovie-name" placeholder="xxxxxx" required minlength="6" maxlength="15">
             <label for="editMovie-name">Nombre de la Película</label>
           </div>
@@ -162,24 +167,16 @@
             <label for="editMovie-image">Imágen</label>
           </div>
           <p class="text-light">Categoria</p>
-          <div class="d-flex justify-content-start pb-2 mb-1">
-          <div class="form-check me-2">
-            <input class="form-check-input" type="radio" name="radios-categoria" id="categ-terror-radio-edit" value="terror" required>
-            <label class="form-check-label" for="categ-terror-radio-edit">
-              Terror
-            </label>
-          </div>
-          <div class="form-check me-2">
-            <input class="form-check-input" type="radio" name="radios-categoria" id="categ-infantil-radio-edit" value="infantil" required>
-            <label class="form-check-label" for="categ-infantil-radio-edit">
-              Infantil
-            </label>
-          </div>
-          <div class="form-check me-2"">
-            <input class="form-check-input" type="radio" name="radios-categoria" id="categ-accion-radio-edit" value="accion" required>
-            <label class="form-check-label" for="categ-accion-radio-edit">
-              Accion
-            </label>
+          <div class="d-flex justify-content-start pb-2 mb-1" >
+          <div class="form-check  d-flex" id="radios-button">
+            <p>Terror</p>
+            <input class="form-check-input mx-2" type="radio" name="radiosCategoriaEdit" id="terror" value="terror" required>
+            <p>Infantil</p>
+            <input class="form-check-input mx-2" type="radio" name="radiosCategoriaEdit" id="infantil" value="infantil" required>
+            <p>Accion</p>
+            <input class="form-check-input mx-2" type="radio" name="radiosCategoriaEdit" id="accion" value="accion" required>
+            <p>Comedia</p>
+            <input class="form-check-input mx-2" type="radio" name="radiosCategoriaEdit" id="comedia" value="comedia" required>
           </div>
         </div>
           <div class="form-floating mb-3 ms-1">
@@ -204,8 +201,9 @@
   </div>
 </div>
 <!-- ?FIN MODAL EDITAR -->
-</div>
+
   </main>
+
   <!-- ?INICIO FOOTER -->
   <footer id="footer-page" class="container-fluid bg-compass-primary">
     <div class="row d-lg-flex justify-content-around align-items-center bg-compass-primary py-4">
