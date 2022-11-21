@@ -12,7 +12,7 @@
 .style-text-nav:hover{
   color: #8A0015 !important;
 }
-#main-style,#main-style2{
+#main-style{
   background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mejores-peliculas-terror-1666357610.jpg);
   width: 100%;
   height: 100vh;
@@ -31,7 +31,7 @@
   margin-top: 50px;
   color: white;
 }
-#background-main,#background-main2{
+#background-main{
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.781);
@@ -84,4 +84,11 @@
 }
 #div-form{
   width: 90%;
+}
+#style-button-register:hover{
+  color: #8A0015;
+  text-shadow: 0 0 5px white,
+  0 0 25px white,
+  0 0 50px white,
+  0 0 100px white
 }

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../styles/style-principal.css">
     <link rel="stylesheet" href="../styles/style-landingpage.css">
     <link rel="stylesheet" href="/styles/style-footer.css">
-    <link rel="stylesheet" href="/styles/Styles-Buscador.css">
+    <!-- <link rel="stylesheet" href="/styles/Styles-Buscador.css"> -->
     <title>Document</title>
 </head>
 <body>
@@ -29,12 +29,12 @@
         <li class="nav-item">
           <a class="nav-link active style-text-nav" href="#" data-bs-toggle="modal" data-bs-target="#register-Modal">Mi lista</a>
         </li>
-        <div class="d-flex align-items-center ms-2">
-          <form id="form-buscador" class="" action="">
-            <input type="text" name="buscador" id="buscador" placeholder="Buscar una peli">
-          </form>
-        </div>
       </ul>
+      <div class="d-flex align-items-center ms-lg-2 me-3 containerInput">
+        <form action="" class="search-box"> 
+          <input  type="text" class="search-input" placeholder="Escribe aqui la pelicula" id="buscador">
+          <a class="search-btn" ><i class="fa-solid fa-magnifying-glass"></i></a></form>
+      </div>
       
       <!-- Default dropstart button -->
       <div class="btn-group dropstart">
@@ -47,22 +47,10 @@
             <li><a class="dropdown-item" href="error404.html">Centro de ayuda</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" onclick="logOut()" href="#">Cerrar sesion</a></li>
-          <!-- Dropdown menu links -->
         </ul>
       </div>
-        <!-- <div class="dropdown">
-          <a id="button-dropdwn" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Cuenta 
-          </a>
-        
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Cuenta</a></li>
-            <li><a class="dropdown-item" href="#">Configuraciones</a></li>
-            <li><a class="dropdown-item" href="#">Centro de ayuda</a></li>
-            <li><hr class="dropdown-divider"></li>
-<li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
           </ul>
-        </div> -->
+        </div> 
       </div>
     </div>
   </div>
