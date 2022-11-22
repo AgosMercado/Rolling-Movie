@@ -49,7 +49,7 @@ function validar(e){
   
   if (errorsKeys.length==0){
     console.log("ok");
-
+    alertMessage ("Tu mensaje fue enviado ¡Gracias por contactarnos!","form");
 
   }else{
     errorsValues.map(error=>{
