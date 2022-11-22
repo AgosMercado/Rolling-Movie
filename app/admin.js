@@ -47,7 +47,12 @@ peliculas.forEach(pelicula=>{
     `
     let containerPelicula = document.getElementById("tableABM");
     containerPelicula.appendChild(peliculaFila);
+    
 })
+
+
+
+
 
 //! FUNCION PARA AGREGAR PELICULAS
   const agregarPelicula= (e) =>{ 
@@ -71,7 +76,9 @@ peliculas.forEach(pelicula=>{
   let publicado = document.getElementById("switch-publicado").checked;
   let destacado = document.getElementById("switch-destacado").checked;
   let idPelicula = Math.round(Math.random()*150);
-  console.log(idPelicula);
+  // if(!pelicula.publicado){
+    //   peliculaFila.classList.add("d-none");
+    // }
   //CREO LA NUEVA PELICULA
   let nuevaPelicula = new Peliculas(nombrePelic, idPelicula, descripcionPelic, publicado, destacado, imagenPelic, categoriaPelic);
   let errorsObject = validationRegister(nombrePelic, descripcionPelic); //traigo el "objeto Errores" de la funcion
@@ -120,10 +127,6 @@ function alertMessage (message, containerMessage){
   setTimeout(()=>{alertMessage.remove();},5000); // PASADOS 2 SEGUNDOS SE BORRE EL ELEMENTO QUE ACABO DE CREAR SINO ES SPAM
 }
 
-//! FUNCION PARA EDITAR PELICULAS
-const editarPelicula =()=>{
-
-}
 
 // //! FUNCION PARA CARGAR LOS DATOS A EDITAR
 const traerDatos = (idSeleccionado) =>{
@@ -131,33 +134,74 @@ const traerDatos = (idSeleccionado) =>{
   document.getElementById("editMovie-name").value = peliculaEncontrada.nombre;
   document.getElementById("editMovie-description").value = peliculaEncontrada.descripcion;
   document.getElementById("editMovie-image").value = peliculaEncontrada.imagen;
-  console.log(document.querySelector(`input[value="${peliculaEncontrada.categoria}"]`));
-  //   if(categoriaTerror.checked){  //! NO FUNCIONA
-  //     categoriaTerrorEdit.checked="true";
-  //     console.log("terror");
-  //   } else if (categoriaInfantil.checked){
-  //     categoriaInfantilEdit.checked="true";
-  //     console.log("infantil");
-  //   }else if (categoriaAccion.checked){
-  //     categoriaAccionEdit.checked="true";
-  //     console.log("accion");
-  //   }
-  //   if(switchDestacado){
-  //     destacadoEdit.checked="true"
-  //   }
-  //   else{
-  //       destacadoEdit.checked="false"
-  //       }
-    //TRAER LOS VALORES Y SELECCIONAR LA OPCION CORRESPONDIENTE
-    // if(switchPublicado.checked){
-    //   publicadoEdit.setAttribute("checked", "true")
-    // } else{
-    //   publicadoEdit.setAttribute("checked", "false")
-    // }
+  // console.log(document.querySelector(`input[value="${peliculaEncontrada.categoria}"]`));
+  let categTerror=document.getElementById("terror");
+  let categComedia = document.getElementById("comedia");
+  let categAccion = document.getElementById("accion");
+  let categInfantil = document.getElementById("infantil"); 
+  switch (true) {
+    case categTerror.id==peliculaEncontrada.categoria:
+      categTerror.checked =true;
+      break;
+    case categComedia.id==peliculaEncontrada.categoria:
+      categComedia.checked =true;
+      break;
+    case categAccion.id==peliculaEncontrada.categoria:
+      categAccion.checked =true;
+    break;
+    case categInfantil.id==peliculaEncontrada.categoria:
+      categInfantil.checked =true;
+      break;
+    default:
+  }
+  let peliPublicada = document.getElementById("switch-publicado-edit")
+  if(peliculaEncontrada.publicado){
+    peliPublicada.checked = true;
+  }else{
+    peliPublicada.checked = false;
+  }
+  let peliDestacada = document.getElementById("switch-destacado-edit")
+  if(peliculaEncontrada.destacado){
+    peliDestacada.checked = true;
+  }else{
+    peliDestacada.checked = false;
+  }
+  document.getElementById("form-edit").setAttribute("onsubmit", `editarPelicula(${idSeleccionado})`)
 }
-
-//! FUNCION PARA DESLOGUEARSE
-const logOut =()=>{
+  
+  //! FUNCION PARA EDITAR PELICULAS
+  const editarPelicula =(idSeleccionado)=>{
+    //Traigo los elementos del form edit y los guardo en variables
+    let peliNombre = document.getElementById("editMovie-name").value;
+    let peliDescripcion = document.getElementById("editMovie-description").value;
+    let peliImagen =document.getElementById("editMovie-image").value;
+    let destacadoPeli = document.getElementById("switch-destacado-edit").checked;
+    let publicadoPeli = document.getElementById("switch-publicado-edit").checked;
+    let categTerror=document.getElementById("terror");
+    let categComedia = document.getElementById("comedia");
+    let categAccion = document.getElementById("accion");
+    let categInfantil = document.getElementById("infantil");
+    if(categTerror.checked){
+      categoriaPelic = categTerror.value;
+    } else if (categInfantil.checked){
+      categoriaPelic = categInfantil.value;
+    }else if (categAccion.checked){
+        categoriaPelic = categAccion.value;
+    }else if (categComedia.checked){
+      categoriaPelic = categComedia.value;
+    }
+  //elimino del array el elemento encontrado
+  let pelisActualizadas = peliculas.filter(pelicula=>pelicula.id!=idSeleccionado);
+  //Creo una nueva pelicula con los nuevos elementos traidos del form editar
+  let nuevaPeli = new Peliculas (peliNombre, idSeleccionado, peliDescripcion, publicadoPeli, destacadoPeli, peliImagen, categoriaPelic);
+  //Pusheo la nueva peli
+  pelisActualizadas.push(nuevaPeli);
+  //actualizo el array en LS
+  localStorage.setItem("peliculas",JSON.stringify(pelisActualizadas));
+  }
+  
+  //! FUNCION PARA DESLOGUEARSE
+  const logOut =()=>{
   //BORRO DE LS EN USUARIO LOGUEADO
   localStorage.removeItem("userLogged");
   //REDIRIJO A LOGIN
