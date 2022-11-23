@@ -13,7 +13,11 @@ peliculasDetail.innerHTML =
     <div class="col-md-5 col-11 mt-4"><img class="image-style-detail w-50" src="${peliculaEncontrada.imagen}" alt="${peliculaEncontrada.nombre}"></div>
     <div class="style-description col-md-5 col-11 mt-5" ><h2 class="style-description">${peliculaEncontrada.nombre}</h2>
     <div class="style-description mt-5"><p class="style-description">${peliculaEncontrada.descripcion}</p>
-    <div></div>
+    <div class="style-description mt-5"><p class="style-description">${peliculaEncontrada.direccion}</p>
+    <div class="style-description mt-5"><p class="style-description">${peliculaEncontrada.duracion}</p>
+    <div class="style-description mt-5"><p class="style-description">${peliculaEncontrada.pais}</p>
+    <div class="style-description col-md-5 col-11 mt-5" ><h2 class="style-description">${peliculaEncontrada.calificacion}<i class="fa-regular fa-star"></i></h2>
+    <div class="style-description mt-5"><p class="style-description">CALIFICACION</p>
     </div>
 `
 let containerDetail = document.getElementById("pelicula-container");
