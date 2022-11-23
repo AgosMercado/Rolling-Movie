@@ -11,8 +11,8 @@ peliculasDetail.classList.add('row');
 peliculasDetail.innerHTML =
 `
     <div class="col-md-5 col-11 mt-4"><img class="image-style-detail w-50" src="${peliculaEncontrada.imagen}" alt="${peliculaEncontrada.nombre}"></div>
-    <div class="col-md-5 col-11 mt-5"><h2>${peliculaEncontrada.nombre}</h2>
-    <div class="mt-5"><p>${peliculaEncontrada.descripcion}</p>
+    <div class="style-description col-md-5 col-11 mt-5" ><h2 class="style-description">${peliculaEncontrada.nombre}</h2>
+    <div class="style-description mt-5"><p class="style-description">${peliculaEncontrada.descripcion}</p>
     <div></div>
     </div>
 `
