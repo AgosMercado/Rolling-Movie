@@ -24,7 +24,7 @@ const login = (e)=>{
         //GUARDO EL USUARIO EN LS
         localStorage.setItem("userLogged",JSON.stringify(userFound));
         console.log(userFound);
-        window.location.assign(window.location.origin + "/pages/pagprincipal.html");
+        window.location.assign(window.location.origin + "/Rolling-Movie/pages/pagprincipal.html");
         console.log("entro");
     }}else{
         errorsValues.map(error=>{
