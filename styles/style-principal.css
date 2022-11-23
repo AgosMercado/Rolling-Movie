@@ -20,6 +20,8 @@ main{
 .card-style{
     width: 250px !important; 
     background-color: black;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .button-carousel{
@@ -52,15 +54,75 @@ main{
     display: none;
 }
 
-.scrollmenu{
-  overflow: hidden;
+/* .scrollmenu{
+  overflow: scroll;
   white-space: nowrap;
   width: 100vw;
+} */
+
+.scrollmenu{
+  display: grid;
+  grid-auto-flow: column;
+  scroll-behavior: auto;
+  gap:1.2rem;
+  overflow-y: auto;
+  overscroll-behavior-x:contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none !important;
+  overscroll-behavior-y: none;
+  width: 100%;
+  overflow: hidden;
+} 
+/* .card{
+  scroll-snap-align: center !important;
+}
+.scrollmenu::-webkit-scrollbar {
+  appearance: none;
+}
+.scrollmenu::-webkit-scrollbar:vertical {
+  width:10px;
 }
 
-#categoria-terror{
-   
-    overflow-x: scroll;
+.scrollmenu::-webkit-scrollbar-button:increment,.scrollmenu::-webkit-scrollbar-button {
+  display: none;
+} 
+
+.scrollmenu::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+.scrollmenu::-webkit-scrollbar-thumb {
+  background-color:#8A0015;
+  border-radius: 20px;
+  border: none; */
+  /* border: 2px solid #f1f2f3; */
+}
+
+/* .scrollmenu::-webkit-scrollbar-track {
+  border-radius: 10px;  
+} */
+.card:hover{
+  transform:scale(0.9);
+  transition-duration: 50ms;
+  color: #8A0015;
+}
+
+.categoria-scroll::-webkit-scrollbar{
+  display: none;
+  
+}
+
+.categoria-scroll{
+  overflow-x: scroll;
+
+}
+
+.btn-cards{
+  background-color: #8A0015;
+  height: 5vh;
+  width: 3vw;
+  border-radius: 10px;
+
 }
 
 @media screen and (max-width: 991px){
@@ -115,3 +177,5 @@ main{
         color: #FFF;
         background-color: #8A0015;
       }
+      
+      

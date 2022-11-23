@@ -56,23 +56,75 @@ peliculas = [
     localStorage.setItem("peliculas",JSON.stringify(peliculas));
 }
 
+
+// function createCarousel(){
+//     let peliculaCarousel = peliculas.filter(peliculas => peliculas.destacada == true);
+//     peliculaCarousel. forEach (pelicula => {
+//         const newItem=document.createElement ("div");
+//         newItem
+//     })
+
+// }
+// <div class="carousel-item ">
+//             <img src= "../assets/PORTADAS/PORTADA-AVATAR.jpg" class="d-block w-100 carousel-pag-principal img-fluid" alt="pelicula Avatar">
+//             <div class="carousel-caption d-block">
+//               <div class="style-text-carousel">
+//                 <h5>Avatar</h5>
+//                 <p>Ambientada en el año 2154, se desarrollan en Pandora, una luna de un planeta similar a Júpiter, habitada por una especie humanoide llamada na'vi, asentados alrededor de un gigantesco árbol que cubre una inmensa veta de un mineral muy cotizado y que supondría la solución a los problemas energéticos de la Tierra.</p>
+//                 <button type="button" class="btn btn-dark button-carousel">Ver mas</button>
+//               </div>
+//             </div>
+//           </div>
+
     function createCard (categoria, queryContainer){
         let peliculaCategoria = peliculas.filter(pelicula => pelicula.categoria == categoria);
         peliculaCategoria.forEach(pelicula => {
             const newCard=document.createElement ("div");
             newCard.classList.add ("card-style","pelicula");
             newCard.id = pelicula.id
-            newCard.classList.add ("card");
-            newCard.style.width= '18rem';
+            // newCard.classList.add ("card");
+            // newCard.style.width= '18rem';
             newCard.innerHTML = `
-            <img src= ${pelicula.imagen} class="card-img-top" alt= ${pelicula.nombre}>
-            <div class="card-body">
-                <a href='http://127.0.0.1:5500/pages/detail.html#${pelicula.id}' class="btn btn-primary btn-sm button-carousel" ${pelicula.id}>Ver</a>
+            <img src= ${pelicula.imagen} alt= ${pelicula.nombre}>
+            <div>
+                <a href='http://127.0.0.1:5500/pages/detail.html#${pelicula.id}' class="btn btn-primary btn-sm button-carousel mt-2" ${pelicula.id}>Ver</a>
                 <h3 class="d-none">${pelicula.nombre}</h3>
                     `
                 document.querySelector(queryContainer).appendChild(newCard);
                 });
             }
+
+    function moveCarouselCard(categoria, derecha) {
+        if(categoria === 'terror'){
+            if(derecha){
+                document.querySelector('#categoria-terror').scrollLeft+= 200;
+            }else{
+                document.querySelector('#categoria-terror').scrollLeft+= -200
+            }
+        }
+        if(categoria === 'infantil'){
+            if(derecha){
+                document.querySelector('#categoria-infantil').scrollLeft+= 200;
+            }else{
+                document.querySelector('#categoria-infantil').scrollLeft+= -200
+            }
+        }
+        if(categoria === 'accion'){
+            if(derecha){
+                document.querySelector('#categoria-accion').scrollLeft+= 200;
+            }else{
+                document.querySelector('#categoria-accion').scrollLeft+= -200
+            }
+        }
+        if(categoria === 'comedia'){
+            if(derecha){
+                document.querySelector('#categoria-comedia').scrollLeft+= 200;
+            }else{
+                document.querySelector('#categoria-comedia').scrollLeft+= -200
+            }
+        }
+    }    
+    
 
             createCard("terror","#categoria-terror");
             createCard("infantil","#categoria-infantil");
