@@ -5,8 +5,13 @@ main{
     height: 90vh;
 }
 .image-style{
-    width: 250px;
-    height: 300px;
+    width: 450px;
+    height: 400px;
     object-fit: cover;
     object-position: center;
     } 
+
+    
+.style-description{
+color:rgb(251, 251, 251) !important;
+}
