@@ -15,7 +15,7 @@ window.location.assign(window.location.origin + "/pages/login.html");
 
 
 class Peliculas{
-    constructor(nombre,id,descripcion,publicado,destacado,imagen,categoria,imagenPortada){
+    constructor(nombre,id,descripcion,publicado,destacado,imagen,categoria,calificacion,direccion,pais,duracion,imagenPortada){
     this.nombre = nombre;
     this.id = id;
     this.descripcion = descripcion;
@@ -23,6 +23,10 @@ class Peliculas{
     this.destacado = destacado;
     this.imagen = imagen;
     this.categoria = categoria;
+    this.calificacion = calificacion;
+    this.direccion = direccion;
+    this.pais = pais; 
+    this.duracion = duracion; 
     this.imagenPortada = imagenPortada;
     }
 }
@@ -86,31 +90,6 @@ peliculas = [
             createCard("comedia","#categoria-comedia");
 
 
-
-
-
-
-
-// document.getElementById("buscador").addEventListener("keyup",(event)=>{
-//     let infoInput= document.getElementById("buscador").value.toLowerCase();
-//     console.log("texto",infoInput);
-//     console.log("hola",peliculas.filter(pelicula => pelicula.nombre.includes("mal de ojo")));
-//     let peliculaEncontrada= peliculas.filter(pelicula => pelicula.nombre.includes(infoInput));
-//     console.log(peliculaEncontrada);
-// }
-// )
-
-//     document.addEventListener("keyup",e=> {
-//     if(e.target.matches("#buscador")){
-//     document.querySelectorAll(".pelicula").forEach(elemento =>{
-//     if ( elemento.${pelicula.nombre}.toLowerCase().includes(e.target.value.toLowerCase())){
-//     elemento.classList.remove("filtro")
-//     }else{
-//     elemento.classList.add("filtro")
-//     }
-//  })
-// }
-// })
 
 //! FUNCION PARA DESLOGUEARSE
 const logOut =()=>{
