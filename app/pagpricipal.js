@@ -23,10 +23,6 @@ class Peliculas{
     this.destacado = destacado;
     this.imagen = imagen;
     this.categoria = categoria;
-    // this.calificacion = calificacion;
-    // this.direccion = direccion;
-    // this.pais = pais; 
-    // this.duracion = duracion; 
     this.imagenPortada = imagenPortada;
     }
 }
@@ -38,7 +34,7 @@ if (peliculasLS){
 }else{
 peliculas = [
         new Peliculas("Aquaman",195,"En Maine 1985, el guardián del faro Thomas Curry encuentra y rescata, durante una tormenta, seriamente herida a la princesa del reino submarino Atlantis, Atlanna y la lleva a su casa. Una vez curada Atlanna, ella y Tom comienzan un romance teniendo un hijo, Arthur, pero cuando Arthur tenía tres años, la casa es atacada por varios soldados Atlantes, Atlanna se ve obligada a abandonar a Arthur y Tom, prometiéndoles a volver de Atlantis a la superficie.","true","true","../assets/ACCION/aquamancard.jpg","accion","../assets/PORTADAS/peliculas_mas_taquilleras_5260.webp"),
-        new Peliculas("Spiderman",184,"Peter Parker ha sido Spiderman durante casi dos años. En este tiempo se ha enfrentado a retos personales realmente heroicos mientras mantenía a salvo la ciudad de Nueva York.","true", "true","https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/292033/292033_173x256.jpg","infantil","../assets/PORTADAS/foto-spiderman.jpeg"),
+        new Peliculas("Spiderman",184,"Peter Parker ha sido Spiderman durante casi dos años. En este tiempo se ha enfrentado a retos personales realmente heroicos mientras mantenía a salvo la ciudad de Nueva York.","true", "true","../assets/ACCION/spidercard","infantil","../assets/PORTADAS/foto-spiderman.jpeg"),
         new Peliculas("Avatar",189, "Ambientada en el año 2154, se desarrollan en Pandora, una luna de un planeta similar a Júpiter, habitada por una especie humanoide llamada na'vi, asentados alrededor de un gigantesco árbol que cubre una inmensa veta de un mineral muy cotizado y que supondría la solución a los problemas energéticos de la Tierra.","true", "true", "../assets/INFANTILES/avatarcard.jpg","infantil","../assets/PORTADAS/PORTADA-AVATAR.jpg"),
         new Peliculas("Sonrie", 65, "Después de presenciar un incidente extraño que involucra a un paciente, la Dra. Rose Cotter comienza a experimentar sucesos aterradores. Rose debe enfrentarse a su inquietante pasado para poder sobrevivir y escapar de su nueva realidad.", "true", "true", "../assets/TERROR/TERR-SONRIE.jpg","terror","../assets/PORTADAS/SMILEPORTADA.jpg"),
         new Peliculas ("La Luz del Diablo",64,"La historia de la hermana Ann, una inquieta joven de 25 años que cree devotamente que realizar exorcismos es su vocación. Pero ella está en desacuerdo con las tradiciones de la institución: a las hermanas no se les permite realizar exorcismos, solo a los sacerdotes. Con el apoyo de un mentor, un profesor que siente su don especial, se le permite observar las sesiones de capacitación reales. Su deseo de demostrar su valía da un giro personal cuando conoce a uno de los pacientes más perturbados de la escuela. Durante sus desgarradores encuentros, la hermana Ann se encuentra cara a cara con una fuerza demoníaca que infesta la escuela y tiene lazos misteriosos con su propio pasado. Es entonces cuando el poder del mal y sus propias habilidades sorprendentes se realizan plenamente.", "true","true", "../assets/TERROR/TERROR-PREYDEVIL.jpg","terror","../assets/PORTADAS/PRAYFORPORTADA.png"),
@@ -63,8 +59,39 @@ peliculas = [
     ]
     localStorage.setItem("peliculas",JSON.stringify(peliculas));
 }
+
+// !FUNCION PARA LA CREAACION DEL CAROUSEL
+function createCarousel(){
+    let peliculasCarousel = peliculas.filter(peli => peli.destacado == true);
+    let flag=false;
+    peliculasCarousel.forEach (pelicula => {
+        const newItem =document.createElement("div");
+        newItem.classList.add("carousel-item");
+        if(!flag){
+        newItem.classList.add("active");
+        flag=true;
+        }
+        newItem.innerHTML= `
+        <img src= ${pelicula.imagenPortada} class="d-block w-100 carousel-pag-principal img-fluid" alt=${pelicula.nombre}>
+                    <div class="carousel-caption d-block">
+                        <div class="style-text-carousel">
+                        <h5>${pelicula.nombre}</h5>
+                        <p>${pelicula.descripcion}</p>
+                        <a href='http://127.0.0.1:5500/pages/detail.html#${pelicula.id}' class="btn btn-primary btn-sm button-carousel" ${pelicula.id}>Ver</a>
+                    </div>
+                    </div>
+        `
+        document.querySelector(".carousel-inner").appendChild(newItem);
+    });
+    }
+createCarousel();
+
+
+
+
     function createCard (categoria, queryContainer){
         let peliculaCategoria = peliculas.filter(pelicula => pelicula.categoria == categoria);
+        console.log(peliculaCategoria);
         peliculaCategoria.forEach(pelicula => {
             if(pelicula.publicado){
             const newCard=document.createElement ("div");
@@ -111,32 +138,4 @@ const logOut =()=>{
         })
         }
     })
-
-    // !FUNCION PARA CARRUSEL
-
-    function createCarousel(){
-        let peliculasCarousel = peliculas.filter(pelicula => pelicula.destacado == true);
-        peliculasCarousel.forEach (pelicula => {
-            const newItem =document.createElement("div");
-            newItem.classList.add("carousel slide");
-            newItem.id= "carouselExampleControls"
-            newItem.setAttribute("data-bs-ride","carousel");
-            newItem.innerHTML= `
-            <div class="carousel-inner" >
-            <div  class="carousel-item active carousel-pag-principal" >
-            <img src= "${pelicula.imagenPortada}" class="d-block w-100 carousel-pag-principal img-fluid" alt="${pelicula.nombre}">
-               //             <div class="carousel-caption d-block">
-               //               <div class="style-text-carousel">
-               //                 <h5>${pelicula.nombre}</h5>
-               //                 <p>${pelicula.descripcion}</p>
-               //                 <button type="button" class="btn btn-dark button-carousel">Ver mas</button>
-               //               </div>
-               //             </div>
-            </div>
-                </div>
-            </div>
-            `
-            document.querySelector("#container-carousel").appendChild(newItem);
-            });
-        }
-        createCarousel()
+    

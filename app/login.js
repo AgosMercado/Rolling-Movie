@@ -71,8 +71,8 @@ const validationLogin = (email, password)=>{
 
 const validationRegister2 = (email2)=>{  
     let errors = {};
-    let emailOk = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email2);
-    if(!emailOk) errors.email = " Verifica el email ingresado";
+    let emailOk2 = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email2);
+    if(!emailOk2) errors.email2 = " Verifica el email ingresado";
     return errors;
 }
 const validationForgetPassword = (e)=>{

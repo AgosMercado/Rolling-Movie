@@ -28,7 +28,6 @@ class Peliculas{
 }
 
 let peliculas = JSON.parse(localStorage.getItem("peliculas"));
-console.log(peliculas);
 
 //!CREACION DINAMICA DE TABLA ABM
 peliculas.forEach(pelicula=>{
@@ -135,7 +134,7 @@ const traerDatos = (idSeleccionado) =>{
   document.getElementById("editMovie-name").value = peliculaEncontrada.nombre;
   document.getElementById("editMovie-description").value = peliculaEncontrada.descripcion;
   document.getElementById("editMovie-image").value = peliculaEncontrada.imagen;
-  document.getElementById("editMovie-imagePortada").value = peliculaEncontrada.imagenPortada; //editMovie-imagePortada
+  document.getElementById("editMovie-imagePortada").value = peliculaEncontrada.imagenPortada; 
   let categTerror=document.getElementById("terror");
   let categComedia = document.getElementById("comedia");
   let categAccion = document.getElementById("accion");
@@ -229,10 +228,12 @@ const traerDatos = (idSeleccionado) =>{
   window.location.reload();  
   }
 
-//! FUNCION PARA DESTACAR UN APELIC 
+//! FUNCION PARA DESTACAR UNA PELIC 
 const destacarPelicula =(idPeli)=>{
   let peliculaTraida = peliculas.find(pelicula=>pelicula.id==idPeli); //TRAIGO LA PELI QUE SELECCIONE
+  console.log(peliculaTraida);  //ok
   let valorDestacado = peliculaTraida.destacado; //PUEDE SER TRUE O FALSE
+  console.log(valorDestacado); //ok
   if (!valorDestacado){
     peliculaTraida.destacado = true;
   } else{

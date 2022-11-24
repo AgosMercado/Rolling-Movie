@@ -1,3 +1,6 @@
+*{
+  font-family: 'Bitter', serif;
+}
 .carousel-pag-principal{
     object-fit: cover;
     object-position:center;

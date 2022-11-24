@@ -11,65 +11,57 @@
     <link rel="stylesheet" href="/styles/Styles-Buscador.css">
     <link rel="stylesheet" href="/styles/detail.css">
     <link rel="stylesheet" href="/styles/style-admin.css">
-    <title>Document</title>
+    <link rel="icon" href="/assets/LOGO/pngwing.com (2).png">
+    <title>Detalle de la Película</title>
 </head>
 <body>
     <header>
 <!-- ?INICIO NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top my-auto" id="style-nav">
-  <div class="container-fluid">
-    <a class="navbar-brand style-text-nav" href="#">Rolling Movies
-      <img src="/assets/pngwing.com (2).png" id=imagelogo alt="logo" class="main-image" width="35" height="35"> </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active style-text-nav" href="#" data-bs-toggle="modal" data-bs-target="#register-Modal">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active style-text-nav" href="#" data-bs-toggle="modal" data-bs-target="#register-Modal">Mi lista</a>
-        </li>
-        <div class="d-flex align-items-center ms-2">
-          <form id="form-buscador" class="" action="">
-            <input type="text" name="buscador" id="buscador" placeholder="Buscar una peli">
-          </form>
-        </div>
-      </ul>
-      
-      <!-- Default dropstart button -->
-      <div class="btn-group dropstart">
-        <button type="button" class="btn btn-secondary dropdown-toggle" id="button-user" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fa-solid fa-user"></i>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="error404.html">Cuenta</a></li>
-            <li><a class="dropdown-item" href="error404.html">Configuraciones</a></li>
-            <li><a class="dropdown-item" href="error404.html">Centro de ayuda</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" onclick="logOut()" href="#">Cerrar sesion</a></li>
-          <!-- Dropdown menu links -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top my-auto" id="style-nav">
+    <div class="container-fluid">
+      <a class="navbar-brand style-text-nav" href="/pages/pagprincipal.html">Rolling Movies
+        <img src="/assets/LOGO/pngwing.com (2).png" id=imagelogo alt="logo" class="main-image" width="35" height="35"> </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active style-text-nav" href="/pages/pagprincipal.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active style-text-nav" href="/pages/error404.html" >Mi lista</a>
+          </li>
         </ul>
-      </div>
-        <!-- <div class="dropdown">
-          <a id="button-dropdwn" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Cuenta 
-          </a>
+        <div class="d-flex align-items-center ms-lg-2 me-3 containerInput">
+          <form action="" class="search-box"> 
+            <input  type="text" class="search-input" placeholder="Busca en Rolling Movies" id="buscador">
+            <a class="search-btn" ><i class="fa-solid fa-magnifying-glass"></i></a></form>
+        </div>
         
+        <!-- Default dropstart button -->
+        <div class="btn-group dropstart">
+          <button type="button" class="btn btn-secondary dropdown-toggle" id="button-user" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user"></i>
+          </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Cuenta</a></li>
-            <li><a class="dropdown-item" href="#">Configuraciones</a></li>
-            <li><a class="dropdown-item" href="#">Centro de ayuda</a></li>
-            <li><hr class="dropdown-divider"></li>
-<li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+            <li><a class="dropdown-item" href="/pages/error404.html">Cuenta</a></li>
+              <li><a class="dropdown-item" href="/pages/error404.html">Configuraciones</a></li>
+              <li><a class="dropdown-item" href="/pages/error404.html">Centro de ayuda</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" onclick="logOut()" href="#">Cerrar sesion</a></li>
           </ul>
-        </div> -->
+        </div>
+            </ul>
+          </div> 
+        </div>
       </div>
     </div>
-  </div>
-</nav>
-<!-- ?FIN NAVBAR -->
+  </nav>
+  </header>
+  
+    <!-- ?FIN NAVBAR -->
 
 
 <!-- comienzo de detalle -->

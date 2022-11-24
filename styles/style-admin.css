@@ -1,3 +1,8 @@
+*{
+  font-family: 'Bitter', serif;
+  margin: 0;
+  padding: 0;
+}
 body{
 background-image: url(/assets/PORTADAS/portada.jpg);
 background-position: center;
@@ -7,7 +12,7 @@ background-size: cover;
   background-color: rgba(0, 0, 0, 0.938) !important;
 }
 .style-table{
-  width: 90vw !important;
+  width: 100% !important;
   text-align: center;
 }
 .style-table-category{
@@ -51,6 +56,7 @@ background-size: cover;
 }
 .style-cell{
   max-height: 200px;
+  color:cornsilk;
 }
 .form-check-input{
   background-color:#8A0015;

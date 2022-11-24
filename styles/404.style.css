@@ -1,8 +1,10 @@
+*{
+   font-family: 'Bitter', serif;
+}
 @media screen and (min-width:1000px){
    #gifpenny{
    width: 1000px;
    height: 600px;
       margin-bottom: 0px;
    }
-}
-                                 
+}                     

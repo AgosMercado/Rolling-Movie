@@ -23,4 +23,13 @@ peliculasDetail.innerHTML =
 let containerDetail = document.getElementById("pelicula-container");
 containerDetail.appendChild(peliculasDetail);
 
+//! FUNCION PARA DESLOGUEARSE
+const logOut =()=>{
+    //BORRO DE LS EN USUARIO LOGUEADO
+    localStorage.removeItem("userLogged");
+    //REDIRIJO A LOGIN
+    window.location.assign(window.location.origin + "/pages/login.html");
+    }
+
+
 

@@ -1,3 +1,6 @@
+*{
+    font-family: 'Bitter', serif;
+}
 main{
     display:flex;
     flex-direction: column;
