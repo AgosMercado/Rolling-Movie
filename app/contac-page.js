@@ -55,7 +55,9 @@ function validar(e){
     errorsValues.map(error=>{
       alertMessage (error,"form");
     }) 
-}}
+}
+document.getElementById("form").setAttribute("onsubmit", `enviarEmail('${email}')`)
+}
 
 //! FUNCION QUE VALIDA A TRAVES DE REGEX LOS CAMPOS QUE PASO POR PARAMETRO (CAMPOS DEL REGISTRO)
 const validationRegister = (name, email, phone, textArea)=>{  
@@ -73,7 +75,7 @@ const validationRegister = (name, email, phone, textArea)=>{
 }
 
 
-//FUNCION PARA CREAR UN ALERT EN UN CONTENEDOR Y LUEGO DE DOS SEGUNDOS SE BORRE
+//! FUNCION PARA CREAR UN ALERT EN UN CONTENEDOR Y LUEGO DE DOS SEGUNDOS SE BORRE
 function alertMessage (message, containerMessage){    
     let alertMessage = document.createElement("div");
     alertMessage.classList.add("style-message2","my-2");
@@ -83,4 +85,19 @@ function alertMessage (message, containerMessage){
     let containerParent = document.getElementById(containerMessage);
     containerParent.appendChild(alertMessage);
     setTimeout(()=>{alertMessage.remove();},1500); // PASADOS 2 SEGUNDOS SE BORRE EL ELEMENTO QUE ACABO DE CREAR SINO ES SPAM
+}
+
+//! FUNCION PARA ENVIAR MAIL
+const enviarEmail = (emailIngresado)=>{
+  Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "agosmercado@gmail.com",
+    Password : "FCFE4A9AAAC4B9727EE8829B9F39ECB11A29",
+    To : emailIngresado,
+    From : "agosmercado@gmail.com",
+    Subject : "Gracias por contactarte con Roling Movies",
+    Body : "Te confirmamos que recibimos tu solicitud de contacto, a la brevedad nos comunicaremos con vos."
+}).then(
+  message => alert(message)
+);
 }

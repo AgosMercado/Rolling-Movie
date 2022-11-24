@@ -1,3 +1,8 @@
+*{
+  font-family: 'Bitter', serif;
+  margin: 0;
+  padding: 0;
+}
 body{
 background-image: url(/assets/PORTADAS/portada.jpg);
 background-position: center;
@@ -7,7 +12,7 @@ background-size: cover;
   background-color: rgba(0, 0, 0, 0.938) !important;
 }
 .style-table{
-  width: 90vw !important;
+  width: 100% !important;
   text-align: center;
 }
 .style-table-category{
@@ -41,13 +46,17 @@ background-size: cover;
 .style-button-add:focus{
   box-shadow: none !important;
 }
-@media screen and (max-width: 900px){
+@media screen and (max-width: 992px){
   .style-table{
-    width: 70vw;
+    width: 90vw;
+}
+.style-icons{
+  width: 250px !important;
 }
 }
 .style-cell{
   max-height: 200px;
+  color:cornsilk;
 }
 .form-check-input{
   background-color:#8A0015;
@@ -110,7 +119,7 @@ nav{
 .style-table-category::-webkit-scrollbar-thumb {
   background-color: #8A0015;
   border-radius: 20px;
-  border: 2px solid #f1f2f3;
+  border: 1px solid #8A0015;
 }
 
 .style-table-category::-webkit-scrollbar-track {
@@ -118,4 +127,7 @@ nav{
 }
 #radios-button{
   padding-left: 0px !important;
+}
+.style-icons{
+  width: 200px;
 }

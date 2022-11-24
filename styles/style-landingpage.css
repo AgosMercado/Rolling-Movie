@@ -62,6 +62,9 @@
     background-size: cover;
     background-position: center;
 }
+#background-main{
+  margin-bottom: 90px;
+}
 }
 .style-message{
   color:#8A0015;
@@ -91,4 +94,54 @@
   0 0 25px white,
   0 0 50px white,
   0 0 100px white
+}
+.title span{
+  --total: calc(var(--duration) + var(--delay));
+  position: relative;
+  display: block;
+  color: transparent;
+  overflow: hidden;
+  animation: revealText 1s var(--total) forwards;
+}
+.title span::after{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  background:  #8A0015;
+  animation:
+  rollIn var(--duration)
+  var(--delay) forwards,
+  rollOut var(--duration)
+  var(--total) forwards;
+}
+@keyframes revealText{
+  to {
+    color:#fff;
+  }
+}
+@keyframes rollIn{
+  from{
+    transform: scaleX(0);
+  }to{
+    transform: scaleX(1);
+  }
+}
+@keyframes rollOut{
+  from{
+    transform: translateX(0);
+  }to{
+    transform: translateX(105%);
+  }
+}
+.title{
+  width: 200px;
+  font-size: 1em;
+}
+.style-text2{
+  font-size: 0.8em;
 }

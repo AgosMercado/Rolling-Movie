@@ -5,34 +5,38 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bitter&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="../styles/style-admin.css">
   <link rel="stylesheet" href="/styles/style-landingpage.css">
   <link rel="stylesheet" href="/styles/style-footer.css">
-  <link rel="icon" href="/assets/pngwing.com (2).png">
+  <link rel="icon" href="/assets/LOGO/pngwing.com (2).png">
   <link rel="stylesheet" href="/styles/style-principal.css">
 </head>
 <body>
   <!-- ?INICIO NAVBAR -->
+<header>
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top my-auto" id="style-nav">
   <div class="container-fluid">
-    <a class="navbar-brand style-text-nav" href="#">Rolling Movies
-      <img src="/assets/pngwing.com (2).png" id=imagelogo alt="logo" class="main-image" width="35" height="35"> </a>
+    <a class="navbar-brand style-text-nav" href="/pages/pagprincipal.html">Rolling Movies
+      <img src="/assets/LOGO/pngwing.com (2).png" id=imagelogo alt="logo" class="main-image" width="35" height="35"> </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active style-text-nav" href="#" data-bs-toggle="modal" data-bs-target="#register-Modal">Inicio</a>
+          <a class="nav-link active style-text-nav" href="/pages/pagprincipal.html">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active style-text-nav" href="#" data-bs-toggle="modal" data-bs-target="#register-Modal">Mi lista</a>
+          <a class="nav-link active style-text-nav" href="/pages/error404.html" >Mi lista</a>
         </li>
       </ul>
       <div class="d-flex align-items-center ms-lg-2 me-3 containerInput">
         <form action="" class="search-box"> 
-          <input  type="text" class="search-input" placeholder="Escribe aqui la pelicula" id="buscador">
+          <input  type="text" class="search-input" placeholder="Busca en Rolling Movies" id="buscador">
           <a class="search-btn" ><i class="fa-solid fa-magnifying-glass"></i></a></form>
       </div>
       
@@ -42,9 +46,9 @@
           <i class="fa-solid fa-user"></i>
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="error404.html">Cuenta</a></li>
-            <li><a class="dropdown-item" href="error404.html">Configuraciones</a></li>
-            <li><a class="dropdown-item" href="error404.html">Centro de ayuda</a></li>
+          <li><a class="dropdown-item" href="/pages/error404.html">Cuenta</a></li>
+            <li><a class="dropdown-item" href="/pages/error404.html">Configuraciones</a></li>
+            <li><a class="dropdown-item" href="/pages/error404.html">Centro de ayuda</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" onclick="logOut()" href="#">Cerrar sesion</a></li>
         </ul>
@@ -55,15 +59,15 @@
     </div>
   </div>
 </nav>
-
+</header>
 
   <!-- ?FIN NAVBAR -->
   <!-- ?INICIO TABLA ADMINISTRACION -->
   <main class="mt-5 pt-4 container" id="main-style2">
     <h1 class="text-center text-light">Administración de Películas</h1> 
     <button class="style-button-add btn btn-outline-success ms-auto d-block" data-bs-toggle="modal" data-bs-target="#add-movie-modal">AGREGAR <i class="fa-solid fa-plus"></i></button>
-    <div class="d-flex justify-content-center container style-table-bg">
-    <table class="table table-dark table-hover style-table mt-3" id="tableABM">
+    <div class="d-flex justify-content-center container style-table-bg table-responsive">
+    <table class="table table-dark table-hover style-table mt-3 " id="tableABM">
     <thead>
       <tr>
         <th scope="col">ID.</th>
@@ -102,6 +106,10 @@
           <div class="form-floating mb-3">
             <input type="text" class="form-control" id="newMovie-image" placeholder="xx" required>
             <label for="newMovie-image">Imágen</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="newMovie-imagePortada" placeholder="xx" required>
+            <label for="newMovie-imagePortada">Imágen Portada</label>
           </div>
           <p class="text-light">Categoria</p>
           <div class="d-flex justify-content-start pb-2 mb-1">
@@ -174,6 +182,10 @@
             <input type="text" class="form-control" id="editMovie-image" placeholder="xx" required>
             <label for="editMovie-image">Imágen</label>
           </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="editMovie-imagePortada" placeholder="xx" required>
+            <label for="editMovie-imagePortada">Imágen Portada</label>
+          </div>
           <p class="text-light">Categoria</p>
           <div class="d-flex justify-content-start pb-2 mb-1" >
           <div class="form-check  d-flex" id="radios-button">
@@ -217,7 +229,7 @@
     <div class="row d-lg-flex justify-content-around align-items-center bg-compass-primary py-4">
         <!-- Logo Rolling Movie-->
         <div class="col-md-5 col-lg-3 order-0 d-flex justify-content-center">
-          <img src="/assets/pngwing.com (2).png" id=imagelogo alt="Logo Rolling Movie" class="main-image" width="65" height="65">
+          <img src="/assets/LOGO/pngwing.com (2).png" id=imagelogo alt="Logo Rolling Movie" class="main-image" width="65" height="65">
   
         </div>
         <div class="w-100 order-1 bg-compass-persianRed my-4 d-md-none" style="height: 2px;"></div>
@@ -225,13 +237,13 @@
 
         <!-- Redes Sociales-->
         <div class="d-flex order-4 order-lg-2 justify-content-around align-items-center col-lg-3">
-            <a href="error404.html"><i
+            <a href="/pages/error404.html"><i
               class="fa-brands fa-instagram fa-2xl incons-networks animation-redes"></i></a>
-            <a href="error404.html"><i
+            <a href="/pages/error404.html"><i
               class="fa-brands fa-facebook fa-2xl incons-networks animation-redes"></i></a>
-            <a href="error404.html"><i
+            <a href="/pages/error404.html"><i
               class="fa-brands fa-twitter fa-2xl incons-networks animation-redes"></i></a>
-            <a href="error404.html"><i
+            <a href="/pages/error404.html"><i
               class="fa-brands fa-google-plus-g fa-2xl incons-networks animation-redes"></i></a>
         </div>
         <div class="w-100 order-5 bg-compass-persianRed mt-4 mb-2 d-lg-none" style="height: 2px;"></div>
