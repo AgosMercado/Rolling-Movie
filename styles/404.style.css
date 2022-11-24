@@ -1,10 +1,35 @@
-*{
-   font-family: 'Bitter', serif;
-}
-@media screen and (min-width:1000px){
-   #gifpenny{
-   width: 1000px;
-   height: 600px;
-      margin-bottom: 0px;
+@media screen and (min-width:200px){
+   #penny video{
+   width: 250px;
    }
-}                     
+                              }
+@media screen and (min-width:300px){
+#penny video{
+   width: 350px;
+}
+                                    }
+@media screen and (min-width:500px){
+#penny video{
+   width: 450px;
+}
+                                    }
+@media screen and (min-width:768px){
+#penny video{
+   width: 600px;
+   height: 600px;
+   }
+                                    }
+@media screen and (min-width:820px){
+#penny video{
+   width: 700px;
+   height: 700px;
+   margin-bottom: 120px;
+   }
+                                    }
+@media screen and (min-width:1000px){
+#penny video{
+   width: 650px;
+   height: 350px;
+   margin-bottom: 0px;
+   }
+                                 }
