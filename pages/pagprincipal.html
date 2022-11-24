@@ -84,25 +84,51 @@
 
 <!-- ?INICIO CATEGORIAS  -->
 <main>
-  <div class="scrollmenu">
+  <div>
     <h3 class="py-3 px-2 text-light">Terror</h3>
-    <div id="categoria-terror" class="d-flex justify-content-around">
+  <div class="scrollmenu">
+    <div class="d-flex align-items-center">
+      <button class="btn-cards" onclick="moveCarouselCard('terror', false)"><</button>
     </div>
-  </div>  
+    <div id="categoria-terror" class="d-flex categoria-scroll justify-content-around"></div>
+    <div class="d-flex align-items-center">
+      <button class="btn-cards " onclick="moveCarouselCard('terror', true)">></button>
+    </div>
+  </div> 
 
     <h3 class="py-3 px-2 text-light">Infantil</h3>
-    <div id="categoria-infantil" class="d-flex justify-content-around">
+  <div class="scrollmenu">
+    <div class="d-flex align-items-center">
+      <button class="btn-cards" onclick="moveCarouselCard('infantil', false)"><</button>
     </div>
-
-    <h3 class="py-3 px-2 text-light" >Acción</h3>
-    <div id="categoria-accion" class="d-flex justify-content-around">
-    </div>
-
-    <h3 class="py-3 px-2 text-light" >Comedia</h3>
-    <div id="categoria-comedia" class="d-flex justify-content-around">
+      <div id="categoria-infantil" class="d-flex categoria-scroll justify-content-around"></div>
+    <div class="d-flex align-items-center">
+      <button class="btn-cards" onclick="moveCarouselCard('infantil', true)">></button>
     </div>
   </div>
 
+    <h3 class="py-3 px-2 text-light" >Acción</h3>
+  <div class="scrollmenu">
+    <div class="d-flex align-items-center">
+      <button class="btn-cards " onclick="moveCarouselCard('accion', false)"><</button>
+    </div>
+      <div id="categoria-accion" class="d-flex categoria-scroll justify-content-around"></div>
+    <div class="d-flex align-items-center">
+      <button class="btn-cards" onclick="moveCarouselCard('accion', true)">></button>
+    </div>
+  </div>
+
+    <h3 class="py-3 px-2 text-light" >Comedia</h3>
+    <div class="scrollmenu mb-5">
+      <div class="d-flex align-items-center">
+        <button class="btn-cards " onclick="moveCarouselCard('comedia', false)"><</button>
+      </div>
+      <div id="categoria-comedia" class="d-flex categoria-scroll justify-content-around"></div>
+      <div class="d-flex align-items-center">
+      <button class="btn-cards " onclick="moveCarouselCard('comedia', true)">></button>
+      </div>
+    </div>
+  </div>
   <div id="line"></div>
 
   <!-- <span class="handle handlePrev active" tabindex="0" role="button" aria-label="Ver títulos anteriores"><b class="indicator-icon icon-leftCaret"></b></span>

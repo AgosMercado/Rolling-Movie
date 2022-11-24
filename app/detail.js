@@ -10,7 +10,7 @@ const peliculasDetail= document.createElement('div');
 peliculasDetail.classList.add('row');
 peliculasDetail.innerHTML =
 `
-    <div class=" col-md-5 col-11 mt-15"><img class="image-style-detail mt-4 w-75" id="imagepeli" src="${peliculaEncontrada.imagen}" alt="${peliculaEncontrada.nombre}"></div>
+    <div class=" col-md-5 col-11 mt-15 stylecontainerimagen"><img class="image-style-detail mt-4" id="imagepeli" src="${peliculaEncontrada.imagen}" alt="${peliculaEncontrada.nombre}"></div>
     <div class=" style-description01 col-md-5 col-11 mt-3" ><strong><h2 class="style-description01">${peliculaEncontrada.nombre}</h2></strong>
     <div class=" style-description mt-5"><p class="style-description">${peliculaEncontrada.descripcion}</p>
     
@@ -19,6 +19,10 @@ peliculasDetail.innerHTML =
         <i class="fa fa-heart"></i>
         </button>
     </div>
+    <div class="d-flex container-button justify-content-start mt-5">
+          <a href="../pages/error404.html" button class="btn btn-outline-success justify-content-center" id="style-button-register" >MAS INFO</button></a>
+          <a href="../pages/error404.html" button class="btn btn-outline-success justify-content-center" id="style-button-register" >VER TRAILER</button></a>
+      </div>
 `
 let containerDetail = document.getElementById("pelicula-container");
 containerDetail.appendChild(peliculasDetail);
