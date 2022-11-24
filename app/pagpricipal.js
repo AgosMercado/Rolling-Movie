@@ -7,7 +7,7 @@ window.location.assign(window.location.origin + "/pages/login.html");
     let adminMenu=document.createElement("li");
     adminMenu.classList.add("nav-item");
     adminMenu.innerHTML= `
-    <a class="nav-link active style-text-nav" href="/pages/admin.html" >ADMIN</a>
+    <a class="nav-link active style-text-nav" href="/Rolling-Movie/pages/admin.html" >ADMIN</a>
     `
     document.querySelector(".navbar-nav").appendChild(adminMenu);
 }
@@ -62,33 +62,42 @@ peliculas = [
 
 
 function createCarousel(){
-    let peliculaCarousel = peliculas.filter(peliculas => peliculas.destacada == true);
-    peliculaCarousel. forEach (pelicula => {
-        const newItem=document.createElement ("div");
-        newItem.classList.add("carousel-item ");
+    let peliculasCarousel = peliculas.filter(pelicula => pelicula.destacada == true);
+    peliculasCarousel. forEach (pelicula => {
+        const newItem =document.createElement ("div");
+        newItem.classList.add("carousel slide");
+        newItem.id= "carouselExampleControls"
+        newItem.setAttribute("data-bs-ride","carousel");
            newItem.innerHTML= `
-           <img src= "${peliculas.imagen}" class="d-block w-100 carousel-pag-principal img-fluid" alt="${peliculas.nombre}">
+        <div class="carousel-inner" >
+          <div  class="carousel-item active carousel-pag-principal" >
+           <img src= "${pelicula.imagen}" class="d-block w-100 carousel-pag-principal img-fluid" alt="${pelicula.nombre}">
            //             <div class="carousel-caption d-block">
            //               <div class="style-text-carousel">
-           //                 <h5>${peliculas.nombre}</h5>
-           //                 <p>${peliculas.descripcion}</p>
+           //                 <h5>${pelicula.nombre}</h5>
+           //                 <p>${pelicula.descripcion}</p>
            //                 <button type="button" class="btn btn-dark button-carousel">Ver mas</button>
            //               </div>
            //             </div>
+           </div>
+              </div>
+          </div>
            `
-           document.querySelector(queryContainer).appendChild(newItem);
+           document.querySelector("#container-carousel").appendChild(newItem);
         });
     }
-// <div class="carousel-item ">
-//             <img src= "../assets/PORTADAS/PORTADA-AVATAR.jpg" class="d-block w-100 carousel-pag-principal img-fluid" alt="pelicula Avatar">
-//             <div class="carousel-caption d-block">
-//               <div class="style-text-carousel">
-//                 <h5>Avatar</h5>
-//                 <p>Ambientada en el año 2154, se desarrollan en Pandora, una luna de un planeta similar a Júpiter, habitada por una especie humanoide llamada na'vi, asentados alrededor de un gigantesco árbol que cubre una inmensa veta de un mineral muy cotizado y que supondría la solución a los problemas energéticos de la Tierra.</p>
-//                 <button type="button" class="btn btn-dark button-carousel">Ver mas</button>
-//               </div>
-//             </div>
-//           </div>
+// <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+{/* <div class="carousel-inner" >
+<div  class="carousel-item active carousel-pag-principal" >
+  <img src="../assets/PORTADAS/peliculas_mas_taquilleras_5260.webp" class="d-block w-100 carousel-pag-principal img-fluid" alt="pelicula Aquaman">
+  <div class="carousel-caption d-block">
+    <div class="style-text-carousel">
+      <h5>Aquaman</h5>
+      <p>En Maine 1985, el guardián del faro Thomas Curry encuentra y rescata, durante una tormenta, seriamente herida a la princesa del reino submarino Atlantis, Atlanna y la lleva a su casa. Una vez curada Atlanna, ella y Tom comienzan un romance teniendo un hijo, Arthur, pero cuando Arthur tenía tres años, la casa es atacada por varios soldados Atlantes, Atlanna se ve obligada a abandonar a Arthur y Tom, prometiéndoles a volver de Atlantis a la superficie.</p>
+      <button type="button" class="btn btn-dark button-carousel">Ver mas</button>
+    </div>
+    </div>
+</div> */}
 
     function createCard (categoria, queryContainer){
         let peliculaCategoria = peliculas.filter(pelicula => pelicula.categoria == categoria);

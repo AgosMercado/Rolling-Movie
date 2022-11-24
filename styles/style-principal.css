@@ -108,7 +108,7 @@ main{
 /* .scrollmenu::-webkit-scrollbar-track {
   border-radius: 10px;  
 } */
-.card:hover{
+.card-style:hover{
   transform:scale(0.9);
   transition-duration: 50ms;
   color: #8A0015;
