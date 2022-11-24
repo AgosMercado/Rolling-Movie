@@ -4,14 +4,106 @@ main{
     justify-content: center;
     height: 90vh;
 }
-.image-style{
+.image-style-detail{
+    width: 100%;
+
+   } 
+.image-style-detail-mx-4 {
     width: 450px;
-    height: 400px;
-    object-fit: cover;
-    object-position: center;
-    } 
+    height: 200px;
+}
+.style-description{
+    font-size: 1vw;
+
+   
+    
+
+
+
+}
+.container-calification {
+    padding-top: 50px;
+}
+.style-description01{
+    color: #fefefe;
+}
+
+
+
+
 
     
 .style-description{
 color:rgb(251, 251, 251) !important;
 }
+
+.button-like {
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    text-decoration: none;
+    padding: 1rem;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    border-radius: 10rem;
+    color: #ffffff;
+    transition: all ease 0.3s;
+  }
+  
+  .button-like span {
+    margin-left: 0.5rem;
+  }
+  
+  .button-like .fa,
+  .button-like span {
+    transition: all ease 0.4s;
+  }
+  
+  .button-like:focus {
+    background-color: transparent;
+  }
+  
+  .button-like:focus .fa,
+  .button-like:focus span {
+    color: #8A0015;
+  }
+  
+  .button-like:hover {
+    border-color: #8A0015;
+    background-color: transparent;
+  }
+  
+  .button-like:hover .fa,
+  .button-like:hover span {
+    color: #8A0015;
+  }
+  
+  .liked {
+    background-color: #8A0015;
+    border-color: #8A0015;
+  }
+  
+  .liked .fa,
+  .liked span {
+    color: #fefefe;
+  }
+  
+  .liked:focus {
+    background-color: #8A0015;
+  }
+  
+  .liked:focus .fa,
+  .liked:focus span {
+    color: #fefefe;
+  }
+  
+  .liked:hover {
+    background-color: #8A0015;
+    border-color: #8A0015;
+  }
+  
+  .liked:hover .fa,
+  .liked:hover span {
+    color: #fefefe;
+  }
