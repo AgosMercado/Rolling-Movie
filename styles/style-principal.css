@@ -28,7 +28,7 @@ main{
     border: none;
 }
 .style-text-carousel{
-    background-color: rgba(0, 0, 0, 0.459);
+    background-color: rgba(0, 0, 0, 0.475);
     padding: 10px;
     border-radius: 15px;
 }
@@ -54,11 +54,12 @@ main{
     display: none;
 }
 
-/* .scrollmenu{
+.scrollmenu{
   overflow: scroll;
   white-space: nowrap;
-  width: 100vw;
-} */
+  width: 100%;
+  overflow: hidden;
+}
 
 .scrollmenu{
   display: grid;
@@ -73,6 +74,12 @@ main{
   width: 100%;
   overflow: hidden;
 } 
+
+.card{
+  scroll-snap-align: center !important;
+}
+
+
 /* .card{
   scroll-snap-align: center !important;
 }
