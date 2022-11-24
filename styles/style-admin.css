@@ -41,9 +41,12 @@ background-size: cover;
 .style-button-add:focus{
   box-shadow: none !important;
 }
-@media screen and (max-width: 900px){
+@media screen and (max-width: 992px){
   .style-table{
-    width: 70vw;
+    width: 90vw;
+}
+.style-icons{
+  width: 250px !important;
 }
 }
 .style-cell{
@@ -110,7 +113,7 @@ nav{
 .style-table-category::-webkit-scrollbar-thumb {
   background-color: #8A0015;
   border-radius: 20px;
-  border: 2px solid #f1f2f3;
+  border: 1px solid #8A0015;
 }
 
 .style-table-category::-webkit-scrollbar-track {
@@ -118,4 +121,7 @@ nav{
 }
 #radios-button{
   padding-left: 0px !important;
+}
+.style-icons{
+  width: 200px;
 }

@@ -20,13 +20,17 @@ const login = (e)=>{
     let errorsKeys = Object.keys(errorsObject);  //Traigo el array de propiedades del objeto Errores
     let errorsValues = Object.values(errorsObject); //Traigo el array de valores del objeto errores
     if (errorsKeys.length==0){
+        console.log("entro a");
     if(userFound && userFound.password==password){
         //GUARDO EL USUARIO EN LS
         localStorage.setItem("userLogged",JSON.stringify(userFound));
         console.log(userFound);
         window.location.assign(window.location.origin + "/pages/pagprincipal.html");
         console.log("entro");
+    }else{
+        alertMessage ("Los datos ingresados son incorrectos","#div-form");
     }}else{
+        console.log("holis");
         errorsValues.map(error=>{
         alertMessage (error,"#div-form");
         // document.getElementById("formLogin").reset();
@@ -51,12 +55,16 @@ function alertMessage (message,queryContainer){
 
 
 
-const validationLogin = (email, password)=>{  
+const validationLogin = (email, password)=>{ 
+    console.log(email);
+    console.log(password);
     let errors = {};
     let emailOk = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
     if(!emailOk) errors.email = " Verifica el email ingresado";
+    console.log(emailOk);
     let passwordOk = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password);
     if(!passwordOk) errors.password = " Verifica la contraseña ingresada";
+    console.log(errors); 
     return errors;
 }
 

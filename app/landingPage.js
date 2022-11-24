@@ -26,11 +26,11 @@ if(usersLS){
 }else{
   admins= [
     new User(25, "Agostina Mercado", 29, "agosmercado@gmail.com", "123456789aA", "true"),
-    new User(24, "Gisel Hemsy", 28, "ghemsy@gmail.com", 123456788, "true"),
-    new User(23, "Gabriel Rodriguez", 27, "gabz89.gr@gmail.com", 123456787, "true"),
-    new User(22, "Nicolas Peralta", 26, "peralta.j.nicolas@gmail.com", 123456786, "true"),
-    new User(21, "David Fernandez", 25, "davidfmamani@gmail.com", 123456785, "true"),
-    new User(20, "Facundo Fierro", 24, "fachu2501@gmail.com", 1234567894, "true")
+    new User(24, "Gisel Hemsy", 28, "ghemsy@gmail.com", "123456788aA", "true"),
+    new User(23, "Gabriel Rodriguez", 27, "gabz89.gr@gmail.com", "123456787aA", "true"),
+    new User(22, "Nicolas Peralta", 26, "peralta.j.nicolas@gmail.com", "123456786aA", "true"),
+    new User(21, "David Fernandez", 25, "davidfmamani@gmail.com", "123456785aA", "true"),
+    new User(20, "Facundo Fierro", 24, "fachu2501@gmail.com", "1234567894aA", "true")
   ]
   localStorage.setItem("admins",JSON.stringify(admins));
 }

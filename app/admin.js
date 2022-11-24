@@ -40,7 +40,9 @@ peliculas.forEach(pelicula=>{
     <td class="style-cell">${pelicula.categoria}</td>
     <td class="style-cell">${pelicula.publicado}</td>
     <td class="style-cell">${pelicula.destacado}</td>
-    <td class="style-cell">
+    <td class="style-cell style-icons d-flex flex-nowrap justify-content-center">
+      <button class="btn style-button-table"><i onclick="" class="fa-solid fa-star"></i></button>
+      <button class="btn style-button-table"><i onclick="publicarPelicula(${pelicula.id})" class="fa-solid fa-eye"></i></button>
       <button class="btn style-button-table"><i class="fa-solid fa-trash" onclick="eliminarPelicula(${pelicula.id})"></i></button>
       <button class="btn style-button-table" data-bs-toggle="modal" data-bs-target="#edit-movie-modal"><i onclick="traerDatos(${pelicula.id})" class="fa-solid fa-pen"></i></button>
     </td>
@@ -134,7 +136,6 @@ const traerDatos = (idSeleccionado) =>{
   document.getElementById("editMovie-name").value = peliculaEncontrada.nombre;
   document.getElementById("editMovie-description").value = peliculaEncontrada.descripcion;
   document.getElementById("editMovie-image").value = peliculaEncontrada.imagen;
-  // console.log(document.querySelector(`input[value="${peliculaEncontrada.categoria}"]`));
   let categTerror=document.getElementById("terror");
   let categComedia = document.getElementById("comedia");
   let categAccion = document.getElementById("accion");
@@ -207,3 +208,25 @@ const traerDatos = (idSeleccionado) =>{
   //REDIRIJO A LOGIN
   window.location.assign(window.location.origin + "/pages/login.html");
   }
+
+  //! FUNCION PARA PUBLICAR U OCULTAR UNA PELICULA
+  const publicarPelicula = (idPeli) =>{
+  const peliculaTraida = peliculas.find(pelicula=>pelicula.id==idPeli); //TRAIGO LA PELI QUE SELECCIONE
+  let valorPublic = peliculaTraida.publicado; //PUEDE SER TRUE O FALSE
+  //del documento de la pag principal necesito encontrar el elemento que coincida con el ID que traigo y mostrarlo o no
+  if (!valorPublic){
+    peliculaTraida.publicado = true;
+  } else{
+    peliculaTraida.publicado = false;
+    }
+   //elimino del array el elemento encontrado
+  let pelisActualizadas = peliculas.filter(pelicula=>pelicula.id!=idPeli);
+   //Creo una nueva pelicula con los nuevos elementos traidos del form editar
+
+   //Pusheo la nueva peli
+  pelisActualizadas.push(peliculaTraida);
+   //actualizo el array en LS
+  localStorage.setItem("peliculas",JSON.stringify(pelisActualizadas));
+  window.location.reload();  
+  }
+
