@@ -15,7 +15,7 @@ window.location.assign(window.location.origin + "/pages/login.html");
 
 
 class Peliculas{
-    constructor(nombre,id,descripcion,publicado,destacado,imagen,categoria,calificacion,direccion,pais,duracion,imagenPortada){
+    constructor(nombre,id,descripcion,publicado,destacado,imagen,categoria,imagenPortada){
     this.nombre = nombre;
     this.id = id;
     this.descripcion = descripcion;
@@ -23,10 +23,10 @@ class Peliculas{
     this.destacado = destacado;
     this.imagen = imagen;
     this.categoria = categoria;
-    this.calificacion = calificacion;
-    this.direccion = direccion;
-    this.pais = pais; 
-    this.duracion = duracion; 
+    // this.calificacion = calificacion;
+    // this.direccion = direccion;
+    // this.pais = pais; 
+    // this.duracion = duracion; 
     this.imagenPortada = imagenPortada;
     }
 }
@@ -63,7 +63,6 @@ peliculas = [
     ]
     localStorage.setItem("peliculas",JSON.stringify(peliculas));
 }
-
     function createCard (categoria, queryContainer){
         let peliculaCategoria = peliculas.filter(pelicula => pelicula.categoria == categoria);
         peliculaCategoria.forEach(pelicula => {
@@ -113,4 +112,31 @@ const logOut =()=>{
         }
     })
 
-    // !FUNCION PARA 
+    // !FUNCION PARA CARRUSEL
+
+    function createCarousel(){
+        let peliculasCarousel = peliculas.filter(pelicula => pelicula.destacado == true);
+        peliculasCarousel.forEach (pelicula => {
+            const newItem =document.createElement("div");
+            newItem.classList.add("carousel slide");
+            newItem.id= "carouselExampleControls"
+            newItem.setAttribute("data-bs-ride","carousel");
+            newItem.innerHTML= `
+            <div class="carousel-inner" >
+            <div  class="carousel-item active carousel-pag-principal" >
+            <img src= "${pelicula.imagenPortada}" class="d-block w-100 carousel-pag-principal img-fluid" alt="${pelicula.nombre}">
+               //             <div class="carousel-caption d-block">
+               //               <div class="style-text-carousel">
+               //                 <h5>${pelicula.nombre}</h5>
+               //                 <p>${pelicula.descripcion}</p>
+               //                 <button type="button" class="btn btn-dark button-carousel">Ver mas</button>
+               //               </div>
+               //             </div>
+            </div>
+                </div>
+            </div>
+            `
+            document.querySelector("#container-carousel").appendChild(newItem);
+            });
+        }
+        createCarousel()

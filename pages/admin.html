@@ -9,15 +9,16 @@
   <link rel="stylesheet" href="../styles/style-admin.css">
   <link rel="stylesheet" href="/styles/style-landingpage.css">
   <link rel="stylesheet" href="/styles/style-footer.css">
-  <link rel="icon" href="/assets/pngwing.com (2).png">
+  <link rel="icon" href="/assets/LOGO/pngwing.com (2).png">
   <link rel="stylesheet" href="/styles/style-principal.css">
 </head>
 <body>
   <!-- ?INICIO NAVBAR -->
+<header>
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top my-auto" id="style-nav">
   <div class="container-fluid">
     <a class="navbar-brand style-text-nav" href="/pages/pagprincipal.html">Rolling Movies
-      <img src="/assets/pngwing.com (2).png" id=imagelogo alt="logo" class="main-image" width="35" height="35"> </a>
+      <img src="/assets/LOGO/pngwing.com (2).png" id=imagelogo alt="logo" class="main-image" width="35" height="35"> </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -55,7 +56,7 @@
     </div>
   </div>
 </nav>
-
+</header>
 
   <!-- ?FIN NAVBAR -->
   <!-- ?INICIO TABLA ADMINISTRACION -->
@@ -102,6 +103,10 @@
           <div class="form-floating mb-3">
             <input type="text" class="form-control" id="newMovie-image" placeholder="xx" required>
             <label for="newMovie-image">Imágen</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="newMovie-imagePortada" placeholder="xx" required>
+            <label for="newMovie-imagePortada">Imágen Portada</label>
           </div>
           <p class="text-light">Categoria</p>
           <div class="d-flex justify-content-start pb-2 mb-1">
@@ -174,6 +179,11 @@
             <input type="text" class="form-control" id="editMovie-image" placeholder="xx" required>
             <label for="editMovie-image">Imágen</label>
           </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="
+            " placeholder="xx" required>
+            <label for="editMovie-imagePortada">Imágen Portada</label>
+          </div>
           <p class="text-light">Categoria</p>
           <div class="d-flex justify-content-start pb-2 mb-1" >
           <div class="form-check  d-flex" id="radios-button">
@@ -217,7 +227,7 @@
     <div class="row d-lg-flex justify-content-around align-items-center bg-compass-primary py-4">
         <!-- Logo Rolling Movie-->
         <div class="col-md-5 col-lg-3 order-0 d-flex justify-content-center">
-          <img src="/assets/pngwing.com (2).png" id=imagelogo alt="Logo Rolling Movie" class="main-image" width="65" height="65">
+          <img src="/assets/LOGO/pngwing.com (2).png" id=imagelogo alt="Logo Rolling Movie" class="main-image" width="65" height="65">
   
         </div>
         <div class="w-100 order-1 bg-compass-persianRed my-4 d-md-none" style="height: 2px;"></div>
@@ -225,13 +235,13 @@
 
         <!-- Redes Sociales-->
         <div class="d-flex order-4 order-lg-2 justify-content-around align-items-center col-lg-3">
-            <a href="error404.html"><i
+            <a href="/pages/error404.html"><i
               class="fa-brands fa-instagram fa-2xl incons-networks animation-redes"></i></a>
-            <a href="error404.html"><i
+            <a href="/pages/error404.html"><i
               class="fa-brands fa-facebook fa-2xl incons-networks animation-redes"></i></a>
-            <a href="error404.html"><i
+            <a href="/pages/error404.html"><i
               class="fa-brands fa-twitter fa-2xl incons-networks animation-redes"></i></a>
-            <a href="error404.html"><i
+            <a href="/pages/error404.html"><i
               class="fa-brands fa-google-plus-g fa-2xl incons-networks animation-redes"></i></a>
         </div>
         <div class="w-100 order-5 bg-compass-persianRed mt-4 mb-2 d-lg-none" style="height: 2px;"></div>
