@@ -137,7 +137,7 @@ main{
       
       .categoria-scroll{
         overflow-x: scroll;
-      
+        padding-left: 50px;
       }
       .btn-cards{
         background-color: #8A0015;

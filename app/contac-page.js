@@ -56,7 +56,7 @@ function validar(e){
       alertMessage (error,"form");
     }) 
 }
-document.getElementById("form").setAttribute("onsubmit", `enviarEmail('${email}')`)
+document.getElementById("form").addEventListener("submit", enviarEmail(email))
 }
 
 //! FUNCION QUE VALIDA A TRAVES DE REGEX LOS CAMPOS QUE PASO POR PARAMETRO (CAMPOS DEL REGISTRO)
