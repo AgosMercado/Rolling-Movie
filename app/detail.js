@@ -1,3 +1,22 @@
+//! PROTECCION DE RUTAS
+let admins = JSON.parse(localStorage.getItem("admins"));
+let userLogged = JSON.parse(localStorage.getItem("userLogged"));
+if(!userLogged){  //SI NO EXISTE USUARIO LOGUEADO REDIRIJO AL LOGIN
+window.location.assign(window.location.origin + "/pages/login.html");
+}else if (userLogged.admin){
+    let adminMenu=document.createElement("li");
+    adminMenu.classList.add("nav-item");
+    adminMenu.innerHTML= `
+    <a class="nav-link active style-text-nav" href="/pages/admin.html" >ADMIN</a>
+    `
+    document.querySelector(".navbar-nav").appendChild(adminMenu);
+}
+
+
+
+
+
+
 const id= window.location.hash.slice(1);  ///40
 console.log(id);   ///ok
 
@@ -10,19 +29,11 @@ const peliculasDetail= document.createElement('div');
 peliculasDetail.classList.add('row');
 peliculasDetail.innerHTML =
 `
-    <div class=" col-md-5 col-11 mt-15 stylecontainerimagen"><img class="image-style-detail mt-4" id="imagepeli" src="${peliculaEncontrada.imagen}" alt="${peliculaEncontrada.nombre}"></div>
-    <div class=" style-description01 col-md-5 col-11 mt-3" ><strong><h2 class="style-description01">${peliculaEncontrada.nombre}</h2></strong>
-    <div class=" style-description mt-5"><p class="style-description">${peliculaEncontrada.descripcion}</p>
+<div class="col-md-12 col-lg-8 container" ><strong><p class="text-center style-descriptionName">${peliculaEncontrada.nombre}</p></strong>
+<div class="d-flex  justify-content-center container"><p class="style-description col-lg-7">${peliculaEncontrada.descripcion}</p></div></div>
+
+<div class="col-md-12 col-lg-3 stylecontainerimagen container d-flex  justify-content-center"><img class="image-style-detail mt-2" id="imagepeli" src="${peliculaEncontrada.imagen}" alt="${peliculaEncontrada.nombre}"></div>
     
-    <div <p class="container-calification"><h>CALIFICA ESTA PELICULA</h></p> 
-    <button class=" d-flex button button-like d-flex align-content-center justify-item-center mx-5">
-        <i class="fa fa-heart"></i>
-        </button>
-    </div>
-    <div class="d-flex container-button justify-content-start mt-5">
-          <a href="../pages/error404.html" button class="btn btn-outline-success justify-content-center" id="style-button-register" >MAS INFO</button></a>
-          <a href="../pages/error404.html" button class="btn btn-outline-success justify-content-center" id="style-button-register" >VER TRAILER</button></a>
-      </div>
 `
 let containerDetail = document.getElementById("pelicula-container");
 containerDetail.appendChild(peliculasDetail);
@@ -37,19 +48,19 @@ const logOut =()=>{
 
 
 
-let userLoggedLS = JSON.parse(localStorage.getItem("userLogged"));
-if(!userLoggedLS){ 
-window.location.assign(window.location.origin + "/pages/login.html");
-}else if (!userLoggedLS.admin){ 
-window.location.assign(window.location.origin + "/pages/pagprincipal.html");
-}else{
-  let adminMenu=document.createElement("li");
-    adminMenu.classList.add("nav-item");
-    adminMenu.innerHTML= `
-      <a class="nav-link active style-text-nav" href="/pages/admin.html" >ADMIN</a>
-    `
-    document.querySelector(".navbar-nav").appendChild(adminMenu);
-}
+// let userLoggedLS = JSON.parse(localStorage.getItem("userLogged"));
+// if(!userLoggedLS){ 
+// window.location.assign(window.location.origin + "/pages/login.html");
+// }else if (!userLoggedLS.admin){ 
+// window.location.assign(window.location.origin + "/pages/pagprincipal.html");
+// }else{
+//   let adminMenu=document.createElement("li");
+//     adminMenu.classList.add("nav-item");
+//     adminMenu.innerHTML= `
+//       <a class="nav-link active style-text-nav" href="/pages/admin.html" >ADMIN</a>
+//     `
+//     document.querySelector(".navbar-nav").appendChild(adminMenu);
+// }
 
 
 
