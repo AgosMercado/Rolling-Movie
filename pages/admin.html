@@ -1,21 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Página de Administración</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bitter&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles/style-admin.css">
+  <link rel="stylesheet" href="/styles/style-landingpage.css">
+  <link rel="stylesheet" href="/styles/style-footer.css">
+  <link rel="icon" href="/assets/LOGO/pngwing.com (2).png">
+  <link rel="stylesheet" href="/styles/style-principal.css">
 </head>
 <body>
-  <h1>PAGINA DE ADMIN 😂</h1>
-  <main class="d-flex">
-    <div class="container container-terror">
-      <h4>TERROR</h4>
-      <!-- CARD -->
+  <!-- ?INICIO NAVBAR -->
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top my-auto" id="style-nav">
+  <div class="container-fluid">
+    <a class="navbar-brand style-text-nav" href="/pages/pagprincipal.html">Rolling Movies
+      <img src="/assets/LOGO/pngwing.com (2).png" id=imagelogo alt="logo" class="main-image" width="35" height="35"> </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active style-text-nav" href="/pages/pagprincipal.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active style-text-nav" href="/pages/error404.html" >Mi lista</a>
+        </li>
+      </ul>
+      <div class="d-flex align-items-center ms-lg-2 me-3 containerInput">
+        <form action="" class="search-box"> 
+          <input  type="text" class="search-input" placeholder="Busca en Rolling Movies" id="buscador">
+          <a class="search-btn" ><i class="fa-solid fa-magnifying-glass"></i></a></form>
+      </div>
       
+      <!-- Default dropstart button -->
+      <div class="btn-group dropstart">
+        <button type="button" class="btn btn-secondary dropdown-toggle" id="button-user" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/pages/error404.html">Cuenta</a></li>
+            <li><a class="dropdown-item" href="/pages/error404.html">Configuraciones</a></li>
+            <li><a class="dropdown-item" href="/pages/error404.html">Centro de ayuda</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" onclick="logOut()" href="#">Cerrar sesion</a></li>
+        </ul>
+      </div>
+          </ul>
+        </div> 
+      </div>
     </div>
-    
+  </div>
+</nav>
+</header>
+
+  <!-- ?FIN NAVBAR -->
+  <!-- ?INICIO TABLA ADMINISTRACION -->
+  <main class="mt-5 pt-4 container" id="main-style2">
+    <h1 class="text-center text-light">Administración de Películas</h1> 
+    <button class="style-button-add btn btn-outline-success ms-auto d-block" data-bs-toggle="modal" data-bs-target="#add-movie-modal">AGREGAR <i class="fa-solid fa-plus"></i></button>
+    <div class="d-flex justify-content-center container style-table-bg table-responsive">
+    <table class="table table-dark table-hover style-table mt-3 " id="tableABM">
+    <thead>
+      <tr>
+        <th scope="col">ID.</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Imagen</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Publicado</th>
+        <th scope="col">Destacado</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+<!-- ?FIN TABLA ADMINISTRACION -->
+<!-- ?INICIO MODAL AGREGAR PELICULA -->
+<div class="modal" tabindex="-1" id="add-movie-modal" tabindex="-1" aria-labelledby="modalAdd" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header register-modal-style">
+        <h5 class="modal-title text-light">Agregar Película</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body register-modal-style">
+        <form onsubmit="agregarPelicula(event)">
+          <div class="form-floating mb-3" id="">
+            <input type="text" class="form-control" id="newMovie-name" placeholder="xxxxxx" required minlength="6" maxlength="15">
+            <label for="newMovie-name">Nombre de la Película</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="newMovie-description" placeholder="Lorem.." required minlength="10" maxlength="500" >
+            <label for="newMovie-description">Descripción</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="newMovie-image" placeholder="xx" required>
+            <label for="newMovie-image">Imágen</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="newMovie-imagePortada" placeholder="xx" required>
+            <label for="newMovie-imagePortada">Imágen Portada</label>
+          </div>
+          <p class="text-light">Categoria</p>
+          <div class="d-flex justify-content-start pb-2 mb-1">
+          <div class="form-check me-2">
+            <input class="form-check-input" type="radio" name="radios-categoria" id="categoria-terror-radio" value="terror" required>
+            <label class="form-check-label" for="categoria-terror-radio">
+              Terror
+            </label>
+          </div>
+          <div class="form-check me-2">
+            <input class="form-check-input" type="radio" name="radios-categoria" id="categoria-infantil-radio" value="infantil"  required>
+            <label class="form-check-label" for="categoria-infantil-radio">
+              Infantil
+            </label>
+          </div>
+          <div class="form-check me-2"">
+            <input class="form-check-input" type="radio" name="radios-categoria" id="categoria-accion-radio" value="accion" required>
+            <label class="form-check-label" for="categoria-accion-radio">
+              Accion
+            </label>
+          </div>
+          <div class="form-check me-2"">
+            <input class="form-check-input" type="radio" name="radios-categoria" id="categoria-comedia-radio" value="comedia" required>
+            <label class="form-check-label" for="categoria-comedia-radio">
+              Comedia
+            </label>
+          </div>
+        </div>
+          <div class="form-floating mb-3 ms-1">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="switch-publicado">
+              <label class="form-check-label" for="switch-publicado">Publicado</label>
+            </div>
+          </div>
+          <div class="form-floating mb-3 ms-1">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="switch-destacado">
+              <label class="form-check-label" for="switch-destacado">Destacado</label>
+            </div>
+          </div>
+          <div class="form-floating mb-3" id="container-message">
+            <button type="submit" class="btn btn-outline-success" id="buton-modal-register">Enviar datos</button>
+          </div>  
+          <div id="container-alertMessage"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ?FIN MODAL AGREGAR PELICULA-->
+<!-- ?INICIO MODAL EDITAR PELICULA -->
+<div class="modal" tabindex="-1" id="edit-movie-modal" tabindex="-1" aria-labelledby="modalEdit" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header register-modal-style">
+        <h5 class="modal-title text-light">Editar Película</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body register-modal-style">
+        <form id="form-edit">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="editMovie-name" placeholder="xxxxxx" required minlength="6" maxlength="15">
+            <label for="editMovie-name">Nombre de la Película</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="editMovie-description" placeholder="Lorem.." required minlength="10" maxlength="500" >
+            <label for="editMovie-description">Descripción</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="editMovie-image" placeholder="xx" required>
+            <label for="editMovie-image">Imágen</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="editMovie-imagePortada" placeholder="xx" required>
+            <label for="editMovie-imagePortada">Imágen Portada</label>
+          </div>
+          <p class="text-light">Categoria</p>
+          <div class="d-flex justify-content-start pb-2 mb-1" >
+          <div class="form-check  d-flex" id="radios-button">
+            <p>Terror</p>
+            <input class="form-check-input mx-2" type="radio" name="radiosCategoriaEdit" id="terror" value="terror" required>
+            <p>Infantil</p>
+            <input class="form-check-input mx-2" type="radio" name="radiosCategoriaEdit" id="infantil" value="infantil" required>
+            <p>Accion</p>
+            <input class="form-check-input mx-2" type="radio" name="radiosCategoriaEdit" id="accion" value="accion" required>
+            <p>Comedia</p>
+            <input class="form-check-input mx-2" type="radio" name="radiosCategoriaEdit" id="comedia" value="comedia" required>
+          </div>
+        </div>
+          <div class="form-floating mb-3 ms-1">
+            <div class="form-check form-switch testpublicado">
+              <input class="form-check-input" type="checkbox" role="switch" id="switch-publicado-edit">
+              <label class="form-check-label" for="switch-publicado">Publicado</label>
+            </div>
+          </div>
+          <div class="form-floating mb-3 ms-1">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="switch-destacado-edit">
+              <label class="form-check-label" for="switch-destacado">Destacado</label>
+            </div>
+          </div>
+          <div class="form-floating mb-3" id="container-message">
+            <button type="submit" class="btn btn-outline-success" id="buton-modal-register">Guardar Cambios</button>
+          </div>  
+          <div id="container-alertMessage"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ?FIN MODAL EDITAR -->
+
   </main>
+
+  <!-- ?INICIO FOOTER -->
+  <footer id="footer-page" class="container-fluid bg-compass-primary">
+    <div class="row d-lg-flex justify-content-around align-items-center bg-compass-primary py-4">
+        <!-- Logo Rolling Movie-->
+        <div class="col-md-5 col-lg-3 order-0 d-flex justify-content-center">
+          <img src="/assets/LOGO/pngwing.com (2).png" id=imagelogo alt="Logo Rolling Movie" class="main-image" width="65" height="65">
+  
+        </div>
+        <div class="w-100 order-1 bg-compass-persianRed my-4 d-md-none" style="height: 2px;"></div>
+        <div class="w-100 order-3 bg-compass-persianRed my-4 d-lg-none" style="height: 2px;"></div>
+
+        <!-- Redes Sociales-->
+        <div class="d-flex order-4 order-lg-2 justify-content-around align-items-center col-lg-3">
+            <a href="/pages/error404.html"><i
+              class="fa-brands fa-instagram fa-2xl incons-networks animation-redes"></i></a>
+            <a href="/pages/error404.html"><i
+              class="fa-brands fa-facebook fa-2xl incons-networks animation-redes"></i></a>
+            <a href="/pages/error404.html"><i
+              class="fa-brands fa-twitter fa-2xl incons-networks animation-redes"></i></a>
+            <a href="/pages/error404.html"><i
+              class="fa-brands fa-google-plus-g fa-2xl incons-networks animation-redes"></i></a>
+        </div>
+        <div class="w-100 order-5 bg-compass-persianRed mt-4 mb-2 d-lg-none" style="height: 2px;"></div>
+
+        <!-- Links -->
+        <div class="col-md-5 col-lg-3 order-2 order-lg-3 flex-column">
+            <p class="text-general-page fs-5 text-center text-lg-end"><a href=""></a></p>
+            <p class="text-general-page fs-5 text-center text-lg-end"><a href=""></a></p>
+            <p class="text-general-page fs-5 text-center text-lg-end"><a href="/pages/contact-page.html">Contáctanos</a></p>
+            <p class="text-general-page fs-5 text-center text-lg-end"><a href="/pages/about-us.html">Acerca de nosotros</a></p>
+        </div>
+    </div>
+    <div class="container-copyright">
+        <p>&copy; Copyright 2022 - Todos los derechos reservados Rolling Movie.</p>
+    </div>
+  </footer>
+  <!-- ?FIN FOOTER -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="/app/admin.js"></script>
+  <script src="https://kit.fontawesome.com/73835d0d8e.js" crossorigin="anonymous"></script>
 </body>
 </html>

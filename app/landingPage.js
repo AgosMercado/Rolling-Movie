@@ -25,12 +25,12 @@ if(usersLS){
   admins = JSON.parse(localStorage.getItem("admins"));
 }else{
   admins= [
-    new User(25, "Agostina Mercado", 29, "agosmercado@gmail.com", 123456789, "true"),
-    new User(24, "Gisel Hemsy", 28, "ghemsy@gmail.com", 123456788, "true"),
-    new User(23, "Gabriel Rodriguez", 27, "gabz89.gr@gmail.com", 123456787, "true"),
-    new User(22, "Nicolas Peralta", 26, "peralta.j.nicolas@gmail.com", 123456786, "true"),
-    new User(21, "David Fernandez", 25, "davidfmamani@gmail.com", 123456785, "true"),
-    new User(20, "Facundo Fierro", 24, "fachu2501@gmail.com", 1234567894, "true")
+    new User(25, "Agostina Mercado", 29, "agosmercado@gmail.com", "123456789aA", "true"),
+    new User(24, "Gisel Hemsy", 28, "ghemsy@gmail.com", "123456788aA", "true"),
+    new User(23, "Gabriel Rodriguez", 27, "gabz89.gr@gmail.com", "123456787aA", "true"),
+    new User(22, "Nicolas Peralta", 26, "peralta.j.nicolas@gmail.com", "123456786aA", "true"),
+    new User(21, "David Fernandez", 25, "davidfmamani@gmail.com", "123456785aA", "true"),
+    new User(20, "Facundo Fierro", 24, "fachu2501@gmail.com", "1234567894aA", "true")
   ]
   localStorage.setItem("admins",JSON.stringify(admins));
 }
@@ -55,7 +55,7 @@ function register (e){
   let email = document.getElementById("register-email-value").value;
   let password = document.getElementById("register-password-value").value;
   let password2 = document.getElementById("register-password2-value").value;
-  let idNewUser = Math.random();
+  let idNewUser = Math.round(Math.random()*150);
   let newUser = new User(idNewUser, name, age, email, password, false);
   
   let userFounded = admins.find(user=>user.email==email); //Busco en la lista de admins si encuentro alguno que tenga el email que se esta ingresando
@@ -71,6 +71,8 @@ function register (e){
   adminsLS.push(newUser);
   //Actualizo en LS:
   localStorage.setItem("admins",JSON.stringify(adminsLS));
+  //GUARDO EL USUARIO LOGUEADO
+  localStorage.setItem("userLogged",JSON.stringify(newUser));
   //Redirijo al inicio:
   window.location.assign(window.location.origin + "/pages/pagprincipal.html")
     }else alertMessage (" El email ingresado ya ha sido registrado","container-alertMessage");
@@ -103,3 +105,6 @@ const validationRegister = (name, age, email, password, password2)=>{
 
   //EXPRESION REGULAR PARA TEXTO
   // ^[a-zA-Z]*$
+
+  //exp reg numeros
+   // /^[0-9]+$/

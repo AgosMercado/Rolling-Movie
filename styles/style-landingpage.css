@@ -1,12 +1,12 @@
-#button-search,#style-button-register,#buton-modal-register,#button-init{
-  border: 1px solid #8A0015;
-  color: #8A0015;
+#button-search,#style-button-register,#buton-modal-register,#button-init,#BO,#button-user,.button-login{
+  border: 1px solid #8A0015 !important;
+  color: #8A0015 !important;
 }
-#button-search:hover,#style-button-register:hover,#buton-modal-register:hover,#button-init{
+#button-search:hover,#style-button-register:hover,#buton-modal-register:hover,#button-init,#button-user,.button-carousel,.button-login{
   background-color: #8A0015 !important;
   color: white !important;
 }
-#button-search:focus,#style-button-register:focus,#buton-modal-register:focus,.btn-close:focus{
+#button-search:focus,#style-button-register:focus,#buton-modal-register:focus,.btn-close:focus,#button-user:focus,.button-login:focus{
   box-shadow: none !important;
 }
 .style-text-nav:hover{
@@ -34,7 +34,7 @@
 #background-main{
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.795);
+  background-color: rgba(0, 0, 0, 0.781);
 }
 .register-modal-style{
   background-color: black;
@@ -62,11 +62,86 @@
     background-size: cover;
     background-position: center;
 }
+#background-main{
+  margin-bottom: 90px;
+}
 }
 .style-message{
   color:#8A0015;
   font-size: .9rem;
 }
+/* se agrego estilo a error 404 */
+
+.tenor-gif-embed{
+  width: 500px;
+  height: 500px;
+  position:fixed;
+  left: 400px;
+}
 #style-nav{
   background-color: black;
+}
+.style-message2{
+  color:white;
+  font-size: .9rem;
+}
+#div-form{
+  width: 90%;
+}
+#style-button-register:hover{
+  color: #8A0015;
+  text-shadow: 0 0 5px white,
+  0 0 25px white,
+  0 0 50px white,
+  0 0 100px white
+}
+.title span{
+  --total: calc(var(--duration) + var(--delay));
+  position: relative;
+  display: block;
+  color: transparent;
+  overflow: hidden;
+  animation: revealText 1s var(--total) forwards;
+}
+.title span::after{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  background:  #8A0015;
+  animation:
+  rollIn var(--duration)
+  var(--delay) forwards,
+  rollOut var(--duration)
+  var(--total) forwards;
+}
+@keyframes revealText{
+  to {
+    color:#fff;
+  }
+}
+@keyframes rollIn{
+  from{
+    transform: scaleX(0);
+  }to{
+    transform: scaleX(1);
+  }
+}
+@keyframes rollOut{
+  from{
+    transform: translateX(0);
+  }to{
+    transform: translateX(105%);
+  }
+}
+.title{
+  width: 200px;
+  font-size: 1em;
+}
+.style-text2{
+  font-size: 0.8em;
 }

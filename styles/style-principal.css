@@ -1,5 +1,164 @@
-.carousel-pag-principal{
- height: 100vh !important;
- object-fit: cover;
- object-position: center;
+*{
+  font-family: 'Bitter', serif;
 }
+.carousel-pag-principal{
+    object-fit: cover;
+    object-position:center;
+    height: 100vh;
+    width: 100vw;
+}
+
+main{
+    background-color: black;
+}
+
+.img-card{
+    height: 250px !important;
+    width: 300px !important;
+    object-fit: contain;
+    object-position: center;
+
+}
+
+.card-style{
+    width: 250px !important; 
+    background-color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.button-carousel{
+    border: none !important;
+}
+.style-text-carousel{
+    background-color: rgba(0, 0, 0, 0.475);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+
+#line{
+  background-color: #8A0015;
+  width: 100%;
+  height: 1px;
+}
+
+/* #form-buscador{
+  border: none;
+} */
+
+#buscador{
+  background-color: white;
+  border-radius:8px;
+  border: none;
+  caret-color: #8A0015;
+}
+
+.filtro{
+  display: none;
+}
+
+@media screen and (max-width: 991px){
+  .dropdown-menu{
+    right: 0% !important;
+    left: 100% !important;
+    top: 0%;
+    }
+    .containerInput{
+      margin-bottom: 10px;
+    }
+    }
+    .search-input{
+        outline: none;
+        border: none;
+        background: black ;
+        width: 0;
+        padding: 0;
+        color: black;
+        float: left;
+        font-size: 16px;
+        transition: .3s;
+        line-height: 40px;
+        }
+        .search-input::placeholder{
+        color: #dbc5b0;
+        }
+      .search-btn{
+        color: #fff;
+        float: right;
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        background-color: #8A0015;
+        display: flex;
+        justify-content: center !important;
+        align-items: center;
+        text-decoration: none;
+        transition: .3s;
+      }
+      .search-input:focus,.search-input:not(:placeholder-shown){
+        width: 240px;
+        padding: 0 6px;
+      }
+      .search-box:hover > .search-input{
+        width: 240px;
+        padding: 0 6px;
+      }
+      .search-box:hover > .search-btn,
+      .search-input:focus + .search-btn,
+      .search-input:not(:placeholder-shown) + .search-btn{
+        color: #FFF;
+        background-color: #8A0015;
+      }
+      .scrollmenu{
+        display: grid;
+        grid-auto-flow: column;
+        scroll-behavior: auto;
+        gap:1.2rem;
+        overflow-y: auto;
+        overscroll-behavior-x:contain;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none !important;
+        overscroll-behavior-y: none;
+        width: 100%;
+        overflow: hidden;
+      }
+      .scrollmenu{
+        overflow: scroll;
+        white-space: nowrap;
+        width: 100%;
+        overflow: hidden;
+      }
+      
+      .categoria-scroll::-webkit-scrollbar{
+        display: none;
+        
+      }
+      
+      .categoria-scroll{
+        overflow-x: scroll;
+        /* padding-left: 50px; */
+      }
+      .btn-cards{
+        background-color: #8A0015;
+        height: 5vh;
+        width: 3vw;
+        border-radius: 10px;
+      
+      }
+      .card{
+        scroll-snap-align: center !important;
+      }
+      .style-image{
+        width: 173px;
+        height: 256px;
+      }
+      .style-image:hover{
+        transform: scale(1.1);
+      }
+      @media screen and (max-width: 500px){
+        .card-style{
+          justify-content: center;
+          margin-left: 20px;
+          }
+          }

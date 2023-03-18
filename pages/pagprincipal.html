@@ -6,79 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/style-principal.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../styles/style-landingpage.css">
+    <link rel="stylesheet" href="/styles/style-footer.css">
+    <link rel="icon" href="/assets/LOGO/pngwing.com (2).png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bitter&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="/styles/Styles-Buscador.css"> -->
+    <title>Rolling Movies</title>
 </head>
 <body>
     <header>
 <!-- ?INICIO NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top my-auto">
-        <div class="container-fluid">
-          <a class="navbar-brand style-text-nav" href="#">Rolling Movies</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active style-text-nav" aria-current="page" href="#">INICIO</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active style-text-nav" aria-current="page" href="#">MI LISTA</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input id=boton class="form-control me-2 border-0" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success me-2" type="submit">Buscar</button>
-            </form>
-            <div class="dropdown">
-              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown link
-              </a>
-            
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Cuenta</a></li>
-                <li><a class="dropdown-item" href="#">Configuraciones</a></li>
-                <li><a class="dropdown-item" href="#">Centro de ayuda</a></li>
-                <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
-              </ul>
-            </div>
-            </form>
-          </div>
-        </div>
-      </nav>
-    </header>
-<!-- !FIN NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top my-auto" id="style-nav">
+  <div class="container-fluid">
+    <a class="navbar-brand style-text-nav" href="#">Rolling Movies
+      <img src="/assets/LOGO/pngwing.com (2).png" id=imagelogo alt="logo" class="main-image" width="35" height="35"> </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active style-text-nav" href="/pages/pagprincipal.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active style-text-nav" href="/pages/error404.html">Mi lista</a>
+        </li>
+      </ul>
+      <div class="d-flex align-items-center ms-lg-2 me-3 containerInput">
+        <form action="" class="search-box"> 
+          <input  type="text" class="search-input" placeholder="Busca en Rolling Movies" id="buscador">
+          <a class="search-btn" ><i class="fa-solid fa-magnifying-glass"></i></a></form>
+      </div>
+      
+      <!-- Default dropstart button -->
+      <div class="btn-group dropstart">
+        <button type="button" class="btn btn-secondary dropdown-toggle" id="button-user" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="error404.html">Cuenta</a></li>
+            <li><a class="dropdown-item" href="error404.html">Configuraciones</a></li>
+            <li><a class="dropdown-item" href="error404.html">Centro de ayuda</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" onclick="logOut()" href="#">Cerrar sesion</a></li>
+        </ul>
+      </div>
+          </ul>
+        </div> 
+      </div>
+    </div>
+  </div>
+</nav>
 
-<!-- ?INICIO CAROUSEL -->
+
+  <!-- ?FIN NAVBAR -->
+            
+
+
+<!-- !INICIO CAROUSEL -->
+<div id="container-carousel">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner" >
-          <div  class="carousel-item active carousel-pag-principal" >
-            <img src=https://scontent.ftuc4-1.fna.fbcdn.net/v/t39.30808-6/305842707_10160329395184078_66030670029855097_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=e3f864&_nc_ohc=Irp3_xtWmScAX9mi8DB&_nc_ht=scontent.ftuc4-1.fna&oh=00_AfBLEF-6wiJT19PKzCqVY8CV9XjYf2GCk21uNNtBCuZy5Q&oe=63683984 class="d-block w-100 carousel-pag-principal" alt="peicula Cars">
-            <div class="carousel-caption d-block">
-                <h5>Cars</h5>
-                <p>Pelicula de comedia deportia, animada, producida por Pixar Animation Studio.</p>
-                <button type="button" class="btn btn-dark">Ver mas</button>
-              </div>
-
-          </div>
-          <div class="carousel-item ">
-            <img src= "../assets/foot-era-del-hielo.jpeg" class="d-block w-100 carousel-pag-principal" alt="pelicula Era de hielo">
-            <div class="carousel-caption d-block">
-                <h5>Harry Potter VII parte II</h5>
-                <p>Manny, Sid, Diego y Scrat abandonan su valle y emprenden un divertido viaje por un paisaje en pleno deshielo. Su misión es informar a los demás animales de que la Edad de Hielo se acaba. Por el camino conocen a Ellie, una mamut que derrite el corazón de Manny, y a las simpáticas y traviesas zarigüeyas Crash y Eddie.</p>
-                <button type="button" class="btn btn-dark">Ver mas</button>
-              </div>
-           
-          </div>
-          <div class="carousel-item">
-            <img src="../assets/foto-spiderman.jpeg" class="d-block w-100 carousel-pag-principal" alt="Pelicula Spiderman">
-            <div class="carousel-caption d-block">
-                <h5>Spiderman</h5>
-                <p>Peter Parker ha sido Spiderman durante casi dos años. En este tiempo se ha enfrentado a retos personales realmente heroicos mientras mantenía a salvo la ciudad de Nueva York.</p>
-                <button type="button" class="btn btn-dark">Ver mas</button>
-              </div>
-          </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -89,12 +79,105 @@
             <span class="visually-hidden">Next</span>
           </button>
       </div>
+    </div>
 <!-- !FIN CARRUSEL -->
 
-<!-- ?INICIO ATEGORIAS  -->
+<!-- ?INICIO CATEGORIAS  -->
+<main>
+  <div>
+    <h3 class="py-3 px-2 text-light">Terror</h3>
+  <div class="scrollmenu">
+    <div class="d-flex align-items-center">
+      <button class="btn-cards ms-1" onclick="moveCarouselCard('terror', false)"><</button>
+    </div>
+    <div id="categoria-terror" class="d-flex categoria-scroll"></div>
+    <div class="d-flex align-items-center">
+      <button class="btn-cards me-1 ms-1" onclick="moveCarouselCard('terror', true)">></button>
+    </div>
+  </div> 
 
+    <h3 class="py-3 px-2 text-light">Infantil</h3>
+  <div class="scrollmenu">
+    <div class="d-flex align-items-center">
+      <button class="btn-cards ms-1" onclick="moveCarouselCard('infantil', false)"><i class="fa-solid fa-caret-left"></i></button>
+    </div>
+      <div id="categoria-infantil" class="d-flex categoria-scroll"></div>
+    <div class="d-flex align-items-center">
+      <button class="btn-cards me-1 ms-1" onclick="moveCarouselCard('infantil', true)"><i class="fa-solid fa-caret-right"></i></button>
+    </div>
+  </div>
 
+    <h3 class="py-3 px-2 text-light" >Acción</h3>
+  <div class="scrollmenu">
+    <div class="d-flex align-items-center">
+      <button class="btn-cards ms-1" onclick="moveCarouselCard('accion', false)"><i class="fa-solid fa-caret-left"></i></button>
+    </div>
+      <div id="categoria-accion" class="d-flex categoria-scroll"></div>
+    <div class="d-flex align-items-center">
+      <button class="btn-cards me-1 ms-1" onclick="moveCarouselCard('accion', true)"><i class="fa-solid fa-caret-right"></i></button>
+    </div>
+  </div>
+
+    <h3 class="py-3 px-2 text-light" >Comedia</h3>
+    <div class="scrollmenu mb-5">
+      <div class="d-flex align-items-center">
+        <button class="btn-cards ms-1" onclick="moveCarouselCard('comedia', false)"><i class="fa-solid fa-caret-left"></i></button>
+      </div>
+      <div id="categoria-comedia" class="d-flex categoria-scroll"></div>
+      <div class="d-flex align-items-center">
+      <button class="btn-cards me-1 ms-1" onclick="moveCarouselCard('comedia', true)"><i class="fa-solid fa-caret-right"></i></button>
+      </div>
+    </div>
+  </div>
+  <div id="line"></div>
+
+  <!-- <span class="handle handlePrev active" tabindex="0" role="button" aria-label="Ver títulos anteriores"><b class="indicator-icon icon-leftCaret"></b></span>
+  <ul class="pagination-indicator"><li class=""></li><li class=""></li><li class="active"></li><li class=""></li><li class=""></li><li class=""></li><li class=""></li><li class=""></li><li class=""></li><li class=""></li></ul>
+  <span class="handle handleNext active" tabindex="0" role="button" aria-label="Ver más títulos"><b class="indicator-icon icon-rightCaret"></b></span> -->
+
+  </main>
+
+<!-- ?INICIO FOOTER -->
+<footer id="footer-page" class="container-fluid bg-compass-primary">
+  <div class="row d-lg-flex justify-content-around align-items-center bg-compass-primary py-4">
+      <!-- Logo Rolling Movie-->
+      <div class="col-md-5 col-lg-3 order-0 d-flex justify-content-center">
+        <img src="/assets/LOGO/pngwing.com (2).png" id=imagelogo alt="Logo Rolling Movie" class="main-image" width="65" height="65">
+
+      </div>
+      <div class="w-100 order-1 bg-compass-persianRed my-4 d-md-none" style="height: 2px;"></div>
+      <div class="w-100 order-3 bg-compass-persianRed my-4 d-lg-none" style="height: 2px;"></div>
+
+      <!-- Redes Sociales-->
+      <div class="d-flex order-4 order-lg-2 justify-content-around align-items-center col-lg-3">
+          <a href="/pages/error404.html"><i
+            class="fa-brands fa-instagram fa-2xl incons-networks animation-redes"></i></a>
+          <a href="/pages/error404.html"><i
+            class="fa-brands fa-facebook fa-2xl incons-networks animation-redes"></i></a>
+          <a href="/pages/error404.html"><i
+            class="fa-brands fa-twitter fa-2xl incons-networks animation-redes"></i></a>
+          <a href="/pages/error404.html"><i
+            class="fa-brands fa-google-plus-g fa-2xl incons-networks animation-redes"></i></a>
+      </div>
+      <div class="w-100 order-5 bg-compass-persianRed mt-4 mb-2 d-lg-none" style="height: 2px;"></div>
+
+      <!-- Links -->
+      <div class="col-md-5 col-lg-3 order-2 order-lg-3 flex-column">
+          <p class="text-general-page fs-5 text-center text-lg-end"><a href=""></a></p>
+          <p class="text-general-page fs-5 text-center text-lg-end"><a href=""></a></p>
+          <p class="text-general-page fs-5 text-center text-lg-end"><a href="/pages/contact-page.html">Contáctanos</a></p>
+          <p class="text-general-page fs-5 text-center text-lg-end"><a href="/pages/about-us.html">Acerca de nosotros</a></p>
+      </div>
+  </div>
+  <div class="container-copyright">
+      <p>&copy; Copyright 2022 - Todos los derechos reservados Rolling Movie.</p>
+  </div>
+</footer>
+<!-- ?FIN FOOTER -->
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/73835d0d8e.js" crossorigin="anonymous"></script>
+<script src="../app/pagpricipal.js"></script>
+<scrip src="../app/Buscador.js"></scrip>
 </body>
 </html>
