@@ -87,11 +87,15 @@ function createCarousel(){
     createCarousel()
     
     const cambioboolean =()=>{
-        peliculas[0].destacado=true;
+        peliPrueba=peliculas[0];
+        peliPrueba.destacado=true;
+        peliculas.push(peliPrueba);
+
         // miValor = "Nuevo valor";
 localStorage.setItem("peliculas", peliculas);
         console.log(peliculas[0]);
         console.log("cambiando");
+        console.log("**************", peliculas);
     }
     
     document.body.onload=cambioboolean;
