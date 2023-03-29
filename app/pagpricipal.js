@@ -35,7 +35,7 @@ if (peliculasLS){
 peliculas = [
         new Peliculas("Aquaman",195,"En Maine 1985, el guardián del faro Thomas Curry encuentra y rescata, durante una tormenta, seriamente herida a la princesa del reino submarino Atlantis, Atlanna y la lleva a su casa. Una vez curada Atlanna, ella y Tom comienzan un romance teniendo un hijo, Arthur, pero cuando Arthur tenía tres años, la casa es atacada por varios soldados Atlantes, Atlanna se ve obligada a abandonar a Arthur y Tom, prometiéndoles a volver de Atlantis a la superficie.","true","false","../assets/ACCION/aquamancard.jpg","accion","../assets/PORTADAS/peliculas_mas_taquilleras_5260.webp"),
         new Peliculas("Spiderman",184,"Peter Parker ha sido Spiderman durante casi dos años. En este tiempo se ha enfrentado a retos personales realmente heroicos mientras mantenía a salvo la ciudad de Nueva York.","true", "false","../assets/ACCION/spidercard.jpg","infantil","../assets/PORTADAS/foto-spiderman.jpeg"),
-        new Peliculas("Avatar",189, "Ambientada en el año 2154, se desarrollan en Pandora, una luna de un planeta similar a Júpiter, habitada por una especie humanoide llamada na'vi, asentados alrededor de un gigantesco árbol que cubre una inmensa veta de un mineral muy cotizado y que supondría la solución a los problemas energéticos de la Tierra.","true", "true", "../assets/INFANTILES/avatarcard.jpg","infantil","../assets/PORTADAS/PORTADA-AVATAR.jpg"),
+        new Peliculas("Avatar",189, "Ambientada en el año 2154, se desarrollan en Pandora, una luna de un planeta similar a Júpiter, habitada por una especie humanoide llamada na'vi, asentados alrededor de un gigantesco árbol que cubre una inmensa veta de un mineral muy cotizado y que supondría la solución a los problemas energéticos de la Tierra.","true", "false", "../assets/INFANTILES/avatarcard.jpg","infantil","../assets/PORTADAS/PORTADA-AVATAR.jpg"),
         new Peliculas("Sonrie", 65, "Después de presenciar un incidente extraño que involucra a un paciente, la Dra. Rose Cotter comienza a experimentar sucesos aterradores. Rose debe enfrentarse a su inquietante pasado para poder sobrevivir y escapar de su nueva realidad.", "true", "true", "../assets/TERROR/TERR-SONRIE.jpg","terror","../assets/PORTADAS/SMILEPORTADA.jpg"),
         new Peliculas ("La Luz del Diablo",64,"La historia de la hermana Ann, una inquieta joven de 25 años que cree devotamente que realizar exorcismos es su vocación. Pero ella está en desacuerdo con las tradiciones de la institución: a las hermanas no se les permite realizar exorcismos, solo a los sacerdotes. Con el apoyo de un mentor, un profesor que siente su don especial, se le permite observar las sesiones de capacitación reales. Su deseo de demostrar su valía da un giro personal cuando conoce a uno de los pacientes más perturbados de la escuela. Durante sus desgarradores encuentros, la hermana Ann se encuentra cara a cara con una fuerza demoníaca que infesta la escuela y tiene lazos misteriosos con su propio pasado. Es entonces cuando el poder del mal y sus propias habilidades sorprendentes se realizan plenamente.", "true","false", "../assets/TERROR/TERROR-DEVILLIGHT.jpg","terror","../assets/PORTADAS/PRAYFORPORTADA.png"),
         new Peliculas("Jeepers Creepers: Reborn",63,"Obligada a viajar con su novio, Laine, comienza a experimentar premoniciones asociadas con el mito urbano de The Creeper. Laine cree que se ha invocado algo sobrenatural, y que ella está en el centro de todo.","true","false","../assets/TERROR/TERROR-JeepersCreepersReborn.jpg","terror","../assets/PORTADAS/JEEPERSPORTADA.jpg"),
@@ -84,10 +84,14 @@ function createCarousel(){
         document.querySelector(".carousel-inner").appendChild(newItem);
     });
     }
-document.body.onload=createCarousel;
-
-
-
+    createCarousel()
+    
+    const cambioboolean =()=>{
+        peliculas[0].destacado=true;
+        console.log("cambiando");
+    }
+    
+    document.body.onload=cambioboolean;
 
     function createCard (categoria, queryContainer){
         let peliculaCategoria = peliculas.filter(pelicula => pelicula.categoria == categoria);
