@@ -88,6 +88,7 @@ function createCarousel(){
     
     const cambioboolean =()=>{
         peliculas[0].destacado=true;
+        console.log(peliculas[0]);
         console.log("cambiando");
     }
     
