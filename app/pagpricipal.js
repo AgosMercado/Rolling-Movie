@@ -89,7 +89,7 @@ function createCarousel(){
     const cambioboolean =()=>{
         peliculas[0].destacado=true;
         // miValor = "Nuevo valor";
-localStorage.setItem("peliculas", peliculas[0].destacado);
+localStorage.setItem("peliculas", peliculas);
         console.log(peliculas[0]);
         console.log("cambiando");
     }
