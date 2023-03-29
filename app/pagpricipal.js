@@ -84,7 +84,7 @@ function createCarousel(){
         document.querySelector(".carousel-inner").appendChild(newItem);
     });
     }
-createCarousel();
+document.body.onload=createCarousel;
 
 
 
