@@ -60,6 +60,19 @@ peliculas = [
     localStorage.setItem("peliculas",JSON.stringify(peliculas));
 }
 
+
+const cambioboolean =()=>{
+    let peliMod = peliculas[0];
+    peliMod.destacado=true;
+    peliculas.push(peliMod);
+    // miValor = "Nuevo valor";
+localStorage.setItem("peliculas", JSON.stringify(peliculas));
+    console.log(peliculas[0]);
+    console.log("cambiando");
+}
+
+document.body.onload=cambioboolean;
+
 // !FUNCION PARA LA CREAACION DEL CAROUSEL
 function createCarousel(){
     let peliculasCarousel = peliculas.filter(peli => peli.destacado == true);
@@ -86,19 +99,7 @@ function createCarousel(){
     }
     createCarousel()
     
-    const cambioboolean =()=>{
-        peliPrueba=peliculas[0];
-        peliPrueba.destacado=true;
-        peliculas.push(peliPrueba);
-
-        // miValor = "Nuevo valor";
-localStorage.setItem("peliculas", peliculas);
-        console.log(peliculas[0]);
-        console.log("cambiando");
-        console.log("**************", peliculas);
-    }
-    
-    document.body.onload=cambioboolean;
+  
 
     function createCard (categoria, queryContainer){
         let peliculaCategoria = peliculas.filter(pelicula => pelicula.categoria == categoria);
