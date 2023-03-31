@@ -61,17 +61,15 @@ peliculas = [
 }
 
 
-const cambioboolean =()=>{
-    let peliMod = peliculas[0];
-    peliMod.destacado=true;
-    peliculas.push(peliMod);
-    // miValor = "Nuevo valor";
-localStorage.setItem("peliculas", JSON.stringify(peliculas));
-    console.log(peliculas[0]);
-    console.log("cambiando");
-}
+// const cambioboolean =()=>{
+//     let peliMod = peliculas[0];
+//     peliMod.destacado=true;
+//     peliculas.push(peliMod);
+//     // miValor = "Nuevo valor";
+// localStorage.setItem("peliculas", JSON.stringify(peliculas));
+// }
 
-document.body.onload=cambioboolean;
+// document.body.onload=cambioboolean;
 
 // !FUNCION PARA LA CREAACION DEL CAROUSEL
 function createCarousel(){
